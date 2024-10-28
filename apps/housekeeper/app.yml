@@ -1,0 +1,39 @@
+---
+id: 0xB
+name: housekeeper
+description: collects standard telemetry from all applications on its node
+
+threads:
+  Collector:
+    firstRun: 1100_ms
+    period: 200_ms
+    priority: 500
+
+configurable_parameters:
+  DEFAULT_COLLECT_INTERVAL:
+    type: uint16_t
+    default_value: 1
+  STANDARD_TELEMETRY_SUBSERVICE_ID:
+    type: uint8_t
+    default_value: 1
+
+
+publish:
+  - corfu::appIsAliveTopic
+  - corfu::standardTelemetryTopic
+  - corfu::extendedTelemetryTopic
+
+telecommands:
+  NOP:
+    id: 1
+
+  SetCollectInterval:
+    id: 2
+    fields:
+      intervalInSeconds: uint16_t
+
+standard_telemetry:
+  collectInterval: uint16_t
+  iteration: uint16_t # debug output
+
+

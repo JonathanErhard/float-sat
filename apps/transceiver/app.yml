@@ -1,0 +1,41 @@
+---
+id: 0x09
+# radio for up- and downlink
+
+threads:
+  txThread:
+    firstRun: 1200_ms
+    period: 100_ms
+    priority: 790
+
+# app parameters
+configurable_parameters:
+  DOWNLINK_PORT:
+    type: uint16_t
+    default_value: 8669
+  UPLINK_PORT:
+    type: uint16_t
+    default_value: 8670
+# topics
+subscribe:
+  corfu::standardTelemetryTopic:
+    fifo: 24
+  corfu::extendedTelemetryTopic:
+    fifo: 24
+  radioUpTopic: direct
+
+publish:
+  - corfu::anomalyTopic
+  - corfu::appIsAliveTopic
+  - corfu::uplinkTelecommandTopic
+  - radioDownTopic
+
+# @LINKEDREQ ALLG_09
+anomalies:
+  - RadioTXError
+  - RadioRXError
+
+# commands
+telecommands:
+  NOP:
+    id: 1

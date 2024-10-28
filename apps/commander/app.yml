@@ -1,0 +1,36 @@
+---
+id: 0x6
+name: commander
+description: >
+  gets packets from uplink and differentiates between 
+  inmediate and timed commands and forwards in the corresponding topic
+
+threads:
+  commandThread:
+    firstRun: 1400_ms
+    period: 200_ms # @LINKEDREQ CMD_08
+    priority: 800
+
+subscribe:
+  corfu::uplinkTelecommandTopic:
+    fifo: 12
+
+
+publish:
+  - corfu::anomalyTopic
+  - corfu::appIsAliveTopic
+  - corfu::telecommandTopic
+
+# @LINKEDREQ ALLG_09, CMD_01
+anomalies:
+  - COMMAND_OUT_OF_SEQUENCE
+
+telecommands:
+  NOP:
+    id: 1
+  Reboot:
+    id: 2
+
+standard_telemetry:
+  cmdCounter: uint16_t
+  lastCmdReceivedAt: uint16_t #secound counter

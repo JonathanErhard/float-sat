@@ -1,0 +1,5 @@
+if(EXISTS "/home/jonathanerhard/Projects/floatSat/build-corfu-host-tools/build-tools/generator/test/corfu-generator-test[1]_tests.cmake")
+  include("/home/jonathanerhard/Projects/floatSat/build-corfu-host-tools/build-tools/generator/test/corfu-generator-test[1]_tests.cmake")
+else()
+  add_test(corfu-generator-test_NOT_BUILT corfu-generator-test_NOT_BUILT)
+endif()

@@ -1,1 +1,0 @@
-corfu/scripts/analyze-code.sh

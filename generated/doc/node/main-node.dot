@@ -1,0 +1,26 @@
+digraph D {
+    "housekeeper" [shape=box]
+    "commander" [shape=box]
+    "transceiver" [shape=box]
+
+      "housekeeper" -> "corfu::appIsAliveTopic"
+      "housekeeper" -> "corfu::standardTelemetryTopic"
+      "housekeeper" -> "corfu::extendedTelemetryTopic"
+
+
+      "commander" -> "corfu::anomalyTopic"
+      "commander" -> "corfu::appIsAliveTopic"
+      "commander" -> "corfu::telecommandTopic"
+
+
+      "corfu::uplinkTelecommandTopic" -> "commander"
+      "transceiver" -> "corfu::anomalyTopic"
+      "transceiver" -> "corfu::appIsAliveTopic"
+      "transceiver" -> "corfu::uplinkTelecommandTopic"
+      "transceiver" -> "radioDownTopic"
+
+      "radioUpTopic" -> "transceiver"
+
+      "corfu::standardTelemetryTopic" -> "transceiver"
+      "corfu::extendedTelemetryTopic" -> "transceiver"
+}

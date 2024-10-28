@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+      h2 {
+          padding-top: 20rem;
+      }
+
+      h3 {
+          padding-top: 5rem;
+      }
+
+      h4 {
+          padding-top: 3rem;
+      }
+
+      table {
+          border: black 1pt solid;
+      }
+
+      th {
+          border: black 1pt solid;
+          padding: .5rem 1rem;
+      }
+
+      td {
+          border: black 1pt solid;
+          padding: .5rem;
+      }
+
+      img {
+          max-width: 1100px;
+      }
+  </style>
+</head>
+<body>
+<h3>Node main-node</h3>
+
+<h4>Properties</h4>
+<table>
+  <tr>
+    <th>ID</th>
+    <td>255</td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td>main-node</td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>Main node running on the STM board of our Floatsat</td>
+  </tr>
+</table>
+
+<h4>App Topic Diagram</h4>
+<img src="../../node/main-node.png"><br>
+
+<h4>Apps</h4>
+The node main-node comprises 3 app(s).
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Parameters</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="id">11</td>
+    <td>housekeeper</td>
+    <td>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>DEFAULT_COLLECT_INTERVAL</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>STANDARD_TELEMETRY_SUBSERVICE_ID</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="id">6</td>
+    <td>commander</td>
+    <td>
+      - no parameters -
+    </td>
+  </tr>
+  <tr>
+    <td class="id">9</td>
+    <td>transceiver</td>
+    <td>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>DOWNLINK_PORT</td>
+          <td>8669</td>
+        </tr>
+        <tr>
+          <td>UPLINK_PORT</td>
+          <td>8670</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<h4>Topics</h4>
+The node main-node uses 8 topic(s).
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Data Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="id">1537</td>
+    <td>corfu::anomalyTopic</td>
+    <td>corfu::Anomaly</td>
+  </tr>
+  <tr>
+    <td class="id">1538</td>
+    <td>corfu::appIsAliveTopic</td>
+    <td>corfu::Alive</td>
+  </tr>
+  <tr>
+    <td class="id">1281</td>
+    <td>corfu::telecommandTopic</td>
+    <td>corfu::Telecommand</td>
+  </tr>
+  <tr>
+    <td class="id">1025</td>
+    <td>corfu::uplinkTelecommandTopic</td>
+    <td>corfu::Telecommand</td>
+  </tr>
+  <tr>
+    <td class="id">1297</td>
+    <td>corfu::standardTelemetryTopic</td>
+    <td>corfu::Telemetry</td>
+  </tr>
+  <tr>
+    <td class="id">1298</td>
+    <td>corfu::extendedTelemetryTopic</td>
+    <td>corfu::Telemetry</td>
+  </tr>
+  <tr>
+    <td class="id">2337</td>
+    <td>radioUpTopic</td>
+    <td>corfu::Telecommand</td>
+  </tr>
+  <tr>
+    <td class="id">2447</td>
+    <td>radioDownTopic</td>
+    <td>corfu::Telemetry</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

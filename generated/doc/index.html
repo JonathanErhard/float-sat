@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="foundation.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FloatSat</title>
+</head>
+<body class="grid-container">
+<nav>
+  <ul class="breadcrumbs">
+    <li>Software</li>
+  </ul>
+</nav>
+
+<h1>Overview of FloatSat</h1>
+
+<h2>Content</h2>
+<ul>
+  <li><a href="#nodes">Nodes</a></li>
+  <li><a href="#apps">Apps</a></li>
+  <li><a href="#topics">Topics</a></li>
+  <li><a href="#telecommands">Telecommands</a></li>
+  <li><a href="#telemetry">Extended Telemetry</a></li>
+</ul>
+
+<h2 id="nodes">Nodes</h2>
+The software provides software for 1 node(s).
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>standard TM length (bytes)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="id">255 (0xff)</td>
+    <td><a href="node/main-node.html">main-node</a></td>
+    <td>8</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2 id="apps">Apps</h2>
+The software provides 3 app(s).
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="id">6 (0x6)</td>
+    <td><a href="app/commander/commander.html">commander</a></td>
+  </tr>
+  <tr>
+    <td class="id">11 (0xb)</td>
+    <td><a href="app/housekeeper/housekeeper.html">housekeeper</a></td>
+  </tr>
+  <tr>
+    <td class="id">9 (0x9)</td>
+    <td><a href="app/transceiver/transceiver.html">transceiver</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2 id="topics">Topics</h2>
+The software provides 3 topic(s).
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Data Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="id">1001 (0x3e9)</td>
+    <td><a href="topic/attitudeDeterminationTopic.html">attitudeDeterminationTopic</a></td>
+    <td>AttitudeDeterminationTopic</td>
+  </tr>
+  <tr>
+    <td class="id">7001 (0x1b59)</td>
+    <td><a href="topic/batteryVoltageTopic.html">batteryVoltageTopic</a></td>
+    <td>BatteryVoltageTopic</td>
+  </tr>
+  <tr>
+    <td class="id">5761 (0x1681)</td>
+    <td><a href="topic/biasOffsetTopic.html">biasOffsetTopic</a></td>
+    <td>BiasOffsetTopic</td>
+  </tr>
+  <tr>
+    <td class="id">1002 (0x3ea)</td>
+    <td><a href="topic/desiredMotorSpeedTopic.html">desiredMotorSpeedTopic</a></td>
+    <td>DesiredMotorSpeedTopic</td>
+  </tr>
+  <tr>
+    <td class="id">1004 (0x3ec)</td>
+    <td><a href="topic/desiredStateValueTopic.html">desiredStateValueTopic</a></td>
+    <td>DesiredStateValueTopic</td>
+  </tr>
+  <tr>
+    <td class="id">2001 (0x7d1)</td>
+    <td><a href="topic/imuDataTopic.html">imuDataTopic</a></td>
+    <td>ImuDataTopic</td>
+  </tr>
+  <tr>
+    <td class="id">2556 (0x9fc)</td>
+    <td><a href="topic/isStableTopic.html">isStableTopic</a></td>
+    <td>IsStableTopic</td>
+  </tr>
+  <tr>
+    <td class="id">8001 (0x1f41)</td>
+    <td><a href="topic/modeTopic.html">modeTopic</a></td>
+    <td>ModeTopic</td>
+  </tr>
+  <tr>
+    <td class="id">1005 (0x3ed)</td>
+    <td><a href="topic/peripheralOnOffTopic.html">peripheralOnOffTopic</a></td>
+    <td>PeripheralOnOffTopic</td>
+  </tr>
+  <tr>
+    <td class="id">2447 (0x98f)</td>
+    <td><a href="topic/radioDownTopic.html">radioDownTopic</a></td>
+    <td>corfu::Telemetry</td>
+  </tr>
+  <tr>
+    <td class="id">2337 (0x921)</td>
+    <td><a href="topic/radioUpTopic.html">radioUpTopic</a></td>
+    <td>corfu::Telecommand</td>
+  </tr>
+  <tr>
+    <td class="id">6666 (0x1a0a)</td>
+    <td><a href="topic/solarCellForbiddenTopic.html">solarCellForbiddenTopic</a></td>
+    <td>SolarCellForbiddenTopic</td>
+  </tr>
+  <tr>
+    <td class="id">6001 (0x1771)</td>
+    <td><a href="topic/sunPositionTopic.html">sunPositionTopic</a></td>
+    <td>SunPositionTopic</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2 id="telecommands">Telecommands</h2>
+The software provides 5 telecommand(s).
+<table>
+  <thead>
+  <tr>
+    <th>App</th>
+    <th>App ID</th>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="app/commander/commander.html">commander</a></td>
+      <td>6 (0x6)</td>
+      <td class="id">1 (0x1)</td>
+      <td><a href="app/commander/telecommand/n-o-p.html">NOP</a></td>
+    </tr>
+    <tr>
+      <td><a href="app/commander/commander.html">commander</a></td>
+      <td>6 (0x6)</td>
+      <td class="id">2 (0x2)</td>
+      <td><a href="app/commander/telecommand/reboot.html">Reboot</a></td>
+    </tr>
+    <tr>
+      <td><a href="app/housekeeper/housekeeper.html">housekeeper</a></td>
+      <td>11 (0xb)</td>
+      <td class="id">1 (0x1)</td>
+      <td><a href="app/housekeeper/telecommand/n-o-p.html">NOP</a></td>
+    </tr>
+    <tr>
+      <td><a href="app/housekeeper/housekeeper.html">housekeeper</a></td>
+      <td>11 (0xb)</td>
+      <td class="id">2 (0x2)</td>
+      <td><a href="app/housekeeper/telecommand/set-collect-interval.html">SetCollectInterval</a></td>
+    </tr>
+    <tr>
+      <td><a href="app/transceiver/transceiver.html">transceiver</a></td>
+      <td>9 (0x9)</td>
+      <td class="id">1 (0x1)</td>
+      <td><a href="app/transceiver/telecommand/n-o-p.html">NOP</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="telemetry">Extended Telemetry</h2>
+The software provides 0 type(s) of extended telemetry.
+<table>
+  <thead>
+  <tr>
+    <th>App</th>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<h2 id="anomalies">Anomalies</h2>
+The software provides 3 type(s) of anomalies.
+<table>
+  <thead>
+  <tr>
+    <th>App</th>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="app/commander/commander.html">commander</a></td>
+    <td class="id">29055 (0x717f)</td>
+    <td>Commander_COMMAND_OUT_OF_SEQUENCE</td>
+  </tr>
+  <tr>
+    <td><a href="app/transceiver/transceiver.html">transceiver</a></td>
+    <td class="id">19044 (0x4a64)</td>
+    <td>Transceiver_RadioTXError</td>
+  </tr>
+  <tr>
+    <td><a href="app/transceiver/transceiver.html">transceiver</a></td>
+    <td class="id">49929 (0xc309)</td>
+    <td>Transceiver_RadioRXError</td>
+  </tr>
+  </tbody>
+</table>
+
+<footer>Generated at Fri Oct 18 13:36:24 2024
+ by Corfu.</footer>
+</body>
+</html>

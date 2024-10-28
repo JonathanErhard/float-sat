@@ -1,0 +1,12 @@
+id: 0xFF
+name: main-node
+description: Main node running on the STM board of our Floatsat
+
+hardware_ids:
+  id0: 0x01
+
+apps:
+  # global apps (for all nodes)
+  housekeeper: default
+  commander: default
+  transceiver: default

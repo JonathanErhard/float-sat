@@ -1,0 +1,6 @@
+digraph D {
+    "radioUpTopic"
+        "transceiver" [shape=box]
+
+        "radioUpTopic" -> "transceiver"
+}

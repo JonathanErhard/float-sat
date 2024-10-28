@@ -1,0 +1,14 @@
+digraph D {
+  "commander" [shape=box]
+    "corfu::anomalyTopic"
+    "corfu::appIsAliveTopic"
+    "corfu::telecommandTopic"
+    "corfu::uplinkTelecommandTopic"
+
+    "commander" -> "corfu::anomalyTopic"
+    "commander" -> "corfu::appIsAliveTopic"
+    "commander" -> "corfu::telecommandTopic"
+
+
+    "corfu::uplinkTelecommandTopic" -> "commander"
+}

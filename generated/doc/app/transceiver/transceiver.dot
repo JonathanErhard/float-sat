@@ -1,0 +1,20 @@
+digraph D {
+  "transceiver" [shape=box]
+    "corfu::anomalyTopic"
+    "corfu::appIsAliveTopic"
+    "corfu::uplinkTelecommandTopic"
+    "corfu::standardTelemetryTopic"
+    "corfu::extendedTelemetryTopic"
+    "radioUpTopic"
+    "radioDownTopic"
+
+    "transceiver" -> "corfu::anomalyTopic"
+    "transceiver" -> "corfu::appIsAliveTopic"
+    "transceiver" -> "corfu::uplinkTelecommandTopic"
+    "transceiver" -> "radioDownTopic"
+
+    "radioUpTopic" -> "transceiver"
+
+    "corfu::standardTelemetryTopic" -> "transceiver"
+    "corfu::extendedTelemetryTopic" -> "transceiver"
+}

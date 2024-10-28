@@ -1,0 +1,17 @@
+1729252072, plugin, 0, No Custom Widgets loaded for this project
+1729252072, init, 0, EgseConnector | downlink port: 8671
+1729252072, init, 0, EgseConnector | uplink port: 8672
+1729252072, init, 0, EgseConnector | event topic id: 1539
+1729252072, init, 0, EgseConnector | telemetry topic id: 2447
+1729252072, init, 0, EgseConnector | telecommand topic id: 2337
+1729252072, init, 0, EgseConnector | fileupload topic id: 1004
+1729252072, init, 0, EgseConnector | standard telemetry service id: 11
+1729252072, init, 0, EgseConnector | standard telemetry subservice id: 1
+1729252072, init, 0, DEV-EGSE expecting telemetry with topicID 2447 and
+1729252072, init, 0, DEV-EGSE sending telecommand with topicID 2337
+1729252072, , 0, Signature self-test passed
+1729252582, TC, 0, SENDING TC main-node [id:255] : commander : Reboot
+1729252582, TC, 0, cmdIndex: 0, seqCounter: 0, TTX: 0
+1729252582, TC, 0, signature: 8064166604211029125, crc: 53958
+1729252582, TC, 0, TC parameters:
+1729252582, TC, 0, ---> tele-gateway sending telecommand 6 with ttx 0 through uplink.
