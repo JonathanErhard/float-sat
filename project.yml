@@ -1,0 +1,93 @@
+name: FloatSat
+
+ground:
+  eventTopic: corfu::eventTopic
+  telemetryTopic: radioDownTopic # corfu::downlinkTelemetryTopic -> CAUSES GENERATOR ERROR
+  telecommandTopic: radioUpTopic # corfu::uplinkTelecommandTopic -> CAUSES GENERATOR ERROR
+  downlinkPort: 8671
+  uplinkPort: 8672
+  standardTelemetry:
+    app: housekeeper
+    subserviceId: 1
+
+
+topics:
+  biasOffsetTopic:
+    id: 5761
+    fields:
+      offset: float
+  radioUpTopic: # for tests only
+    id: 2337
+    type: corfu::Telecommand
+  radioDownTopic: # for tests only
+    id: 2447
+    type: corfu::Telemetry
+  isStableTopic:
+    id: 2556
+    description: If the sat is stable now, ie, if we have a lot of velocity on any axis
+    fields:
+      is_stable: bool
+  attitudeDeterminationTopic:
+    id: 1001
+    description: Where we are, and how fast we are, right now
+    fields:
+      position: float
+      velocity: float
+  desiredMotorSpeedTopic:
+    id: 1002
+    description: speed in RPM
+    fields: 
+      speed: float
+  desiredStateValueTopic:
+    id: 1004
+    description: either Rotation speed, or angel, depending on mode
+    fields: 
+      value: float
+  peripheralOnOffTopic:
+    id: 1005
+    description: bit Array of on off
+    fields:
+      state:
+        bit_array:
+          length: 3
+
+  imuDataTopic:
+    id: 2001
+    description: contains all data published by the IMU -> accelerometer + gyro + magentometer
+    fields:
+      accelerometer:
+        array:
+          length: 3
+          type: float
+      gyroscope:
+        array:
+          length: 3
+          type: float
+      magnetometer:
+        array:
+          length: 3
+          type: float
+  sunPositionTopic:
+    id: 6001
+    description: contains the position and the offset from (magnetic) zero of the sun
+    fields:
+      position: float
+      offset: float
+  batteryVoltageTopic:
+    id: 7001
+    description: contains the current voltage of the battery as published by the watchdog
+    fields:
+      voltage: float
+  modeTopic:
+    id: 8001
+    description: the current satellite mode and submode
+    fields:
+      mode: uint8_t
+      submode: uint8_t
+  solarCellForbiddenTopic:
+    id: 6666
+    description: you shall not solar cell
+    fields:
+      is_forbidden: bool
+
+

@@ -1,0 +1,118 @@
+id: 0x02
+name: sensor-collector
+description: collects all the data from all the sensors and publishes them
+
+threads:
+  sensorCollectorThread:
+    firstRun: 1000_ms
+    period: 10_ms
+    priority: 120
+  sensorExtTelemetryThread:
+    firstRun: 1500_ms
+    period: 1000_ms
+    priority: 50
+
+subscribe:
+#  attitudeDeterminationTopic: direct
+  modeTopic: direct
+  peripheralOnOffTopic: direct
+
+publish:
+  - imuDataTopic
+  - sunPositionTopic
+  - corfu::appIsAliveTopic
+  
+telecommands:
+  NOP:
+    id: 1
+  
+  SetCollectionInterval:
+    id: 2
+    description: sets the collection interval of a specific sensor as multiples of the thread period
+    fields:
+      sensor:
+        type: uint8_t
+        aliases:
+          0: IMU
+          1: Sun Sensor #unify sunsensor, having different polling times for each one is dumb
+          2: Solar Power Meter
+      interval: uint16_t
+  
+  SendCollectionIntervals:
+    id: 3
+    description: sends all colection Intervals as extended telemetry
+      
+  CallibMagnetometer:
+    id: 4
+    description: turn on callibration mode for Magnetometer(20s)
+  
+  CallibSS:
+    id: 5
+    description: turn on callb offset mode for SS. (No Sun, Spin, 20s)
+
+  CallibSS0Offset:
+    id: 6
+    description: point sat straight at sun for 3s, this will be the new 0 orientation
+  
+  CallibGyro:
+    id: 7
+    description: use without air to callibrate the gyro
+  
+  SendCallibValues:
+    id: 8
+    description: send Calibration values for all sensors
+
+standard_telemetry:
+  magnetoRawAngle: float
+  sunAngle: float
+
+extended_telemetry:
+  CollectionIntervals:
+    id: 1
+    fields:
+      intervals:
+        array:
+          length: 3
+          type: int64_t
+  SensorData:
+    id: 2
+    fields: 
+      acc:
+        array:
+          length: 3
+          type: float
+      mag:
+        array:
+          length: 3
+          type: float
+      gyr:
+        array:
+          length: 3
+          type: float
+      solarSens:
+        array:
+          length: 4
+          type: float
+      solarSensXDiff: float
+      solarSensYDiff: float
+      solar_volts: float
+  CalibrationValues:
+    id: 3
+    fields:
+      acc:
+        array:
+          length: 3
+          type: float
+      gyr:
+        array:
+          length: 3
+          type: float
+      mag:
+        array:
+          length: 6
+          type: float
+      solarSens:
+        array:
+          length: 8
+          type: float  
+      ssOffset: float

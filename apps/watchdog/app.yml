@@ -1,0 +1,80 @@
+id: 0x01
+name: watchdog
+description: handles anomalies, checks AppIsAlive and checks the battery voltage
+
+threads:
+  watchdogThread:
+    firstRun: 1000_ms
+    period: 1000_ms
+    priority: 120
+
+publish:
+  - batteryVoltageTopic
+  - corfu::anomalyTopic
+  - corfu::appIsAliveTopic
+
+subscribe:
+  corfu::anomalyTopic:
+    fifo: 20
+  corfu::appIsAliveTopic:
+    fifo: 20 # about twice as many as apps, maybe add more places if possible?
+
+configurable_parameters:
+  ANOMALY_HISTORY_SIZE:
+    type: int
+    default_value: 10
+
+structs:
+  AnomalyEntry:
+    anomaly: uint16_t
+    time: uint32_t #internal second counter
+
+telecommands:
+  NOP:
+    id: 1
+  
+  SendAnomalyHistory:
+    id: 2
+    description: sends the last ANOMALY_HISTORY_SIZE anomalies as extended telemetry
+
+  ClearAnomalies:
+    id: 3
+    description: clears the anomaly buffer and counter
+
+  SetSimulatedBatteryVoltage: #not for flight missions!
+    id: 4
+    description: sets the voltage of the baterry to simulate discharge
+    fields:
+      voltage: float
+  
+  StopBatterySimulation: #not for flight missions!
+    id: 5
+    description: stops the simulation of battery discharge
+
+
+standard_telemetry:
+    iteration: uint32_t
+    batteryVoltage: float
+    batteryAmperage: float
+    isBatterySimulated: bool
+    anomalyCounter: uint16_t
+    lastAnomaly: uint16_t
+    appStatus:
+      bit_array:
+        length: 12 # this is now the total number of apps, some have timeout EOT
+    cpuload: float
+
+extended_telemetry:
+  AnomalyHistory:
+    id: 1 
+    fields:
+      entries:
+        array:
+          length: 10
+          type: AnomalyEntry
+
+
+anomalies:
+  - BATTERY_VOLTAGE_LOW
+  - BATTERY_VOLTAGE_CRITICAL
+  - SOME_APP_NOT_ALIVE

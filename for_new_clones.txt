@@ -1,0 +1,106 @@
+# good soldiers follow orders
+
+Set up workspace after cloning:
+1. Fetching all submodules
+
+    cd FloatSatCorfu
+    git submodule init
+    git submodule update
+
+    cd rodos-uart-udp-router
+    git submodule init
+    git submodule update
+
+    cd corfu
+    git submodule init
+    git submodule update
+
+2. Prepare corfu and router for compilation:
+    comment add_subdirectory(test) in CMakeLists.txt of corfu/common-libs/libcorfu-basic
+    change UART_IDX0 to UART_IDX2 in rodos-uart-udp-router/router.cpp
+    optional: fix the generator generating topic graphs including internal topic by overriding
+        the beginning of "executeDot" in generator-docummentation with this:
+==========================        
+void eraseFileLine(std::string path) {
+    std::string line;
+    std::ifstream fin;
+    
+    fin.open(path);
+    // contents of path must be copied to a temp file then
+    // renamed back to the path file
+    std::ofstream temp;
+    temp.open("temp.txt");
+
+    while (getline(fin, line)) {
+        // write all lines to temp other than the line marked for erasing
+        if (line.find("appIsAliveTopic") == std::string::npos && line.find("telecommandTopic") == std::string::npos &&
+            line.find("TelecommandTopic") == std::string::npos &&
+            line.find("anomalyTopic") == std::string::npos && line.find("TelemetryTopic") == std::string::npos)
+          temp << line << std::endl;
+    }
+
+    temp.close();
+    fin.close();
+
+    // required conversion for remove and rename functions
+    const char * p = path.c_str();
+    remove(p);
+    rename("temp.txt", p);
+}
+
+
+static void executeDot(const filesystem::path &outputPath, const std::string &filename) {
+  std::stringstream command;
+  eraseFileLine((outputPath / (filename + ".dot")).string());
+=============================
+
+3. compile everything
+    
+    cd FloatSatCorfu
+    mkdir build-corfu-host-tools && cd build-corfu-host-tools
+    cmake ../corfu/dev-host
+    make
+
+    cd rodos-uart-udp-router
+    mkdir build && cd build
+    cmake -DCMAKE_TOOLCHAIN_FILE=../rodos/cmake/port/linux-x86.cmake -DEXECUTABLE=ON ..
+    make all
+
+4. generate and compile for stm
+
+    cd FloatSatCorfu
+    ./generate.sh
+
+    mkdir build-discovery && cd build-discovery
+    cmake -DCMAKE_TOOLCHAIN_FILE=../corfu/extern/rodos/cmake/port/discovery.cmake ..
+    make
+
+5. to flash main-node to the stmboard
+    
+    cd FloatSatCorfu 
+    ./scripts-for-ground/quickflash.sh
+
+
+FREQUENT PROBLEMS:
+    - bluetooth module doesnt connect / connects and imideately disconnects again
+    Solution:
+        1. bluetoothctl scan on -> make sure the device shows up with address 00:0E:EA:CF:6C:34
+        2. bluetoothctl pair 00:0E:EA:CF:6C:34
+        3. sudo killall rfcomm
+        4. sudo rfcomm connect /dev/rfcomm0 00:0E:EA:CF:6C:34 (keep this open to be able to transmit data)
+
+    - cutecom kills the data connection with bluetooth after reconnect
+    Solution:
+        1. dont 
+        2. to make sure you dont, never start cutecom with sudo when wanting to use the router
+
+    - cant reconnect bluetooth:
+    Solution
+        1. kill cutecom
+        2. kill router
+        3. kill bluetooth
+        4. realive bluetooth
+        5. reconnect rfcomm
+        6. restart router
+        7. restart cutecom (no sudo!!!)
+     

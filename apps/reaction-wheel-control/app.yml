@@ -1,0 +1,60 @@
+id: 0x05
+name: reaction-wheel-control
+description: controls the speed of the reaction wheel using a PI controller
+
+threads:
+  reactionWheelControlThread:
+    firstRun: 1000_ms
+    period: 10_ms #idk????
+    priority: 120
+
+publish:
+  - corfu::appIsAliveTopic
+  - corfu::anomalyTopic
+  - biasOffsetTopic
+
+subscribe:
+  desiredMotorSpeedTopic : direct
+  attitudeDeterminationTopic: direct
+
+telecommands:
+  NOP:
+    id: 1
+  SetPIControlValueWheel:
+    id: 2
+    fields:
+      identifier:
+        type: uint8_t
+        aliases:
+          0: P_Value
+          1: I_Value
+      value: float
+  SendPIControlValues:
+    id: 3
+  SetDesiredSpeed:
+    id: 4
+    fields:
+      speed: float
+
+standard_telemetry:
+    desiredMotorSpeed: float
+    rotationSpeed:
+      type: float
+      customWidget: rswidget
+    controllerOutput: 
+      type: float
+      customWidget: rswidget
+    pwm: float
+    medianRejections: uint16_t
+    offset: float
+
+extended_telemetry:
+  PIValuesWheel:
+    id: 1
+    fields:
+      P_Value: float
+      I_Value: float
+
+anomalies:
+  - MOTOR_SATURATION_HIGH
+  - MOTOR_SATURATION_CRITICAL

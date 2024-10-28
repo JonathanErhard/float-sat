@@ -1,0 +1,6 @@
+[submodule "float-sat"]
+	path = float-sat
+	url = https://github.com/JonathanErhard/float-sat.git
+[submodule "corfu"]
+	path = corfu
+	url = https://gitlab2.informatik.uni-wuerzburg.de/innocube/corfu

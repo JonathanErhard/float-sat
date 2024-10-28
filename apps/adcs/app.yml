@@ -1,0 +1,94 @@
+id: 0x04
+name: adcs
+description: attitude determination and control
+
+threads:
+  adcsThread:
+    firstRun: 1000_ms
+    period: 10_ms
+    priority: 120
+
+publish:
+  - attitudeDeterminationTopic
+  - desiredMotorSpeedTopic
+  - corfu::appIsAliveTopic
+  - modeTopic
+  - isStableTopic
+
+
+subscribe:
+  imuDataTopic: direct
+  modeTopic: direct
+  desiredStateValueTopic: direct
+  sunPositionTopic: direct
+  biasOffsetTopic: direct
+
+telecommands:
+  NOP:
+    id: 1
+  SetAngularPosition:
+    id: 2
+    fields:
+      AngularPosition: float #define unit
+  SetAngularVelocity:
+    id: 3
+    fields:
+      AngularVelocity: float #define unit
+  SetPCControlValue:
+    id: 5
+    fields:
+      identifier:
+        type: uint8_t
+        aliases:
+          0: P_Value
+          1: I_Value
+          2: D_Value
+          3: C_Value
+      value: float
+  SendPCControlValues:
+    id: 7
+  SetADCSControlMode:
+    id: 13
+    fields:
+      mode:
+        type: uint8_t
+        aliases:
+          0: Don't do anything
+          1: Velocity
+          2: Position
+  SwitchMagSS:
+    id: 14
+    fields:
+      sensor:
+        type: uint8_t
+        aliases:
+          0: Magneto
+          1: SunSensor
+
+standard_telemetry:
+    #option 1
+    TargetAngularPosition: float #define unit
+    TargetAngularVelocity: float #define unit
+    #option 2
+    #TargetMode: uint8_t
+    #TargetValue: float #define unit
+    PIDcontrolOutput: float
+    PIcontrolOutput: float
+    Roll: float
+    Pitch: float
+    Yaw: 
+      type: float
+      customWidget: spinn
+    Speed: 
+      type: float
+      customWidget: rswidget
+    PositionDerivative: float
+    PositionError: float
+
+
+extended_telemetry:
+  PCValues:
+    id: 2
+    fields:
+      P_Value: float
+      C_Value: float

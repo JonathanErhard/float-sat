@@ -1,0 +1,94 @@
+id: 0x08
+name: rpi-connector
+description: connects the Raspberry pi with the stm board
+
+telecommands:
+  NOP:
+    id: 0
+  AnalyzeImage:
+    id: 1
+  SendFoundObjects:
+    id: 2
+    description: sends all found objects as ext telementy
+  SetLED:
+    id: 3
+    fields:
+      setOn: bool
+  StartVLC:
+    id: 4
+
+structs:
+  ObjectEntry:
+    ObjectID:
+      type: uint8_t
+      aliases:
+        0: No Object
+        1: Groundstation # Mattei
+        2: Object 2      # Aparna
+        3: Object 3      # Simon
+        4: Object 4      # Konstantin
+        5: Object 5      # Madjid
+        6: Object 6      # Fernando
+        7: Data-Object   # Dynamic
+    Position_x: float
+    Position_y: float
+    # TODO maybe xy pos from camera
+
+    
+threads:
+  rpiListenerThread:
+    firstRun: 1000_ms
+    period: 500_ms
+    priority: 800
+
+standard_telemetry:
+  test_rec_len: uint8_t
+  is_alive: bool
+
+subscribe:
+  attitudeDeterminationTopic: direct
+  modeTopic: direct
+
+publish:
+  - modeTopic
+  - desiredStateValueTopic
+  - solarCellForbiddenTopic
+
+extended_telemetry:
+  rpiData:
+    description: data transmmitted from the Raspberry pi
+    id: 1
+    fields:
+      current_op:
+        type: uint8_t
+        aliases:
+          0: Waiting
+          1: Scanning
+          3: VLC Transmitting
+          4: Done
+          5: VLC Adjusting
+      object:
+        type: uint8_t
+        aliases:
+          0: No Object
+          1: Groundstation # Mattei
+          2: Object 2      # Aparna
+          3: Object 3      # Simon
+          4: Object 4      # Konstantin
+          5: Object 5      # Madjid
+          6: Object 6      # Fernando
+          7: Data-Object   # Dynamic
+      pos_x: float #from ADCS
+      pos_y: float
+
+  ListOfObjects:
+    id: 2
+    description: a list of all found objects
+    fields:
+      entries:
+        array:
+          length: 10
+          type: ObjectEntry
+
+anomalies:
+  - RPI_DEAD
