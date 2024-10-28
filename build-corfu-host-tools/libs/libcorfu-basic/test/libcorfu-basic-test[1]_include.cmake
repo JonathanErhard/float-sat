@@ -1,5 +1,0 @@
-if(EXISTS "/home/jonathanerhard/Projects/floatSat/build-corfu-host-tools/libs/libcorfu-basic/test/libcorfu-basic-test[1]_tests.cmake")
-  include("/home/jonathanerhard/Projects/floatSat/build-corfu-host-tools/libs/libcorfu-basic/test/libcorfu-basic-test[1]_tests.cmake")
-else()
-  add_test(libcorfu-basic-test_NOT_BUILT libcorfu-basic-test_NOT_BUILT)
-endif()
