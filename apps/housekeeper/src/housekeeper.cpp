@@ -3,6 +3,8 @@
 #include <corfu/node.h>
 #include <corfu/tele/telemetry.h>
 
+
+
 /**
  * @LINKEDREQ HKE_00, HKE_01
  */
@@ -35,6 +37,8 @@ void Housekeeper::runCollector() {
 
     // send iAmAlive to local watchdog
     this->sendAlive(RODOS::NOW() + 5_s); // @LINKEDREQ ALLG_10
+
+
 }
 
 bool Housekeeper::handleTelecommandNOP() {

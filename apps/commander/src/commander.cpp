@@ -1,15 +1,23 @@
 #include "commander.h"
 #include "commander-generated/anomaly.h"
 
+#include "rodos.h"
+#define LSM9DSI_M_ADDR 0x1E
+#define LSM9DSI_AG_ADDR 0x6B
+
+
 #include <corfu/node.h>
 
 #define BATTERY_THRESHHOLD 7.0f
+HAL_GPIO pin_green_led(GPIO_060);
+
 
 void Commander::runCommandThread() {
     // check incoming tc fifo, look at as many items as are currently set
     // (fifo will be refilled constantly), optional: just look at first X items?
 
     // RODOS::PRINTF("CMDThread with new geckoport2 @%u \n", this->iterations);
+    
     this->iterations++;
 
     size_t elements = corfuUplinkTelecommandTopicFifo.getElementCount();
@@ -51,6 +59,9 @@ void Commander::runCommandThread() {
 
 bool Commander::handleTelecommandNOP() {
     RODOS::PRINTF("COMMANDER -> NOP\n");
+       
+    pin_green_led.init(true, 1, 0);
+    pin_green_led.setPins(1);
     return true;
 }
 

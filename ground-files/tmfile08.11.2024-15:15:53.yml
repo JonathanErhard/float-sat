@@ -1,0 +1,8194 @@
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "214"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 43700360833
+  type: "Std"
+  uptime: 43700367333
+  recvAt: 1731078954
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "215"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 43900448999
+  type: "Std"
+  uptime: 43900455499
+  recvAt: 1731078954
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "216"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 44100360999
+  type: "Std"
+  uptime: 44100367499
+  recvAt: 1731078954
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "217"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 44300418499
+  type: "Std"
+  uptime: 44300424999
+  recvAt: 1731078954
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "218"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 44500361166
+  type: "Std"
+  uptime: 44500367666
+  recvAt: 1731078954
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "219"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 44700448833
+  type: "Std"
+  uptime: 44700455333
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "220"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 44900360499
+  type: "Std"
+  uptime: 44900366999
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "221"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 45100448999
+  type: "Std"
+  uptime: 45100455499
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "222"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 45300361166
+  type: "Std"
+  uptime: 45300367666
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "223"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 45500449499
+  type: "Std"
+  uptime: 45500455999
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "224"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 45700360999
+  type: "Std"
+  uptime: 45700367499
+  recvAt: 1731078955
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "225"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 45900449333
+  type: "Std"
+  uptime: 45900455833
+  recvAt: 1731078956
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "226"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 46100360999
+  type: "Std"
+  uptime: 46100367499
+  recvAt: 1731078956
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "227"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 46300449166
+  type: "Std"
+  uptime: 46300455666
+  recvAt: 1731078956
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "228"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 46500360666
+  type: "Std"
+  uptime: 46500367166
+  recvAt: 1731078956
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "229"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 46700448999
+  type: "Std"
+  uptime: 46700455499
+  recvAt: 1731078957
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "230"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 46900360666
+  type: "Std"
+  uptime: 46900367166
+  recvAt: 1731078957
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "231"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 47100449166
+  type: "Std"
+  uptime: 47100455666
+  recvAt: 1731078957
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "232"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 47300360833
+  type: "Std"
+  uptime: 47300367333
+  recvAt: 1731078957
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "233"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 47500448666
+  type: "Std"
+  uptime: 47500455166
+  recvAt: 1731078957
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "234"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 47700360833
+  type: "Std"
+  uptime: 47700367333
+  recvAt: 1731078958
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "235"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 47900448833
+  type: "Std"
+  uptime: 47900455333
+  recvAt: 1731078958
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "236"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 48100360666
+  type: "Std"
+  uptime: 48100367166
+  recvAt: 1731078958
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "237"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 48300449166
+  type: "Std"
+  uptime: 48300455499
+  recvAt: 1731078958
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "238"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 48500360999
+  type: "Std"
+  uptime: 48500367333
+  recvAt: 1731078958
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "239"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 48700449499
+  type: "Std"
+  uptime: 48700455999
+  recvAt: 1731078959
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "240"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 48900361333
+  type: "Std"
+  uptime: 48900367833
+  recvAt: 1731078959
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "241"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 49100448666
+  type: "Std"
+  uptime: 49100455166
+  recvAt: 1731078959
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "242"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 49300360833
+  type: "Std"
+  uptime: 49300367333
+  recvAt: 1731078959
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "243"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 49500449333
+  type: "Std"
+  uptime: 49500455833
+  recvAt: 1731078959
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "244"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 49700361166
+  type: "Std"
+  uptime: 49700367666
+  recvAt: 1731078960
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "245"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 49900418666
+  type: "Std"
+  uptime: 49900424999
+  recvAt: 1731078960
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "246"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 50100360666
+  type: "Std"
+  uptime: 50100367166
+  recvAt: 1731078960
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "247"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 50300449333
+  type: "Std"
+  uptime: 50300455833
+  recvAt: 1731078960
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "248"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 50500360499
+  type: "Std"
+  uptime: 50500366999
+  recvAt: 1731078960
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "249"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 50700449333
+  type: "Std"
+  uptime: 50700455833
+  recvAt: 1731078961
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "250"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 50900360999
+  type: "Std"
+  uptime: 50900367499
+  recvAt: 1731078961
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "251"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 51100448833
+  type: "Std"
+  uptime: 51100455333
+  recvAt: 1731078961
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "252"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 51300360333
+  type: "Std"
+  uptime: 51300366833
+  recvAt: 1731078961
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "253"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 51500449333
+  type: "Std"
+  uptime: 51500455833
+  recvAt: 1731078961
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "254"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 51700361166
+  type: "Std"
+  uptime: 51700367666
+  recvAt: 1731078962
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "255"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 51900449166
+  type: "Std"
+  uptime: 51900455666
+  recvAt: 1731078962
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "256"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 52100360666
+  type: "Std"
+  uptime: 52100367166
+  recvAt: 1731078962
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "257"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 52300418666
+  type: "Std"
+  uptime: 52300425166
+  recvAt: 1731078962
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "258"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 52500360666
+  type: "Std"
+  uptime: 52500367166
+  recvAt: 1731078962
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "259"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 52700448999
+  type: "Std"
+  uptime: 52700455333
+  recvAt: 1731078963
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "260"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 52900360999
+  type: "Std"
+  uptime: 52900367499
+  recvAt: 1731078963
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "261"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 53100448666
+  type: "Std"
+  uptime: 53100455166
+  recvAt: 1731078963
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "262"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 53300360666
+  type: "Std"
+  uptime: 53300367166
+  recvAt: 1731078963
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "263"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 53500418666
+  type: "Std"
+  uptime: 53500425166
+  recvAt: 1731078963
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "264"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 53700360833
+  type: "Std"
+  uptime: 53700367166
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "265"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 53900417833
+  type: "Std"
+  uptime: 53900424333
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "266"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 54100361166
+  type: "Std"
+  uptime: 54100367666
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "267"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 54300448833
+  type: "Std"
+  uptime: 54300455333
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "268"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 54500360666
+  type: "Std"
+  uptime: 54500367166
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "269"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 54700449499
+  type: "Std"
+  uptime: 54700455999
+  recvAt: 1731078964
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "270"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 54900361166
+  type: "Std"
+  uptime: 54900367666
+  recvAt: 1731078965
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "271"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 55100449166
+  type: "Std"
+  uptime: 55100455666
+  recvAt: 1731078965
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "272"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 55300360166
+  type: "Std"
+  uptime: 55300366666
+  recvAt: 1731078965
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "273"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 55500449499
+  type: "Std"
+  uptime: 55500455999
+  recvAt: 1731078965
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "274"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 55700360166
+  type: "Std"
+  uptime: 55700366666
+  recvAt: 1731078966
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "275"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 55900449499
+  type: "Std"
+  uptime: 55900455999
+  recvAt: 1731078966
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "276"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 56100360999
+  type: "Std"
+  uptime: 56100367499
+  recvAt: 1731078966
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "277"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 56300449333
+  type: "Std"
+  uptime: 56300455833
+  recvAt: 1731078966
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "278"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 56500360833
+  type: "Std"
+  uptime: 56500367333
+  recvAt: 1731078966
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "279"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 56700449499
+  type: "Std"
+  uptime: 56700455999
+  recvAt: 1731078967
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "280"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 56900361166
+  type: "Std"
+  uptime: 56900367666
+  recvAt: 1731078967
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "281"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 57100449499
+  type: "Std"
+  uptime: 57100455999
+  recvAt: 1731078967
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "282"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 57300360333
+  type: "Std"
+  uptime: 57300366833
+  recvAt: 1731078967
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "283"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 57500449166
+  type: "Std"
+  uptime: 57500455666
+  recvAt: 1731078967
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "284"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 57700360499
+  type: "Std"
+  uptime: 57700366999
+  recvAt: 1731078968
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "285"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 57900448666
+  type: "Std"
+  uptime: 57900455166
+  recvAt: 1731078968
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "286"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 58100361166
+  type: "Std"
+  uptime: 58100367666
+  recvAt: 1731078968
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "287"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 58300448499
+  type: "Std"
+  uptime: 58300454999
+  recvAt: 1731078968
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "288"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 58500360999
+  type: "Std"
+  uptime: 58500367333
+  recvAt: 1731078968
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "289"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 58700448999
+  type: "Std"
+  uptime: 58700455499
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "290"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 58900361166
+  type: "Std"
+  uptime: 58900367666
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "291"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 59100449499
+  type: "Std"
+  uptime: 59100455999
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "292"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 59300360999
+  type: "Std"
+  uptime: 59300367499
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "293"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 59500448999
+  type: "Std"
+  uptime: 59500455499
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "294"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 59700360666
+  type: "Std"
+  uptime: 59700367166
+  recvAt: 1731078969
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "295"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 59900449333
+  type: "Std"
+  uptime: 59900455833
+  recvAt: 1731078970
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "296"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 60100360499
+  type: "Std"
+  uptime: 60100366999
+  recvAt: 1731078970
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "297"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 60300449166
+  type: "Std"
+  uptime: 60300455666
+  recvAt: 1731078970
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "298"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 60500360999
+  type: "Std"
+  uptime: 60500367499
+  recvAt: 1731078970
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "299"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 60700448833
+  type: "Std"
+  uptime: 60700455333
+  recvAt: 1731078971
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "300"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 60900360499
+  type: "Std"
+  uptime: 60900366833
+  recvAt: 1731078971
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "301"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 61100449333
+  type: "Std"
+  uptime: 61100455833
+  recvAt: 1731078971
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "302"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 61300361166
+  type: "Std"
+  uptime: 61300367666
+  recvAt: 1731078971
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "303"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 61500449499
+  type: "Std"
+  uptime: 61500455999
+  recvAt: 1731078971
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "304"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 61700361166
+  type: "Std"
+  uptime: 61700367499
+  recvAt: 1731078972
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "305"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 61900418333
+  type: "Std"
+  uptime: 61900424666
+  recvAt: 1731078972
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "306"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 62100361166
+  type: "Std"
+  uptime: 62100367666
+  recvAt: 1731078972
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "307"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 62300449333
+  type: "Std"
+  uptime: 62300455833
+  recvAt: 1731078972
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "308"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 62500360666
+  type: "Std"
+  uptime: 62500367166
+  recvAt: 1731078972
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "309"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 62700449499
+  type: "Std"
+  uptime: 62700455999
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "310"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 62900360833
+  type: "Std"
+  uptime: 62900367333
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "311"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 63100448666
+  type: "Std"
+  uptime: 63100455166
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "312"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 63300361333
+  type: "Std"
+  uptime: 63300367833
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "313"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 63500449333
+  type: "Std"
+  uptime: 63500455833
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "314"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 63700361333
+  type: "Std"
+  uptime: 63700367833
+  recvAt: 1731078973
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "315"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 63900449333
+  type: "Std"
+  uptime: 63900455833
+  recvAt: 1731078974
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "316"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 64100361166
+  type: "Std"
+  uptime: 64100367666
+  recvAt: 1731078974
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "317"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 64300448833
+  type: "Std"
+  uptime: 64300455333
+  recvAt: 1731078974
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "318"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 64500360833
+  type: "Std"
+  uptime: 64500367333
+  recvAt: 1731078974
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "319"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 64700449666
+  type: "Std"
+  uptime: 64700456166
+  recvAt: 1731078975
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "320"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 64900360333
+  type: "Std"
+  uptime: 64900366833
+  recvAt: 1731078975
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "321"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 65100448833
+  type: "Std"
+  uptime: 65100455333
+  recvAt: 1731078975
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "322"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 65300360499
+  type: "Std"
+  uptime: 65300366999
+  recvAt: 1731078975
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "323"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 65500448833
+  type: "Std"
+  uptime: 65500455333
+  recvAt: 1731078975
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "324"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 65700360333
+  type: "Std"
+  uptime: 65700366833
+  recvAt: 1731078976
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "325"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 65900448666
+  type: "Std"
+  uptime: 65900455166
+  recvAt: 1731078976
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "326"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 66100361333
+  type: "Std"
+  uptime: 66100367666
+  recvAt: 1731078976
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "327"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 66300449166
+  type: "Std"
+  uptime: 66300455666
+  recvAt: 1731078976
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "328"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 66500361166
+  type: "Std"
+  uptime: 66500367666
+  recvAt: 1731078976
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "329"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 66700448666
+  type: "Std"
+  uptime: 66700455166
+  recvAt: 1731078977
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "330"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 66900360666
+  type: "Std"
+  uptime: 66900367166
+  recvAt: 1731078977
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "331"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 67100448833
+  type: "Std"
+  uptime: 67100455333
+  recvAt: 1731078977
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "332"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 67300361333
+  type: "Std"
+  uptime: 67300367666
+  recvAt: 1731078977
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "333"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 67500449166
+  type: "Std"
+  uptime: 67500455666
+  recvAt: 1731078977
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "334"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 67700360833
+  type: "Std"
+  uptime: 67700367333
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "335"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 67900449166
+  type: "Std"
+  uptime: 67900455666
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "336"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 68100360499
+  type: "Std"
+  uptime: 68100366999
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "337"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 68300449166
+  type: "Std"
+  uptime: 68300455499
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "338"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 68500360833
+  type: "Std"
+  uptime: 68500367333
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "339"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 68700449499
+  type: "Std"
+  uptime: 68700455999
+  recvAt: 1731078978
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "340"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 68900361166
+  type: "Std"
+  uptime: 68900367666
+  recvAt: 1731078979
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "341"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 69100448999
+  type: "Std"
+  uptime: 69100455499
+  recvAt: 1731078979
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "342"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 69300360666
+  type: "Std"
+  uptime: 69300366999
+  recvAt: 1731078979
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "343"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 69500448833
+  type: "Std"
+  uptime: 69500455166
+  recvAt: 1731078979
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "344"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 69700360666
+  type: "Std"
+  uptime: 69700367166
+  recvAt: 1731078980
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "345"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 69900449333
+  type: "Std"
+  uptime: 69900455833
+  recvAt: 1731078980
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "346"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 70100360333
+  type: "Std"
+  uptime: 70100366833
+  recvAt: 1731078980
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "347"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 70300449166
+  type: "Std"
+  uptime: 70300455666
+  recvAt: 1731078980
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "348"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 70500360999
+  type: "Std"
+  uptime: 70500367499
+  recvAt: 1731078980
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "349"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 70700448999
+  type: "Std"
+  uptime: 70700455499
+  recvAt: 1731078981
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "350"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 70900360333
+  type: "Std"
+  uptime: 70900366833
+  recvAt: 1731078981
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "351"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 71100448833
+  type: "Std"
+  uptime: 71100455333
+  recvAt: 1731078981
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "352"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 71300361166
+  type: "Std"
+  uptime: 71300367666
+  recvAt: 1731078981
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "353"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 71500449499
+  type: "Std"
+  uptime: 71500455999
+  recvAt: 1731078981
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "354"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 71700361166
+  type: "Std"
+  uptime: 71700367666
+  recvAt: 1731078982
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "355"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 71900449333
+  type: "Std"
+  uptime: 71900455833
+  recvAt: 1731078982
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "356"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 72100360999
+  type: "Std"
+  uptime: 72100367499
+  recvAt: 1731078982
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "357"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 72300449499
+  type: "Std"
+  uptime: 72300455999
+  recvAt: 1731078982
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "358"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 72500361333
+  type: "Std"
+  uptime: 72500367833
+  recvAt: 1731078982
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "359"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 72700449166
+  type: "Std"
+  uptime: 72700455666
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "360"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 72900360666
+  type: "Std"
+  uptime: 72900367166
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "361"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 73100449499
+  type: "Std"
+  uptime: 73100455999
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "362"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 73300360333
+  type: "Std"
+  uptime: 73300366833
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "363"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 73500449333
+  type: "Std"
+  uptime: 73500455833
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "364"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 73700360666
+  type: "Std"
+  uptime: 73700367166
+  recvAt: 1731078983
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "365"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 73900449333
+  type: "Std"
+  uptime: 73900455833
+  recvAt: 1731078984
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "366"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 74100360833
+  type: "Std"
+  uptime: 74100367333
+  recvAt: 1731078984
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "367"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 74300449499
+  type: "Std"
+  uptime: 74300455999
+  recvAt: 1731078984
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "368"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 74500360999
+  type: "Std"
+  uptime: 74500367333
+  recvAt: 1731078984
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "369"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 74700449333
+  type: "Std"
+  uptime: 74700455833
+  recvAt: 1731078985
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "370"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 74900360666
+  type: "Std"
+  uptime: 74900367166
+  recvAt: 1731078985
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "371"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 75100448833
+  type: "Std"
+  uptime: 75100455333
+  recvAt: 1731078985
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "372"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 75300360833
+  type: "Std"
+  uptime: 75300367333
+  recvAt: 1731078985
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "373"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 75500449333
+  type: "Std"
+  uptime: 75500455833
+  recvAt: 1731078985
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "374"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 75700360666
+  type: "Std"
+  uptime: 75700367166
+  recvAt: 1731078986
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "375"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 75900448833
+  type: "Std"
+  uptime: 75900455333
+  recvAt: 1731078986
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "376"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 76100360333
+  type: "Std"
+  uptime: 76100366833
+  recvAt: 1731078986
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "377"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 76300449666
+  type: "Std"
+  uptime: 76300456166
+  recvAt: 1731078986
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "378"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 76500361166
+  type: "Std"
+  uptime: 76500367666
+  recvAt: 1731078986
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "379"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 76700448999
+  type: "Std"
+  uptime: 76700455499
+  recvAt: 1731078987
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "380"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 76900360499
+  type: "Std"
+  uptime: 76900366833
+  recvAt: 1731078987
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "381"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 77100449166
+  type: "Std"
+  uptime: 77100455666
+  recvAt: 1731078987
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "382"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 77300361166
+  type: "Std"
+  uptime: 77300367666
+  recvAt: 1731078987
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "383"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 77500418166
+  type: "Std"
+  uptime: 77500424666
+  recvAt: 1731078987
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "384"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 77700360999
+  type: "Std"
+  uptime: 77700367499
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "385"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 77900448833
+  type: "Std"
+  uptime: 77900455333
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "386"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 78100360666
+  type: "Std"
+  uptime: 78100366999
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "387"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 78300448999
+  type: "Std"
+  uptime: 78300455499
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "388"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 78500360666
+  type: "Std"
+  uptime: 78500367166
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "389"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 78700449333
+  type: "Std"
+  uptime: 78700455833
+  recvAt: 1731078988
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "390"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 78900360833
+  type: "Std"
+  uptime: 78900367333
+  recvAt: 1731078989
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "391"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 79100449333
+  type: "Std"
+  uptime: 79100455833
+  recvAt: 1731078989
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "392"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 79300360833
+  type: "Std"
+  uptime: 79300367333
+  recvAt: 1731078989
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "393"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 79500449166
+  type: "Std"
+  uptime: 79500455666
+  recvAt: 1731078989
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "394"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 79700360833
+  type: "Std"
+  uptime: 79700367333
+  recvAt: 1731078990
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "395"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 79900449333
+  type: "Std"
+  uptime: 79900455833
+  recvAt: 1731078990
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "396"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 80100360833
+  type: "Std"
+  uptime: 80100367333
+  recvAt: 1731078990
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "397"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 80300449166
+  type: "Std"
+  uptime: 80300455499
+  recvAt: 1731078990
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "398"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 80500359999
+  type: "Std"
+  uptime: 80500366499
+  recvAt: 1731078990
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "399"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 80700448666
+  type: "Std"
+  uptime: 80700455166
+  recvAt: 1731078991
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "400"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 80900360999
+  type: "Std"
+  uptime: 80900367499
+  recvAt: 1731078991
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "401"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 81100449166
+  type: "Std"
+  uptime: 81100455666
+  recvAt: 1731078991
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "402"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 81300361333
+  type: "Std"
+  uptime: 81300367666
+  recvAt: 1731078991
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "403"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 81500448833
+  type: "Std"
+  uptime: 81500455333
+  recvAt: 1731078991
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "404"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 81700360666
+  type: "Std"
+  uptime: 81700367166
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "405"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 81900448999
+  type: "Std"
+  uptime: 81900455499
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "406"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 82100361166
+  type: "Std"
+  uptime: 82100367666
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "407"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 82300448666
+  type: "Std"
+  uptime: 82300455166
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "408"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 82500360666
+  type: "Std"
+  uptime: 82500366999
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "409"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 82700449166
+  type: "Std"
+  uptime: 82700455666
+  recvAt: 1731078992
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "410"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 82900360666
+  type: "Std"
+  uptime: 82900367166
+  recvAt: 1731078993
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "411"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 83100449499
+  type: "Std"
+  uptime: 83100455999
+  recvAt: 1731078993
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "412"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 83300360666
+  type: "Std"
+  uptime: 83300367166
+  recvAt: 1731078993
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "413"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 83500449166
+  type: "Std"
+  uptime: 83500455666
+  recvAt: 1731078993
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "414"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 83700361166
+  type: "Std"
+  uptime: 83700367499
+  recvAt: 1731078994
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "415"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 83900449166
+  type: "Std"
+  uptime: 83900455666
+  recvAt: 1731078994
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "416"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 84100360999
+  type: "Std"
+  uptime: 84100367499
+  recvAt: 1731078994
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "417"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 84300449499
+  type: "Std"
+  uptime: 84300455999
+  recvAt: 1731078994
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "418"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 84500360833
+  type: "Std"
+  uptime: 84500367333
+  recvAt: 1731078994
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "419"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 84700449166
+  type: "Std"
+  uptime: 84700455666
+  recvAt: 1731078995
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "420"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 84900360999
+  type: "Std"
+  uptime: 84900367499
+  recvAt: 1731078995
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "421"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 85100448999
+  type: "Std"
+  uptime: 85100455499
+  recvAt: 1731078995
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "422"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 85300360499
+  type: "Std"
+  uptime: 85300366833
+  recvAt: 1731078995
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "423"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 85500448833
+  type: "Std"
+  uptime: 85500455333
+  recvAt: 1731078995
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "424"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 85700360999
+  type: "Std"
+  uptime: 85700367499
+  recvAt: 1731078996
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "425"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 85900448833
+  type: "Std"
+  uptime: 85900455333
+  recvAt: 1731078996
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "426"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 86100360833
+  type: "Std"
+  uptime: 86100367333
+  recvAt: 1731078996
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "427"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 86300448833
+  type: "Std"
+  uptime: 86300455333
+  recvAt: 1731078996
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "428"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 86500360999
+  type: "Std"
+  uptime: 86500367499
+  recvAt: 1731078996
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "429"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 86700449499
+  type: "Std"
+  uptime: 86700455999
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "430"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 86900360166
+  type: "Std"
+  uptime: 86900366666
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "431"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 87100449333
+  type: "Std"
+  uptime: 87100455833
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "432"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 87300360999
+  type: "Std"
+  uptime: 87300367499
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "433"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 87500449499
+  type: "Std"
+  uptime: 87500455999
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "434"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 87700360499
+  type: "Std"
+  uptime: 87700366999
+  recvAt: 1731078997
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "435"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 87900448999
+  type: "Std"
+  uptime: 87900455499
+  recvAt: 1731078998
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "436"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 88100360999
+  type: "Std"
+  uptime: 88100367499
+  recvAt: 1731078998
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "437"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 88300448833
+  type: "Std"
+  uptime: 88300455333
+  recvAt: 1731078998
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "438"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 88500361166
+  type: "Std"
+  uptime: 88500367499
+  recvAt: 1731078998
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "439"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 88700448999
+  type: "Std"
+  uptime: 88700455499
+  recvAt: 1731078999
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "440"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 88900360999
+  type: "Std"
+  uptime: 88900367333
+  recvAt: 1731078999
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "441"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 89100449666
+  type: "Std"
+  uptime: 89100456166
+  recvAt: 1731078999
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "442"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 89300360833
+  type: "Std"
+  uptime: 89300367333
+  recvAt: 1731078999
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "443"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 89500449666
+  type: "Std"
+  uptime: 89500456166
+  recvAt: 1731078999
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "444"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 89700360999
+  type: "Std"
+  uptime: 89700367499
+  recvAt: 1731079000
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "445"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 89900448666
+  type: "Std"
+  uptime: 89900455166
+  recvAt: 1731079000
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "446"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 90100361166
+  type: "Std"
+  uptime: 90100367666
+  recvAt: 1731079000
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "447"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 90300448833
+  type: "Std"
+  uptime: 90300455333
+  recvAt: 1731079000
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "448"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 90500360333
+  type: "Std"
+  uptime: 90500366833
+  recvAt: 1731079000
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "449"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 90700448833
+  type: "Std"
+  uptime: 90700455333
+  recvAt: 1731079001
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "450"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 90900361166
+  type: "Std"
+  uptime: 90900367666
+  recvAt: 1731079001
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "451"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 91100449499
+  type: "Std"
+  uptime: 91100455999
+  recvAt: 1731079001
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "452"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 91300360499
+  type: "Std"
+  uptime: 91300366999
+  recvAt: 1731079001
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "453"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 91500449499
+  type: "Std"
+  uptime: 91500455999
+  recvAt: 1731079001
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "454"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 91700360499
+  type: "Std"
+  uptime: 91700366999
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "455"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 91900448999
+  type: "Std"
+  uptime: 91900455499
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "456"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 92100361166
+  type: "Std"
+  uptime: 92100367666
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "457"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 92300449166
+  type: "Std"
+  uptime: 92300455666
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "458"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 92500361333
+  type: "Std"
+  uptime: 92500367833
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "459"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 92700449166
+  type: "Std"
+  uptime: 92700455666
+  recvAt: 1731079002
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "460"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 92900360833
+  type: "Std"
+  uptime: 92900367333
+  recvAt: 1731079003
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "461"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 93100449166
+  type: "Std"
+  uptime: 93100455666
+  recvAt: 1731079003
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "462"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 93300360499
+  type: "Std"
+  uptime: 93300366999
+  recvAt: 1731079003
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "463"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 93500448999
+  type: "Std"
+  uptime: 93500455499
+  recvAt: 1731079003
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "464"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 93700360999
+  type: "Std"
+  uptime: 93700367499
+  recvAt: 1731079004
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "465"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 93900448999
+  type: "Std"
+  uptime: 93900455499
+  recvAt: 1731079004
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "466"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 94100360499
+  type: "Std"
+  uptime: 94100366999
+  recvAt: 1731079004
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "467"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 94300448833
+  type: "Std"
+  uptime: 94300455333
+  recvAt: 1731079004
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "468"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 94500360833
+  type: "Std"
+  uptime: 94500367333
+  recvAt: 1731079004
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "469"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 94700449166
+  type: "Std"
+  uptime: 94700455666
+  recvAt: 1731079005
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "470"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 94900360833
+  type: "Std"
+  uptime: 94900367166
+  recvAt: 1731079005
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "471"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 95100449499
+  type: "Std"
+  uptime: 95100455999
+  recvAt: 1731079005
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "472"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 95300361166
+  type: "Std"
+  uptime: 95300367666
+  recvAt: 1731079005
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "473"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 95500448999
+  type: "Std"
+  uptime: 95500455499
+  recvAt: 1731079005
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "474"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 95700360999
+  type: "Std"
+  uptime: 95700367499
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "475"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 95900449666
+  type: "Std"
+  uptime: 95900456166
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "476"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 96100360999
+  type: "Std"
+  uptime: 96100367499
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "477"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 96300449666
+  type: "Std"
+  uptime: 96300455999
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "478"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 96500361166
+  type: "Std"
+  uptime: 96500367666
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "479"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 96700448833
+  type: "Std"
+  uptime: 96700455333
+  recvAt: 1731079006
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "480"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 96900360833
+  type: "Std"
+  uptime: 96900367333
+  recvAt: 1731079007
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "481"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 97100448999
+  type: "Std"
+  uptime: 97100455499
+  recvAt: 1731079007
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "482"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 97300360166
+  type: "Std"
+  uptime: 97300366666
+  recvAt: 1731079007
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "483"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 97500448999
+  type: "Std"
+  uptime: 97500455333
+  recvAt: 1731079007
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "484"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 97700360833
+  type: "Std"
+  uptime: 97700367333
+  recvAt: 1731079007
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "485"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 97900449333
+  type: "Std"
+  uptime: 97900455833
+  recvAt: 1731079008
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "486"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 98100360499
+  type: "Std"
+  uptime: 98100366999
+  recvAt: 1731079008
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "487"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 98300417833
+  type: "Std"
+  uptime: 98300424333
+  recvAt: 1731079008
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "488"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 98500361166
+  type: "Std"
+  uptime: 98500367666
+  recvAt: 1731079008
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "489"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 98700449166
+  type: "Std"
+  uptime: 98700455666
+  recvAt: 1731079009
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "490"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 98900360999
+  type: "Std"
+  uptime: 98900367499
+  recvAt: 1731079009
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "491"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 99100449499
+  type: "Std"
+  uptime: 99100455999
+  recvAt: 1731079009
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "492"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 99300360499
+  type: "Std"
+  uptime: 99300366999
+  recvAt: 1731079009
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "493"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 99500449499
+  type: "Std"
+  uptime: 99500455999
+  recvAt: 1731079009
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "494"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 99700360666
+  type: "Std"
+  uptime: 99700367166
+  recvAt: 1731079010
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "495"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 99900449499
+  type: "Std"
+  uptime: 99900455999
+  recvAt: 1731079010
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "496"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 100100360666
+  type: "Std"
+  uptime: 100100367166
+  recvAt: 1731079010
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "497"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 100300449333
+  type: "Std"
+  uptime: 100300455833
+  recvAt: 1731079010
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "498"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 100500360999
+  type: "Std"
+  uptime: 100500367499
+  recvAt: 1731079010
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "499"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 100700449499
+  type: "Std"
+  uptime: 100700455833
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "500"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 100900360499
+  type: "Std"
+  uptime: 100900366999
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "501"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 101100449666
+  type: "Std"
+  uptime: 101100456166
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "502"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 101300361166
+  type: "Std"
+  uptime: 101300367666
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "503"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 101500448833
+  type: "Std"
+  uptime: 101500455333
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "504"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 101700360999
+  type: "Std"
+  uptime: 101700367499
+  recvAt: 1731079011
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "505"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 101900448999
+  type: "Std"
+  uptime: 101900455499
+  recvAt: 1731079012
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "506"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 102100360499
+  type: "Std"
+  uptime: 102100366999
+  recvAt: 1731079012
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "507"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 102300448666
+  type: "Std"
+  uptime: 102300455166
+  recvAt: 1731079012
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "508"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 102500361166
+  type: "Std"
+  uptime: 102500367666
+  recvAt: 1731079012
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "509"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 102700449333
+  type: "Std"
+  uptime: 102700455833
+  recvAt: 1731079013
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "510"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 102900360833
+  type: "Std"
+  uptime: 102900367333
+  recvAt: 1731079013
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "511"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 103100449333
+  type: "Std"
+  uptime: 103100455833
+  recvAt: 1731079013
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "512"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 103300360666
+  type: "Std"
+  uptime: 103300367166
+  recvAt: 1731079013
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "513"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 103500449499
+  type: "Std"
+  uptime: 103500455999
+  recvAt: 1731079013
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "514"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 103700361333
+  type: "Std"
+  uptime: 103700367666
+  recvAt: 1731079014
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "515"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 103900448999
+  type: "Std"
+  uptime: 103900455499
+  recvAt: 1731079014
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "516"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 104100360333
+  type: "Std"
+  uptime: 104100366833
+  recvAt: 1731079014
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "517"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 104300448999
+  type: "Std"
+  uptime: 104300455499
+  recvAt: 1731079014
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "518"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 104500360999
+  type: "Std"
+  uptime: 104500367499
+  recvAt: 1731079014
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "519"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 104700449166
+  type: "Std"
+  uptime: 104700455666
+  recvAt: 1731079015
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "520"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 104900361166
+  type: "Std"
+  uptime: 104900367666
+  recvAt: 1731079015
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "521"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 105100449666
+  type: "Std"
+  uptime: 105100456166
+  recvAt: 1731079015
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "522"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 105300361333
+  type: "Std"
+  uptime: 105300367833
+  recvAt: 1731079015
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "523"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 105500449499
+  type: "Std"
+  uptime: 105500455999
+  recvAt: 1731079015
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "524"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 105700360499
+  type: "Std"
+  uptime: 105700366999
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "525"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 105900449333
+  type: "Std"
+  uptime: 105900455833
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "526"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 106100361166
+  type: "Std"
+  uptime: 106100367666
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "527"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 106300448999
+  type: "Std"
+  uptime: 106300455499
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "528"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 106500360999
+  type: "Std"
+  uptime: 106500367499
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "529"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 106700448999
+  type: "Std"
+  uptime: 106700455499
+  recvAt: 1731079016
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "530"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 106900360999
+  type: "Std"
+  uptime: 106900367499
+  recvAt: 1731079017
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "531"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 107100449333
+  type: "Std"
+  uptime: 107100455833
+  recvAt: 1731079017
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "532"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 107300360833
+  type: "Std"
+  uptime: 107300367333
+  recvAt: 1731079017
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "533"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 107500448833
+  type: "Std"
+  uptime: 107500455333
+  recvAt: 1731079017
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "534"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 107700360833
+  type: "Std"
+  uptime: 107700367333
+  recvAt: 1731079018
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "535"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 107900448999
+  type: "Std"
+  uptime: 107900455499
+  recvAt: 1731079018
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "536"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 108100360666
+  type: "Std"
+  uptime: 108100367166
+  recvAt: 1731079018
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "537"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 108300448999
+  type: "Std"
+  uptime: 108300455499
+  recvAt: 1731079018
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "538"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 108500360666
+  type: "Std"
+  uptime: 108500366999
+  recvAt: 1731079018
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "539"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 108700417666
+  type: "Std"
+  uptime: 108700424166
+  recvAt: 1731079019
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "540"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 108900360666
+  type: "Std"
+  uptime: 108900367166
+  recvAt: 1731079019
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "541"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 109100448833
+  type: "Std"
+  uptime: 109100455333
+  recvAt: 1731079019
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "542"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 109300361166
+  type: "Std"
+  uptime: 109300367666
+  recvAt: 1731079019
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "543"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 109500449666
+  type: "Std"
+  uptime: 109500456166
+  recvAt: 1731079019
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "544"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 109700360666
+  type: "Std"
+  uptime: 109700367166
+  recvAt: 1731079020
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "545"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 109900449333
+  type: "Std"
+  uptime: 109900455833
+  recvAt: 1731079020
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "546"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 110100360666
+  type: "Std"
+  uptime: 110100367166
+  recvAt: 1731079020
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "547"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 110300449333
+  type: "Std"
+  uptime: 110300455833
+  recvAt: 1731079020
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "548"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 110500360333
+  type: "Std"
+  uptime: 110500366833
+  recvAt: 1731079020
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "549"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 110700449333
+  type: "Std"
+  uptime: 110700455833
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "550"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 110900360833
+  type: "Std"
+  uptime: 110900367333
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "551"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 111100449166
+  type: "Std"
+  uptime: 111100455666
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "552"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 111300360499
+  type: "Std"
+  uptime: 111300366999
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "553"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 111500448833
+  type: "Std"
+  uptime: 111500455333
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "554"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 111700361166
+  type: "Std"
+  uptime: 111700367499
+  recvAt: 1731079021
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "555"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 111900449333
+  type: "Std"
+  uptime: 111900455833
+  recvAt: 1731079022
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "556"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 112100360999
+  type: "Std"
+  uptime: 112100367499
+  recvAt: 1731079022
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "557"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 112300449333
+  type: "Std"
+  uptime: 112300455833
+  recvAt: 1731079022
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "558"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 112500361166
+  type: "Std"
+  uptime: 112500367666
+  recvAt: 1731079022
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "559"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 112700448666
+  type: "Std"
+  uptime: 112700455166
+  recvAt: 1731079023
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "560"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 112900361166
+  type: "Std"
+  uptime: 112900367666
+  recvAt: 1731079023
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "561"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 113100448999
+  type: "Std"
+  uptime: 113100455499
+  recvAt: 1731079023
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "562"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 113300361333
+  type: "Std"
+  uptime: 113300367833
+  recvAt: 1731079023
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "563"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 113500448666
+  type: "Std"
+  uptime: 113500454999
+  recvAt: 1731079023
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "564"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 113700360666
+  type: "Std"
+  uptime: 113700367166
+  recvAt: 1731079024
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "565"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 113900417833
+  type: "Std"
+  uptime: 113900424333
+  recvAt: 1731079024
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "566"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 114100360666
+  type: "Std"
+  uptime: 114100366999
+  recvAt: 1731079024
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "567"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 114300448666
+  type: "Std"
+  uptime: 114300455166
+  recvAt: 1731079024
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "568"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 114500360999
+  type: "Std"
+  uptime: 114500367499
+  recvAt: 1731079024
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "569"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 114700448833
+  type: "Std"
+  uptime: 114700455333
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "570"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 114900360666
+  type: "Std"
+  uptime: 114900367166
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "571"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 115100449333
+  type: "Std"
+  uptime: 115100455833
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "572"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 115300360833
+  type: "Std"
+  uptime: 115300367333
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "573"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 115500449499
+  type: "Std"
+  uptime: 115500455999
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "574"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 115700360499
+  type: "Std"
+  uptime: 115700366833
+  recvAt: 1731079025
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "575"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 115900449166
+  type: "Std"
+  uptime: 115900455666
+  recvAt: 1731079026
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "576"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 116100361166
+  type: "Std"
+  uptime: 116100367499
+  recvAt: 1731079026
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "577"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 116300449499
+  type: "Std"
+  uptime: 116300455999
+  recvAt: 1731079026
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "578"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 116500360833
+  type: "Std"
+  uptime: 116500367333
+  recvAt: 1731079026
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "579"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 116700449499
+  type: "Std"
+  uptime: 116700455999
+  recvAt: 1731079026
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "580"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 116900361166
+  type: "Std"
+  uptime: 116900367499
+  recvAt: 1731079027
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "581"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 117100448999
+  type: "Std"
+  uptime: 117100455499
+  recvAt: 1731079027
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "582"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 117300361166
+  type: "Std"
+  uptime: 117300367666
+  recvAt: 1731079027
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "583"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 117500449499
+  type: "Std"
+  uptime: 117500455999
+  recvAt: 1731079027
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "584"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 117700361166
+  type: "Std"
+  uptime: 117700367499
+  recvAt: 1731079028
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "585"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 117900449666
+  type: "Std"
+  uptime: 117900456166
+  recvAt: 1731079028
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "586"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 118100361166
+  type: "Std"
+  uptime: 118100367666
+  recvAt: 1731079028
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "587"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 118300449666
+  type: "Std"
+  uptime: 118300456166
+  recvAt: 1731079028
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "588"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 118500360999
+  type: "Std"
+  uptime: 118500367499
+  recvAt: 1731079028
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "589"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 118700449666
+  type: "Std"
+  uptime: 118700456166
+  recvAt: 1731079029
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "590"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 118900360666
+  type: "Std"
+  uptime: 118900367166
+  recvAt: 1731079029
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "591"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 119100448999
+  type: "Std"
+  uptime: 119100455499
+  recvAt: 1731079029
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "592"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 119300361166
+  type: "Std"
+  uptime: 119300367666
+  recvAt: 1731079029
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "593"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 119500449166
+  type: "Std"
+  uptime: 119500455666
+  recvAt: 1731079029
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "594"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 119700360499
+  type: "Std"
+  uptime: 119700366999
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "595"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 119900448833
+  type: "Std"
+  uptime: 119900455333
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "596"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 120100360499
+  type: "Std"
+  uptime: 120100366999
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "597"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 120300449333
+  type: "Std"
+  uptime: 120300455833
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "598"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 120500361166
+  type: "Std"
+  uptime: 120500367666
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "599"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 120700448666
+  type: "Std"
+  uptime: 120700455166
+  recvAt: 1731079030
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "600"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 120900360499
+  type: "Std"
+  uptime: 120900366833
+  recvAt: 1731079031
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "601"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 121100448833
+  type: "Std"
+  uptime: 121100455333
+  recvAt: 1731079031
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "602"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 121300361166
+  type: "Std"
+  uptime: 121300367666
+  recvAt: 1731079031
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "603"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 121500449499
+  type: "Std"
+  uptime: 121500455999
+  recvAt: 1731079031
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "604"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 121700360833
+  type: "Std"
+  uptime: 121700367333
+  recvAt: 1731079032
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "605"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 121900448833
+  type: "Std"
+  uptime: 121900455333
+  recvAt: 1731079032
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "606"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 122100360666
+  type: "Std"
+  uptime: 122100367166
+  recvAt: 1731079032
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "607"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 122300449333
+  type: "Std"
+  uptime: 122300455833
+  recvAt: 1731079032
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "608"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 122500360666
+  type: "Std"
+  uptime: 122500367166
+  recvAt: 1731079032
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "609"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 122700449499
+  type: "Std"
+  uptime: 122700455999
+  recvAt: 1731079033
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "610"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 122900360999
+  type: "Std"
+  uptime: 122900367499
+  recvAt: 1731079033
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "611"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 123100448999
+  type: "Std"
+  uptime: 123100455499
+  recvAt: 1731079033
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "612"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 123300360833
+  type: "Std"
+  uptime: 123300367166
+  recvAt: 1731079033
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "613"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 123500449166
+  type: "Std"
+  uptime: 123500455666
+  recvAt: 1731079033
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "614"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 123700360833
+  type: "Std"
+  uptime: 123700367333
+  recvAt: 1731079034
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "615"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 123900449499
+  type: "Std"
+  uptime: 123900455999
+  recvAt: 1731079034
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "616"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 124100360833
+  type: "Std"
+  uptime: 124100367333
+  recvAt: 1731079034
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "617"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 124300448666
+  type: "Std"
+  uptime: 124300455166
+  recvAt: 1731079034
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "618"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 124500361166
+  type: "Std"
+  uptime: 124500367666
+  recvAt: 1731079034
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "619"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 124700449333
+  type: "Std"
+  uptime: 124700455833
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "620"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 124900360833
+  type: "Std"
+  uptime: 124900367333
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "621"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 125100448833
+  type: "Std"
+  uptime: 125100455333
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "622"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 125300360833
+  type: "Std"
+  uptime: 125300367333
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "623"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 125500449166
+  type: "Std"
+  uptime: 125500455666
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "624"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 125700361166
+  type: "Std"
+  uptime: 125700367666
+  recvAt: 1731079035
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "625"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 125900448999
+  type: "Std"
+  uptime: 125900455499
+  recvAt: 1731079036
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "626"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 126100360999
+  type: "Std"
+  uptime: 126100367499
+  recvAt: 1731079036
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "627"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 126300449666
+  type: "Std"
+  uptime: 126300456166
+  recvAt: 1731079036
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "628"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 126500360999
+  type: "Std"
+  uptime: 126500367499
+  recvAt: 1731079036
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "629"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 126700449166
+  type: "Std"
+  uptime: 126700455666
+  recvAt: 1731079037
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "630"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 126900360999
+  type: "Std"
+  uptime: 126900367499
+  recvAt: 1731079037
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "631"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 127100449499
+  type: "Std"
+  uptime: 127100455999
+  recvAt: 1731079037
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "632"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 127300360999
+  type: "Std"
+  uptime: 127300367499
+  recvAt: 1731079037
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "633"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 127500449499
+  type: "Std"
+  uptime: 127500455833
+  recvAt: 1731079037
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "634"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 127700360666
+  type: "Std"
+  uptime: 127700367166
+  recvAt: 1731079038
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "635"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 127900449166
+  type: "Std"
+  uptime: 127900455666
+  recvAt: 1731079038
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "636"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 128100360999
+  type: "Std"
+  uptime: 128100367499
+  recvAt: 1731079038
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "637"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 128300449166
+  type: "Std"
+  uptime: 128300455666
+  recvAt: 1731079038
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "638"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 128500360166
+  type: "Std"
+  uptime: 128500366666
+  recvAt: 1731079038
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "639"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 128700449666
+  type: "Std"
+  uptime: 128700456166
+  recvAt: 1731079039
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "640"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 128900360833
+  type: "Std"
+  uptime: 128900367333
+  recvAt: 1731079039
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "641"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 129100448833
+  type: "Std"
+  uptime: 129100455333
+  recvAt: 1731079039
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "642"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 129300360666
+  type: "Std"
+  uptime: 129300367166
+  recvAt: 1731079039
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "643"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 129500449166
+  type: "Std"
+  uptime: 129500455666
+  recvAt: 1731079039
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "644"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 129700360999
+  type: "Std"
+  uptime: 129700367499
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "645"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 129900448999
+  type: "Std"
+  uptime: 129900455333
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "646"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 130100360833
+  type: "Std"
+  uptime: 130100367166
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "647"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 130300448833
+  type: "Std"
+  uptime: 130300455333
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "648"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 130500360499
+  type: "Std"
+  uptime: 130500366999
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "649"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 130700448833
+  type: "Std"
+  uptime: 130700455333
+  recvAt: 1731079040
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "650"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 130900361166
+  type: "Std"
+  uptime: 130900367666
+  recvAt: 1731079041
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "651"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 131100448833
+  type: "Std"
+  uptime: 131100455333
+  recvAt: 1731079041
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "652"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 131300360499
+  type: "Std"
+  uptime: 131300366999
+  recvAt: 1731079041
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "653"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 131500448833
+  type: "Std"
+  uptime: 131500455333
+  recvAt: 1731079041
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "654"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 131700360666
+  type: "Std"
+  uptime: 131700367166
+  recvAt: 1731079042
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "655"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 131900449499
+  type: "Std"
+  uptime: 131900455999
+  recvAt: 1731079042
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "656"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 132100360999
+  type: "Std"
+  uptime: 132100367499
+  recvAt: 1731079042
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "657"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 132300449499
+  type: "Std"
+  uptime: 132300455999
+  recvAt: 1731079042
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "658"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 132500360499
+  type: "Std"
+  uptime: 132500366999
+  recvAt: 1731079042
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "659"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 132700448666
+  type: "Std"
+  uptime: 132700455166
+  recvAt: 1731079043
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "660"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 132900361166
+  type: "Std"
+  uptime: 132900367666
+  recvAt: 1731079043
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "661"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 133100448833
+  type: "Std"
+  uptime: 133100455333
+  recvAt: 1731079043
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "662"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 133300360499
+  type: "Std"
+  uptime: 133300366999
+  recvAt: 1731079043
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "663"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 133500448833
+  type: "Std"
+  uptime: 133500455166
+  recvAt: 1731079043
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "664"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 133700361166
+  type: "Std"
+  uptime: 133700367666
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "665"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 133900448999
+  type: "Std"
+  uptime: 133900455499
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "666"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 134100360666
+  type: "Std"
+  uptime: 134100367166
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "667"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 134300448666
+  type: "Std"
+  uptime: 134300455166
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "668"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 134500360333
+  type: "Std"
+  uptime: 134500366833
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "669"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 134700448666
+  type: "Std"
+  uptime: 134700455166
+  recvAt: 1731079044
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "670"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 134900361166
+  type: "Std"
+  uptime: 134900367666
+  recvAt: 1731079045
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "671"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 135100448666
+  type: "Std"
+  uptime: 135100455166
+  recvAt: 1731079045
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "672"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 135300360333
+  type: "Std"
+  uptime: 135300366833
+  recvAt: 1731079045
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "673"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 135500449333
+  type: "Std"
+  uptime: 135500455833
+  recvAt: 1731079045
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "674"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 135700360833
+  type: "Std"
+  uptime: 135700367333
+  recvAt: 1731079045
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "675"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 135900448999
+  type: "Std"
+  uptime: 135900455499
+  recvAt: 1731079046
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "676"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 136100361166
+  type: "Std"
+  uptime: 136100367666
+  recvAt: 1731079046
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "677"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 136300448833
+  type: "Std"
+  uptime: 136300455333
+  recvAt: 1731079046
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "678"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 136500360499
+  type: "Std"
+  uptime: 136500366999
+  recvAt: 1731079046
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "679"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 136700448833
+  type: "Std"
+  uptime: 136700455333
+  recvAt: 1731079047
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "680"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 136900360999
+  type: "Std"
+  uptime: 136900367499
+  recvAt: 1731079047
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "681"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 137100449166
+  type: "Std"
+  uptime: 137100455666
+  recvAt: 1731079047
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "682"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 137300360499
+  type: "Std"
+  uptime: 137300366999
+  recvAt: 1731079047
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "683"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 137500449166
+  type: "Std"
+  uptime: 137500455499
+  recvAt: 1731079047
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "684"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 137700361166
+  type: "Std"
+  uptime: 137700367499
+  recvAt: 1731079048
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "685"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 137900449166
+  type: "Std"
+  uptime: 137900455666
+  recvAt: 1731079048
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "686"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 138100360999
+  type: "Std"
+  uptime: 138100367499
+  recvAt: 1731079048
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "687"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 138300418666
+  type: "Std"
+  uptime: 138300424999
+  recvAt: 1731079048
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "688"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 138500360999
+  type: "Std"
+  uptime: 138500367499
+  recvAt: 1731079048
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "689"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 138700448833
+  type: "Std"
+  uptime: 138700455333
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "690"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 138900360833
+  type: "Std"
+  uptime: 138900367333
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "691"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 139100449666
+  type: "Std"
+  uptime: 139100456166
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "692"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 139300361166
+  type: "Std"
+  uptime: 139300367666
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "693"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 139500449166
+  type: "Std"
+  uptime: 139500455666
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "694"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 139700360999
+  type: "Std"
+  uptime: 139700367333
+  recvAt: 1731079049
+
+- hwid: 1
+  node: 255
+  packetNumber: 0
+  payload: 
+    CommanderStandardTelemetry: 
+      cmdCounter: "0"
+      lastCmdReceivedAt: "0"
+    HousekeeperStandardTelemetry: 
+      collectInterval: "1"
+      iteration: "695"
+  serviceID: 11
+  subserviceID: 1
+  timeUTC: 139900448666
+  type: "Std"
+  uptime: 139900455166
+  recvAt: 1731079050

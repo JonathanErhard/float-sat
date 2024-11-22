@@ -67,6 +67,7 @@ topics:
         array:
           length: 3
           type: float
+      temperature: float
   sunPositionTopic:
     id: 6001
     description: contains the position and the offset from (magnetic) zero of the sun
