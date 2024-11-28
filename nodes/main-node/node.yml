@@ -10,3 +10,4 @@ apps:
   housekeeper: default
   commander: default
   transceiver: default
+  #reader: default

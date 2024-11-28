@@ -24,6 +24,9 @@ void Reader::initialize(){
     IMU.init(400000);
     isEye=true;
     rot = Matrix3D_F(Vector3D_F(1,0,0),Vector3D_F(0,1,0),Vector3D_F(0,0,1));
+	accConv = LSM9DS1_ACCEL_MG_LSB_4G / 1000.f;
+	gyroConv = deg2radf(LSM9DS1_GYRO_DPS_DIGIT_500DPS);
+	magConv = LSM9DS1_MAG_MGAUSS_4GAUSS / 1000.f;
 }
 
 
@@ -38,14 +41,17 @@ void Reader::runReadthreat() {
     RODOS::Vector3D_F gyrodata;
     float temperature;
 
-    if(readAcc(accdata))
+    if(readAcc(accdata) && readGyro(magdata) && readMag(gyrodata) && readTemp(tempdata)){
+		generated::imuTopic.publish(accdata,magdata,gyrodata,temperature);
+	}
+	hallo
         ;//generated::imuTopic.publish();
-    if(readGyro(magdata))   
+    /*if()   
         ;//publish
     if(readMag(gyrodata))
         ;//publish
     if(readTemp(tempdata))
-        ;//publish
+        ;//publish*/
 
 }
 
