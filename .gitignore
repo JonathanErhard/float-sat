@@ -42,3 +42,14 @@ CMakeUserPresets.json
 *.exe
 *.out
 *.app
+
+backup/*
+generated/*
+*.sh
+ui-layouts/*
+corfu/*
+build-corfu-host-tools/*
+build-discovery/*
+build/*
+ground-files/*
+.vscode/*

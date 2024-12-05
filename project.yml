@@ -10,6 +10,8 @@ ground:
     app: housekeeper
     subserviceId: 1
 
+drivers:
+  #imu: default
 
 topics:
   biasOffsetTopic:
@@ -36,7 +38,7 @@ topics:
   desiredMotorSpeedTopic:
     id: 1002
     description: speed in RPM
-    fields: 
+    fields:
       speed: float
   desiredStateValueTopic:
     id: 1004
@@ -53,7 +55,7 @@ topics:
 
   imuDataTopic:
     id: 2001
-    description: contains all data published by the IMU -> accelerometer + gyro + magentometer
+    description: IMU data accelerometer[3] + gyro[3] + magentometer[3]
     fields:
       accelerometer:
         array:
@@ -67,17 +69,16 @@ topics:
         array:
           length: 3
           type: float
-  sunPositionTopic:
+  lightSensorTopic:
     id: 6001
-    description: contains the position and the offset from (magnetic) zero of the sun
+    description: contains the intensity of the light recieved by the light sensor
     fields:
-      position: float
-      offset: float
-  batteryVoltageTopic:
+      intensity: float
+  proximityTopic:
     id: 7001
-    description: contains the current voltage of the battery as published by the watchdog
+    description: contains the output of the proximity sensor
     fields:
-      voltage: float
+      distance: float
   modeTopic:
     id: 8001
     description: the current satellite mode and submode
@@ -89,5 +90,3 @@ topics:
     description: you shall not solar cell
     fields:
       is_forbidden: bool
-
-

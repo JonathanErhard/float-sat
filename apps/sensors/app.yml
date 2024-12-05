@@ -1,0 +1,25 @@
+id: 0x20
+name: sensors
+description: publishes sensor data
+
+threads:
+  collectData:
+    firstRun: 100_ms
+    period: 100_ms
+    priority: 1000
+
+publish:
+  - imuDataTopic
+  - proximityTopic
+  - lightSensorTopic
+  - corfu::appIsAliveTopic
+  - corfu::anomalyTopic
+  - corfu::extendedTelemetryTopic
+  - corfu::standardTelemetryTopic
+
+telecommands:
+  NOP:
+    id: 1
+
+standard_telemetry:
+    appStatus: uint8_t
