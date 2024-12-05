@@ -8,6 +8,7 @@ ground:
   uplinkPort: 8672
   standardTelemetry:
     app: housekeeper
+    app: Reader
     subserviceId: 1
 
 drivers:

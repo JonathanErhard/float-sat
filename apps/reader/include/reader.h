@@ -6,6 +6,12 @@
 	HAL_GPIO *csM;
 	HAL_GPIO *imuEN;
 	bool isEye;
+	float accConv, gyroConv, magConv;
+	#define LSM9DS1_GYRO_DPS_DIGIT_500DPS 	0.01750F
+	#define LSM9DS1_MAG_MGAUSS_4GAUSS 		0.14F
+	#define LSM9DS1_ACCEL_MG_LSB_4G 		0.122F
+	/*LSM9DS1(HAL_SPI *spi, HAL_GPIO *csXG, HAL_GPIO *csM, uint32_t spi_clk_rate=1000000, Semaphore *sem = NULL, HAL_GPIO *imuEN = NULL);
+	LSM9DS1(HAL_SPI *spi, HAL_GPIO *csXG, HAL_GPIO *csM, Matrix3D_F rot, uint32_t spi_clk_rate=1000000,  Semaphore *sem = NULL, HAL_GPIO *imuEN = NULL);*/
 
 	Matrix3D_F rot;
 

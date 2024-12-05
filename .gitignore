@@ -53,6 +53,12 @@ build-discovery/*
 build-discovery
 
 questions.txt
+
+corfu/*
+corfu
+
+ground-files/*
+ground-files
 backup/*
 generated/*
 
