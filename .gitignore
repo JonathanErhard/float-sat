@@ -43,13 +43,18 @@ CMakeUserPresets.json
 *.out
 *.app
 
+generated/*
+generated
+
+build-corfu-host-tools/*
+build-corfu-host-tools
+
+build-discovery/*
+build-discovery
+
+questions.txt
 backup/*
 generated/*
-*.sh
-ui-layouts/*
-corfu/*
-build-corfu-host-tools/*
-build-discovery/*
-build/*
+
 ground-files/*
 .vscode/*

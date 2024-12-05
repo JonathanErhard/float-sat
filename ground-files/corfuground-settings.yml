@@ -1,0 +1,4 @@
+swapLayoutsOnNodeChange: true
+swapLayoutsOnHwIDChange: false
+preserveWindowDefault: false
+windowsToBackground: false

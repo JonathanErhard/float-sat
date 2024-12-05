@@ -1,0 +1,12 @@
+1732281868, plugin, 0, No Custom Widgets loaded for this project
+1732281868, init, 0, EgseConnector | downlink port: 8671
+1732281868, init, 0, EgseConnector | uplink port: 8672
+1732281868, init, 0, EgseConnector | event topic id: 1539
+1732281868, init, 0, EgseConnector | telemetry topic id: 2447
+1732281868, init, 0, EgseConnector | telecommand topic id: 2337
+1732281868, init, 0, EgseConnector | fileupload topic id: 1004
+1732281868, init, 0, EgseConnector | standard telemetry service id: 11
+1732281868, init, 0, EgseConnector | standard telemetry subservice id: 1
+1732281868, init, 0, DEV-EGSE expecting telemetry with topicID 2447 and
+1732281868, init, 0, DEV-EGSE sending telecommand with topicID 2337
+1732281868, , 0, Signature self-test passed

@@ -1,0 +1,4 @@
+project: FloatSat
+node: main-node
+hwid: 255
+windows: 
