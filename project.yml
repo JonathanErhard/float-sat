@@ -86,6 +86,11 @@ topics:
     fields:
       mode: uint8_t
       submode: uint8_t
+  missionModeTopic:
+    id: 8002
+    description: the current part of the mission that is active
+    fields:
+      mode: uint8_t
   solarCellForbiddenTopic:
     id: 6666
     description: you shall not solar cell

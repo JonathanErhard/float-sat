@@ -1,0 +1,42 @@
+id: 0x74
+name: mission
+description: controls the general procedures of the mission
+
+#structs:
+
+threads:
+  missionThread:
+    firstRun: 1000_ms
+    period: 1000_ms
+    priority: 120
+
+subscribe:
+  attitudeDeterminationTopic: direct
+  proximityTopic: direct
+  lightSensorTopic: direct
+  missionModeTopic: direct
+
+publish:
+  modeTopic
+
+
+telecommands:
+  NOP:
+    id: 1
+  ChangeMode:
+    id: 2
+    fields:
+      modes:
+        type: uint8_t
+        aliases:
+          0: Nothing
+          1: Find
+          2: Pointsun
+          3: pointasteroid
+          4: reflect
+          5: everything
+
+standard_telemetry:
+    appStatus: uint8_t
+
+

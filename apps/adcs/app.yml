@@ -5,10 +5,11 @@ description: Attitude Determination and Control
 #structs:
 
 threads:
-  examplethread:
+  adcsThreat:
     firstRun: 1100_ms
-    period: 100_ms
-    priority: 120
+    period: 10_ms
+    priority: 1200
+    stackSize: 6000
 
 subscribe:
   imuDataTopic: direct
@@ -32,8 +33,11 @@ telecommands:
         type: uint8_t
         aliases:
           0: Nothing
-          1: Velocity
-          2: Position
+          1: Position
+          2: Velocity
+      submode:
+        type: uint8_t
+
 
 #  ExampleWithFields:
 #    id: 2
@@ -41,10 +45,11 @@ telecommands:
 #      parameter: uint8_t
 
 standard_telemetry:
-    appStatus: uint8_t
-    roll: float
-    pitch: float
-    yaw: float
+    attitude: float
+    speed: float
+    target_att: float
+    target_speed: float
+    motor_speed: float
 
 #extended_telemetry:
 #  exampleETX:

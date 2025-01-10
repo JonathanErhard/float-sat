@@ -13,3 +13,4 @@ apps:
   adcs: default
   #reader: default
   sensors: default
+  mission: default
