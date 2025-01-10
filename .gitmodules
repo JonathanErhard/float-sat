@@ -4,3 +4,6 @@
 [submodule "corfu"]
 	path = corfu
 	url = https://gitlab2.informatik.uni-wuerzburg.de/innocube/corfu
+[submodule "drivers/lsm9ds1"]
+	path = drivers/lsm9ds1
+	url = https://github.com/JonathanErhard/LSM9DS1-driver

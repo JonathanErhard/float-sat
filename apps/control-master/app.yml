@@ -1,0 +1,41 @@
+id: 0xFF
+name: control-master
+description: change this to whatever you want
+
+#structs:
+
+threads:
+  servoThread:
+    firstRun: 1000_ms
+    period: 10_ms
+    priority: 120
+
+#subscribe:
+#  exampleTopic1: direct
+
+#publish:
+#  - exampleTopic2
+#  - corfu::appIsAliveTopic
+#  - corfu::anomalyTopic
+#  - corfu::extendedTelemetryTopic
+
+telecommands:
+  NOP:
+    id: 1
+
+#  ExampleWithFields:
+#    id: 2
+#    fields:
+#      parameter: uint8_t
+
+standard_telemetry:
+    appStatus: uint8_t
+
+#extended_telemetry:
+#  exampleETX:
+#    id: 1
+#    fields:
+#      number: uint8_t
+
+#anomalies:
+

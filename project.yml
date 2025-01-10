@@ -8,11 +8,11 @@ ground:
   uplinkPort: 8672
   standardTelemetry:
     app: housekeeper
-    app: Reader
     subserviceId: 1
 
 drivers:
-  #imu: default
+  #lidar: default
+  lsm9ds1: default
 
 topics:
   biasOffsetTopic:
@@ -44,7 +44,7 @@ topics:
   desiredStateValueTopic:
     id: 1004
     description: either Rotation speed, or angel, depending on mode
-    fields: 
+    fields:
       value: float
   peripheralOnOffTopic:
     id: 1005

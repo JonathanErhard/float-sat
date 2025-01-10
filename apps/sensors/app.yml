@@ -20,6 +20,8 @@ publish:
 telecommands:
   NOP:
     id: 1
+  CalibGyro:
+    id: 2
 
 standard_telemetry:
     appStatus: uint8_t
