@@ -13,4 +13,4 @@ apps:
   #adcs: default
   sensors: default
   mission: default
-  control-master: default
+  #control-master: default
