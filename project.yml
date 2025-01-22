@@ -11,7 +11,7 @@ ground:
     subserviceId: 1
 
 drivers:
-  #lidar: default
+  vl53l4ed: default
   lsm9ds1: default
 
 topics:

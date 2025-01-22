@@ -2,6 +2,15 @@
 
 #include <sensors-generated/sensors.h>
 #include <lsm9ds1.h>
+// LIDAR
+
+#include <math.h>
+#define R2D 57.2957795131
+
+// Winkel and my version of the driver
+// #include <platform.h>
+// #include <VL53L4CD_api.h>
+// #include <VL53L4CD_calibration.h> // technically not needed since min doesn't change with calibration
 
 class Sensors : public generated::Sensors
 {
@@ -9,8 +18,10 @@ class Sensors : public generated::Sensors
 	IMU::LMS9DS1 imu;
 
 public:
-	// float latestIMUData[9];
+	// topic buffers
 	generated::ImuDataTopic imuTopicBuffer;
+	generated::LightSensorTopic lightSensorBuffer;
+	generated::ProximityTopic proximityBuffer;
 
 	void
 	initialize() override;
@@ -24,6 +35,6 @@ public:
 	bool handleTelecommandCalibGyro() override;
 
 	// read sensor data
-	void readRawSunSensor();
 	void readSunSensor();
+	void readLIDAR();
 };

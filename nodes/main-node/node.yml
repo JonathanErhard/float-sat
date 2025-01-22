@@ -10,7 +10,7 @@ apps:
   housekeeper: default
   commander: default
   transceiver: default
-  adcs: default
-  #reader: default
+  #adcs: default
   sensors: default
   mission: default
+  control-master: default
