@@ -17,16 +17,22 @@
 #include "hal_pwm.h"
 
 	#define freqPWM 5000	//TODO check if values ok (just stole them)
-	#define MaxDeltaPWM 100
-	#define MaxPWM 1000
-    HAL_PWM PWM1(PWM_IDX02);
-    HAL_PWM PWM2(PWM_IDX01);
+	#define MaxDeltaPWM 5
+	#define MaxPWM 990
+	#define MAXDrehrate 	//Max revolutions per minute that we can get
+    HAL_PWM PWM1(PWM_IDX14);
+    HAL_PWM PWM2(PWM_IDX15);
 
 	#define maxDesiredSpeed 100 //TODO check these values
 	#define maxAttitude 100
 //PE13//PE11
 	//coppied from Senors.cpp written by Atheel Redah @ University of Würzburg, January 20, 2019
 	/* Private variables ---------------------------------------------------------*/
+		__IO uint32_t IC4ReadValue1 = 0, IC4ReadValue2 = 0, Capture = 0;
+	__IO uint8_t CaptureNumber = 0;
+	__IO uint32_t TIM2Freq = 0;
+	__IO uint8_t EncoderB;
+	__IO double CaptureTime;
 
 HAL_GPIO missed_val(RODOS::GPIO_PIN::GPIO_061);
 
@@ -45,7 +51,7 @@ void Adcs::initialize(){
 	Adcs::dt = Adcs::adcsThreatThread.getPeriod()/100000000;
     Adcs::dt = Adcs::dt/10;//halts maul, ich weiß dass es hässlig ist aber wir machen das so. deine mama ist hässlich.
 	Adcs::dt=0.02;
-	float factor=0.978;
+	float factor=0;
 
 
 	A.r[0][0]=1;							
@@ -88,8 +94,9 @@ void Adcs::initialize(){
 	
 
 
-	//PWM1.init(freqPWM,MaxPWM); //TODO
-	//PWM2.init(freqPWM,MaxPWM);
+	PWM1.init(freqPWM,MaxPWM+10); //TODO
+	PWM2.init(freqPWM,MaxPWM+10);
+	last_input=0;
 	EncoderInit();
 	k1=0.1;
 	k2=0.0;
@@ -100,6 +107,7 @@ void Adcs::initialize(){
 	k7=0.1;
 	k8=0.0;
 	k9=1.0;
+	init_time=RODOS::NOW();
 }
 
 
@@ -108,7 +116,18 @@ void Adcs::initAdcsThreat() {
 
 }
 
+
 void Adcs::runAdcsThreat() {
+MotorSpeedUpdate();
+//calculates the speeds of the motor 
+//calculaterise();
+
+if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
+	Adcs::motorController(800);/**/
+} else{
+	Adcs::motorController(0);
+	RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
+}
 }
 
 
@@ -132,7 +151,7 @@ bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setC
 //Topic methods
 void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	Adcs::imu = message;
-	float u=(imu.gyroscope[2])-1;
+	/*float u=(imu.gyroscope[2])-1;
 	//float cz= atan2f(cx,cy);
 
 	float r2 = imu.gyroscope[2];
@@ -147,9 +166,9 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 
 	updateDt();
 	update(peter,u);
+	*/
 
 
-	updateStdTM();
 	//attitudeDeterminationTopic.publish(Adcs::x_hat.r[0][0],Adcs::x_hat.r[0][1]);
 	//RODOS::PRINTF("Pose: %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0], cz, u);
 
@@ -170,7 +189,7 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 		rpy.y += Adcs::positionRb.vals[i].y;
 		rpy.z += Adcs::positionRb.vals[i].z;
 	}
-	float pos = atan2(rpy.x,rpy.y)+ rpy.z*0.1f/2.f;
+	pos = atan2(rpy.x,rpy.y)+ rpy.z*0.1f/2.f;
 	pos=pos* 180/M_PI+180;
 	if(pos > 180) pos = -360+pos;
 	else if(pos < -180) pos = 360+pos;
@@ -183,8 +202,11 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 		velSum.y+=velocityRb.vals[i].y;
 		velSum.z+=velocityRb.vals[i].z;
 	}																																								//imu.magnetometer[0], imu.magnetometer[1],imu.magnetometer[2]												
-	float vel=velSum.z/10;	
-	RODOS::PRINTF("Pose: %f %f | %f %f | %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0],pos,vel, cz, u,rpy.z*0.1f/2.f,atan2f(rpy.x,rpy.y)*180/M_PI);
+	vel=velSum.z/10;	
+	x_hat.r[0][0]= pos;
+	x_hat.r[0][1]= vel;
+	updateStdTM();
+	//RODOS::PRINTF("Pose: %f %f | %f %f | %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0],pos,vel, cz, u,rpy.z*0.1f/2.f,atan2f(rpy.x,rpy.y)*180/M_PI);
 
 
 
@@ -195,6 +217,7 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	
 
 }
+
 void Adcs::updateDt(){
 	Adcs::dt= (RODOS::NOW()-Adcs::t)/1000000000;
 	Adcs::t = RODOS::NOW();
@@ -215,7 +238,6 @@ float Adcs::mod(float in){
 	return in;
 }
 
-
 void Adcs::update(const Matrix_<1,1,float> & y, float u){
 
 	if(!Adcs::initialized)
@@ -232,7 +254,6 @@ void Adcs::update(const Matrix_<1,1,float> & y, float u){
 	Adcs::P = (Adcs::I - Adcs::K*Adcs::C)*Adcs::P;
 	Adcs::x_hat = Adcs::x_hat_new;
 }
-
 
 /*
 different modes:
@@ -254,58 +275,63 @@ float Adcs::pid(){
 	Adcs::dt_pid=(RODOS::NOW()-Adcs::last_time)/1000000000;//update time intervall
 	Adcs::last_time=RODOS::NOW();
 	if(mode.mode!=2){
-		float error= Adcs::x_hat.r[0][0] - Adcs::target_att; //controll loop for desired attitude
-
-		Adcs::target_speed = 	error * Adcs::dt_pid * Adcs::k1 + 
-						error / Adcs::dt_pid * Adcs::k2 + 
-						error * Adcs::k3 ;
+		float error1= Adcs::x_hat.r[0][0] - Adcs::target_att; //controll loop for desired attitude
+		Adcs::sum_error1 += sum_error1;
+		Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k1 + 
+						(error1-last_error1) * k2 +
+						error1 * Adcs::k3 ;
+		Adcs::last_error1 = error1;
 	}
 
 										//if we need a speed instead we do this
 	float error2= Adcs::x_hat.r[1][0] - Adcs::target_speed;
+	Adcs::sum_error2 +=error2;
 														//controll loop for desired spee
-	float desired_speed = 	error2 * Adcs::dt_pid * Adcs::k4 + 
-					error2 / Adcs::dt_pid * Adcs::k5 + 
+
+	float desired_speed = 	sum_error2 * Adcs::k4 + 
 					error2 * Adcs::k6 ;
+
+	desired_speed = desiredspeed+ MAXDrehrate/2
 	if(desired_speed >   maxDesiredSpeed) desired_speed = maxDesiredSpeed;
 	if(desired_speed < - maxDesiredSpeed) desired_speed = - maxDesiredSpeed;
 
 
 	MotorSpeedUpdate();
 	float error3 = Adcs::motor_speed_measured-desired_speed; //check how far off we are from the actual speed
-
-	float error4 = 	error3 * Adcs::dt_pid * Adcs::k7 + 
-					error3 / Adcs::dt_pid * Adcs::k8 + 
+	Adcs::sum_error3 += error3;
+	float error4 = 	sum_error3 * Adcs::k8 +
 					error3 * Adcs::k9 ;
 
 	
 	return error4;
 }
 
+
+
 void Adcs::motorController(float input){
-
-
-	//float diff=Adcs::motor_speed_measured/Adcs::last_input;//check how near we are at the desired speed
-	//input = input * diff;
+	
 
 	if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
 		input=last_input+MaxDeltaPWM;
-	}else if(input-last_input<MaxDeltaPWM){
+	}else if(input-last_input<-MaxDeltaPWM){
 		input=last_input-MaxDeltaPWM;
 	}
-
+	
 	if(input>MaxPWM) //check if motor is exceeding max speed
 		input =MaxPWM;
 	else if(input< - MaxPWM)
 		input= -MaxPWM;
-	
+	//RODOS::PRINTF("input %f %f| %f | %f  %f\n ",input,last_input,motor_speed_measured, angle,(RODOS::NOW()-init_time )/ RODOS::SECONDS );
+	RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
 
-	if(input<0){ //differentiates between positive and negative speed
-		PWM1.write(input);
+
+
+	if(input>0){ //differentiates between positive and negative speed
+		PWM1.write(abs(input));
 		PWM2.write(0.0);
 	} else{
 		PWM1.write(0.0);
-		PWM2.write(input);
+		PWM2.write(abs(input));
 	}
 
 
@@ -395,6 +421,7 @@ void Adcs::EncoderInit()
 
   /* Enable the CC2 Interrupt Request */
   TIM_ITConfig(TIM2, TIM_IT_CC4, ENABLE);
+  RODOS::PRINTF("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 }
 
 extern "C" {
@@ -403,11 +430,7 @@ extern "C" {
   * @param  None
   * @retval None
   */
- 	__IO uint32_t IC4ReadValue1 = 0, IC4ReadValue2 = 0, Capture = 0;
-	__IO uint8_t CaptureNumber = 0;
-	__IO uint32_t TIM2Freq = 0;
-	__IO uint8_t EncoderB;
-	__IO double CaptureTime;
+ 
 void TIM2_IRQHandler(void)
 {
   if(TIM_GetITStatus(TIM2, TIM_IT_CC4) == SET)
@@ -437,6 +460,7 @@ void TIM2_IRQHandler(void)
       TIM2Freq = (uint32_t) ((SystemCoreClock/2)) * 8 / Capture;
       CaptureNumber = 0;
     }
+	//RODOS::PRINTF("captureNUmber: %d Capture %d Systemcoreclock; %d Time2freq %d\n", CaptureNumber,Capture,SystemCoreClock, TIM2Freq);
   }
 }
 }
@@ -456,16 +480,75 @@ void TIM2_IRQHandler(void)
 		Adcs::motor_speed_measured = -1*((float)TIM2Freq / 16) * 60;  //CCW
 	}
 	else {Adcs::motor_speed_measured = ((float)TIM2Freq / 16) * 60;}  //CW
+	//RODOS::PRINTF("I AM ALICE: %f %d\n", Adcs::motor_speed_measured, TIM2Freq);
+}
+
+int angle = 500;
+bool dir = 0;
+double measure=0;
+double sett=0;
+int counter=0;
+int time=0;
+double res1,res2,res3=0;
+
+void Adcs::calculaterise(){
+MotorSpeedUpdate();
+if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
+	Adcs::motorController(300);
+	time=20;
+}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
+	Adcs::motorController(300);
+	sett+=angle;
+	measure+=motor_speed_measured;
+	counter++;
+	res1=sett/measure;
+	time=50;
+}else if(RODOS::NOW()-init_time <(20+time) * RODOS::SECONDS){
+	Adcs::motorController(500);
+	time=70;
+	sett=0; measure=0; counter=0;
+}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
+	Adcs::motorController(300);
+	sett+=angle;
+	measure+=motor_speed_measured;
+	counter++;
+	res2=sett/measure;
+	time=100;
+}else if(RODOS::NOW()-init_time <(20+time) * RODOS::SECONDS){
+	Adcs::motorController(800);
+	time=120;
+	sett=0; measure=0; counter=0;
+}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
+	Adcs::motorController(800);
+	sett+=angle;
+	measure+=motor_speed_measured;
+	counter++;
+	res3=sett/measure;
+	time=160;
+}else{
+	Adcs::motorController(0);
+	RODOS::PRINTF(" res1 %f res2 %f res3 %d res_average %f\n",res1,res2,res3,(res1+res2+res3)/3);
+	
+	}
 }
 
 
 
 
 
-
-
 /*
-	Vector3D_F rpy(0,0,0);
+
+	//( angle <3 && angle > -3))
+/*if(RODOS::NOW()-init_time <60 * RODOS::SECONDS || angle!=500){
+	dir ? angle += 5: angle -= 5;
+	if (angle > 900 || angle < 200)
+		dir = !dir;
+		Adcs::motorController(angle);*/
+	// 500.000 2092.500
+	//start 140
+	// 250.000 948.750
+	//4.185
+	/*Vector3D_F rpy(0,0,0);
 
 	float mx = imu.magnetometer[0];
 	float my = imu.magnetometer[1];

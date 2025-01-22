@@ -35,8 +35,14 @@ telecommands:
           3: pointasteroid
           4: reflect
           5: everything
+  ChangeAngle:
+    id: 3
+    fields:
+      setangle:
+        type: uint8_t
 
 standard_telemetry:
-    appStatus: uint8_t
+    currentAngle: uint8_t
+    currentMode: uint8_t
 
 

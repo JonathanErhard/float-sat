@@ -14,3 +14,4 @@ apps:
   #reader: default
   sensors: default
   mission: default
+  #control-master: default

@@ -65,19 +65,19 @@ class Adcs: public generated::Adcs{
 
     float target_att, target_speed; //target attitude and speed
 
+    float vel, pos=0;
 
     float k1, k2, k3, k4, k5, k6, k7, k8, k9; //pid values
     float dt_pid;
     float last_input, last_time;
     float motor_speed_measured;
+    float sum_error1, sum_error2, sum_error3=0;
+    float last_error1=0;
+    float init_time;
     void motorController(float input);
     void EncoderInit();
     void MotorSpeedUpdate();
-      __IO uint32_t IC4ReadValue1 = 0, IC4ReadValue2 = 0, Capture = 0;
-      __IO uint8_t CaptureNumber = 0;
-      __IO uint32_t TIM2Freq = 0;
-      __IO uint8_t EncoderB;
-      __IO double CaptureTime;
+    void calculaterise();
 
 
 
