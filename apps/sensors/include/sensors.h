@@ -17,12 +17,12 @@ class Sensors : public generated::Sensors
 
 	IMU::LMS9DS1 imu;
 
-public:
 	// topic buffers
 	generated::ImuDataTopic imuTopicBuffer;
 	generated::LightSensorTopic lightSensorBuffer;
 	generated::ProximityTopic proximityBuffer;
 
+public:
 	void
 	initialize() override;
 

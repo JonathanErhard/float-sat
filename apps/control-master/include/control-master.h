@@ -1,17 +1,20 @@
-//generated using CreateApp.sh
+// generated using CreateApp.sh
 
-#include <control-master-generated/control-master.h> 
+#include <control-master-generated/control-master.h>
 
-class ControlMaster: public generated::ControlMaster{
+class ControlMaster : public generated::ControlMaster
+{
 
-	public:
-
+public:
 	void initialize() override;
 
-	//Thread methods
+	// Thread methods
 	void initServoThread() override;
 	void runServoThread() override;
 
-	//Telecommand methods
+	// Topics
+	void handleTopicLightSensorTopic(generated::LightSensorTopic &message) override;
+
+	// Telecommand methods
 	bool handleTelecommandNOP() override;
 };

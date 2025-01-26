@@ -10,8 +10,8 @@ threads:
     period: 10_ms
     priority: 120
 
-#subscribe:
-#  exampleTopic1: direct
+subscribe:
+  lightSensorTopic: direct
 
 #publish:
 #  - exampleTopic2

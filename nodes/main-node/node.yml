@@ -11,6 +11,7 @@ apps:
   commander: default
   transceiver: default
   #adcs: default
-  sensors: default
+  #sensors: default
   mission: default
+  power: default
   #control-master: default

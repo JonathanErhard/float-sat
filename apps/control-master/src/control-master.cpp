@@ -27,8 +27,13 @@ void ControlMaster::runServoThread()
 	dir ? angle += 1 : angle -= 1;
 	if (angle > 50 || angle < 0)
 		dir = !dir;
-	PRINTF("%d\n", angle);
+	// PRINTF("%d\n", angle);
 	servo.write(calculatePWM(angle));
+}
+
+void ControlMaster::handleTopicLightSensorTopic(generated::LightSensorTopic &message)
+{
+	auto sun_v = message.intensity;
 }
 
 // Telecommand methods

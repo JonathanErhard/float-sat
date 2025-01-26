@@ -77,9 +77,9 @@ topics:
       intensity: float
   proximityTopic:
     id: 7001
-    description: contains the output of the proximity sensor
+    description: contains the output of the proximity sensor in mm
     fields:
-      distance: float
+      distance: int
   modeTopic:
     id: 8001
     description: the current satellite mode and submode
@@ -96,3 +96,9 @@ topics:
     description: you shall not solar cell
     fields:
       is_forbidden: bool
+  powerTopic:
+    id: 1420
+    description: qed
+    fields:
+      voltage: float
+      current: float

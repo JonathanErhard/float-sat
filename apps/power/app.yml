@@ -1,0 +1,19 @@
+id: 0x02
+name: power
+description: change this to whatever you want
+
+threads:
+  mainthread:
+    firstRun: 1000_ms
+    period: 100_ms
+    priority: 10
+
+publish:
+  - powerTopic
+
+telecommands:
+  NOP:
+    id: 1
+
+standard_telemetry:
+    appStatus: uint8_t

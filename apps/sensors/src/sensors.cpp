@@ -14,14 +14,11 @@
  * @brief Sun Sensor adc
  * some defines and functions, so our run method isn't 300 lines of code
  */
-
-#define solarPin RODOS::ADC_CHANNEL::ADC_CH_004
-
 #define ADC_NUM_ITERATIONS 5                   // averages across 5 adc readings
-#define SUN_PIN RODOS::ADC_CHANNEL::ADC_CH_006 // PA6
+#define SUN_PIN RODOS::ADC_CHANNEL::ADC_CH_004 // PA4
 #define ADC_BITS 12
-#define ADC_RESOLUTION float((1 << (ADC_BITS - 1)) - 1) 2 ^ ADC_BITS - 1
-RODOS::HAL_ADC adcSolarSensor(RODOS::ADC_IDX::ADC_IDX1);
+#define ADC_RESOLUTION float((1 << (ADC_BITS - 1)) - 1) // 2 ^ ADC_BITS - 1
+RODOS::HAL_ADC adc(RODOS::ADC_IDX::ADC_IDX1);
 
 float SUN_BOUND[2] = {0, 3600}; // it works I guess
 
@@ -29,7 +26,7 @@ void Sensors::readSunSensor()
 {
     u_int16_t acc = 0;
     for (int i = 0; i < ADC_NUM_ITERATIONS; i++)
-        acc += adcSolarSensor.read(solarPin);
+        acc += adc.read(SUN_PIN);
     auto SUN_RAW_VAL = acc / ADC_NUM_ITERATIONS;
 
     lightSensorBuffer.intensity = (SUN_RAW_VAL - SUN_BOUND[0]) / float(SUN_BOUND[1] - SUN_BOUND[0]);
@@ -74,9 +71,9 @@ void Sensors::initCollectData()
     // init IMU and the registers required to read i2c
     imu.init(400000);
 
-    // init solar sensor
-    adcSolarSensor.config(RODOS::ADC_PARAMETER_TYPE::ADC_PARAMETER_RESOLUTION, 12);
-    adcSolarSensor.init(solarPin);
+    // init adc for solar sensor
+    adc.config(RODOS::ADC_PARAMETER_TYPE::ADC_PARAMETER_RESOLUTION, ADC_BITS);
+    adc.init(SUN_PIN);
 
     // init LIDAR
     init_lidar();
@@ -114,6 +111,7 @@ void Sensors::readLIDAR()
     {
         PRINTF("ToF ranging error!\n");
     }
+    proximityBuffer.distance = distance;
 }
 
 void Sensors::runCollectData()
