@@ -14,4 +14,6 @@ class ControlMaster: public generated::ControlMaster{
 
 	//Telecommand methods
 	bool handleTelecommandNOP() override;
+	
+
 };

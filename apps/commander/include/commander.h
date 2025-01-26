@@ -18,9 +18,9 @@ protected:
     bool handleTelecommandReboot() override;
 
     // Mission TC
-    bool handleTelecommandSearchSun() override;
-    bool handleTelecommandSearchObject() override;
-    bool handleTelecommandTrackObject() override;
+    //bool handleTelecommandSearchSun() override;
+    //bool handleTelecommandSearchObject() override;
+    //bool handleTelecommandTrackObject() override;
 
 public:
     void runCommandThread() override;

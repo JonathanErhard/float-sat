@@ -37,6 +37,15 @@ telecommands:
           2: Velocity
       submode:
         type: uint8_t
+    description: |
+      ### changes the position / velocity of the satellite
+
+      * Noting: keeps the current position
+      * Position: aligns the attitude to the in submode specified attitude
+      * Velocity: changes the desired velocity to the in submode specified attitude
+  SafePowerUpDown:
+    id: 3
+    description: changes the satellites flywheel from 0 to 2500 RPM and back
 
 
 #  ExampleWithFields:
@@ -45,11 +54,14 @@ telecommands:
 #      parameter: uint8_t
 
 standard_telemetry:
-    attitude: float
+    attitudeYaw: float
+    pitch: float
+    roll: float
     speed: float
     target_att: float
     target_speed: float
     motor_speed: float
+
 
 #extended_telemetry:
 #  exampleETX:

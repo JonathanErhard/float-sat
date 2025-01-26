@@ -36,6 +36,8 @@ topics:
     fields:
       position: float
       velocity: float
+      roll: float
+      pitch: float
   desiredMotorSpeedTopic:
     id: 1002
     description: speed in RPM

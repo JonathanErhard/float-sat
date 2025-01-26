@@ -8,7 +8,7 @@ threads:
   missionThread:
     firstRun: 1000_ms
     period: 1000_ms
-    priority: 120
+    priority: 9000
 
 subscribe:
   attitudeDeterminationTopic: direct
@@ -17,7 +17,7 @@ subscribe:
   missionModeTopic: direct
 
 publish:
-  modeTopic
+  - modeTopic
 
 
 telecommands:
@@ -35,14 +35,30 @@ telecommands:
           3: pointasteroid
           4: reflect
           5: everything
+    description: |
+      ### Changes the overarcing mode of the satellite
+
+      * Nothing: does nothing lol
+      * Find: spins around and finds the brightest point
+      * Pointsun: points at where it thinks the sun is. if we havent found it yet finds it
+      * pointasteroid: points at where it thinks the asteroid is. if we havent found it yet finds it
+      * reflect: reflects the light from the sun to the asteroid if we havent found the asteroid or sun yet finds it
+      * everything: finds the sun and asteroid and reflects the light onto the asteroid
   ChangeAngle:
     id: 3
     fields:
       setangle:
         type: uint8_t
+    description: Angle that the mirror has. minimum 0° maximum 90 °  but over ~ 45 ° has an effect on the center of gravity 
 
 standard_telemetry:
     currentAngle: uint8_t
     currentMode: uint8_t
+    isInMission: bool
+    attitudeLight: float
+    attitudeObject: float
+    distanceObject: float
+    intensityLight: float
+
 
 
