@@ -37,4 +37,6 @@ public:
 	// read sensor data
 	void readSunSensor();
 	void readLIDAR();
+
+	void publishTM();
 };

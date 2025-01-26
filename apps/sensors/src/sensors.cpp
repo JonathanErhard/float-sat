@@ -145,3 +145,19 @@ bool Sensors::handleTelecommandCalibGyro()
     PRINTF("nah just kidding\n");
     return false;
 }
+
+void Sensors::publishTM()
+{
+    corfu::Accessor stdtm = this->standardTelemetry.access();
+    stdtm->roll = imuTopicBuffer.gyroscope[0];
+    stdtm->pitch = imuTopicBuffer.gyroscope[1];
+    stdtm->yaw = imuTopicBuffer.gyroscope[2];
+    stdtm->ax = imuTopicBuffer.accelerometer[0];
+    stdtm->ay = imuTopicBuffer.accelerometer[1];
+    stdtm->az = imuTopicBuffer.accelerometer[2];
+    stdtm->mx = imuTopicBuffer.magnetometer[0];
+    stdtm->my = imuTopicBuffer.magnetometer[1];
+    stdtm->mz = imuTopicBuffer.magnetometer[2];
+    stdtm->distance = float(proximityBuffer.distance);
+    stdtm->brightness = lightSensorBuffer.intensity;
+}

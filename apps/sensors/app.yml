@@ -24,4 +24,14 @@ telecommands:
     id: 2
 
 standard_telemetry:
-    appStatus: uint8_t
+    roll: float
+    pitch: float
+    yaw: float
+    ax: float
+    ay: float
+    az: float
+    mx: float
+    my: float
+    mz: float
+    distance: float
+    brightness: float
