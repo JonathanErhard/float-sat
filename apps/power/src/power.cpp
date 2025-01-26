@@ -55,11 +55,12 @@ void Power::runMainthread()
 	readCurrent();
 	powerTopic.publish(powerTopicBuffer);
 	update_led();
+	updateStdTM();
 }
 
 void Power::readVoltage()
 {
-	u_int16_t acc = 0;
+	uint16_t acc = 0;
 	for (int i = 0; i < VOLTAGE_ITERATIONS; i++)
 		acc += adcPower.read(VOLTAGE_PIN);
 	float v_raw = acc / (VOLTAGE_ITERATIONS * ADC_RESOLUTION) * 3.0f;
@@ -70,7 +71,7 @@ void Power::readVoltage()
 
 void Power::readCurrent()
 {
-	u_int16_t acc = 0;
+	uint16_t acc = 0;
 	for (int i = 0; i < CURRENT_ITERATIONS; i++)
 		acc += adcPower.read(CURRENT_PIN);
 	float c_v_raw = acc / (CURRENT_ITERATIONS * ADC_RESOLUTION) * 3.0f;
@@ -85,6 +86,13 @@ void Power::update_led()
 {
 	if (voltage < 5.0f)
 		led_gpio.setPins(true);
+}
+
+void Power::updateStdTM(){
+	auto stdTM = this->standardTelemetry.access();
+	stdTM->voltage = voltage;
+	stdTM->current = current;
+	
 }
 
 // Telecommand methods

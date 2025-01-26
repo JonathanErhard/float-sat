@@ -16,4 +16,5 @@ telecommands:
     id: 1
 
 standard_telemetry:
-    appStatus: uint8_t
+    voltage: float
+    current: float

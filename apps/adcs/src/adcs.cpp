@@ -172,8 +172,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	//float cy = my*cos(r) + mz*sin(r) ;
 	//Adcs::positionRb.put(Vector3D_F(cx, cy,y));
 
-	pitch = asin(imu.accelerometer[0]);
-	roll = asin(imu.accelerometer[1]/cos(pitch));
+	pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	roll =  atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
 	float Mx_h = mx*cos(pitch) + mz*sin(pitch);
     float My_h = mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
 	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,y));
@@ -201,8 +201,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	updateStdTM();
 	attTopic.velocity=vel;
 	attTopic.position=pos;
-	attTopic.roll=roll;
-	attTopic.pitch=pitch;
+	attTopic.roll=roll*360/M_PI;
+	attTopic.pitch=pitch*360/M_PI;
 	attitudeDeterminationTopic.publish(attTopic);
 
 	float rotation=0;
@@ -313,7 +313,6 @@ void Adcs::motorController(float input){
 		input =MaxPWM;
 	else if(input< - MaxPWM)
 		input= -MaxPWM;
-	//RODOS::PRINTF("input %f %f| %f | %f  %f\n ",input,last_input,motor_speed_measured, angle,(RODOS::NOW()-init_time )/ RODOS::SECONDS );
 	RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
 
 
@@ -339,8 +338,8 @@ void Adcs::updateStdTM(){
 	stdTM->target_att = Adcs::target_att;
 	stdTM->target_speed = Adcs::target_speed;
 	stdTM->motor_speed = Adcs::motor_speed_measured;
-	stdTM->roll = Adcs::roll;
-	stdTM->pitch = Adcs::pitch;
+	stdTM->roll = Adcs::roll*360/M_PI;
+	stdTM->pitch = Adcs::pitch*360/M_PI;
 }
 
 
@@ -531,7 +530,7 @@ if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
 
 
 /*
-
+//RODOS::PRINTF("input %f %f| %f | %f  %f\n ",input,last_input,motor_speed_measured, angle,(RODOS::NOW()-init_time )/ RODOS::SECONDS );
 	//( angle <3 && angle > -3))
 /*if(RODOS::NOW()-init_time <60 * RODOS::SECONDS || angle!=500){
 	dir ? angle += 5: angle -= 5;

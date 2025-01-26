@@ -21,4 +21,6 @@ public:
 	void readVoltage();
 	void readCurrent();
 	void update_led();
+
+	void updateStdTM();
 };

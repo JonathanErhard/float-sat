@@ -167,7 +167,7 @@ void Mission::handleTopicMissionModeTopic(generated::MissionModeTopic &message) 
 
 
 int Mission::calculateMirrorAngle(){
-	float nu = tan(cos(rotation)*sin(attitude.roll)+sin(rotation)*sin(attitude.pitch));
+	float nu = tan(cos(rotation/360*M_PI)*sin(attitude.roll/360*M_PI)+sin(rotation/360*M_PI)*sin(attitude.pitch/360*M_PI));
 	float d1=proximity.distance;
 	int beta, betamin =90;
 	float omegadiffmin =90;
