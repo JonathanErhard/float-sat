@@ -21,6 +21,7 @@ class Adcs: public generated::Adcs{
 		//Telecommand methods
 		bool handleTelecommandNOP() override;
 		bool handleTelecommandSetControlMode(const generated::SetControlMode &setControlMode) override;
+    bool handleTelecommandSafePowerUpDown() override;
 
 		//Topic methods
 		void handleTopicImuDataTopic(generated::ImuDataTopic &message) override;
@@ -32,6 +33,7 @@ class Adcs: public generated::Adcs{
 		generated::ImuDataTopic imu;
 		generated::ModeTopic mode;
     generated::SetControlMode controlMode;
+    generated::AttitudeDeterminationTopic attTopic;
 
     RODOS::RingBuffer<Vector3D_F, 10> positionRb;
     RODOS::RingBuffer<Vector3D_F, 10> velocityRb;
@@ -66,6 +68,9 @@ class Adcs: public generated::Adcs{
     float target_att, target_speed; //target attitude and speed
 
     float vel, pos=0;
+    float pitch,roll;
+
+    bool safePowerDown=true;
 
     float k1, k2, k3, k4, k5, k6, k7, k8, k9; //pid values
     float dt_pid;

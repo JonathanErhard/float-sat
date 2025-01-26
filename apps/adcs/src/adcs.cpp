@@ -19,7 +19,7 @@
 	#define freqPWM 5000	//TODO check if values ok (just stole them)
 	#define MaxDeltaPWM 5
 	#define MaxPWM 990
-	#define MAXDrehrate 	//Max revolutions per minute that we can get
+	#define MAXDrehrate 5000	//Max revolutions per minute that we can get
     HAL_PWM PWM1(PWM_IDX14);
     HAL_PWM PWM2(PWM_IDX15);
 
@@ -28,7 +28,7 @@
 //PE13//PE11
 	//coppied from Senors.cpp written by Atheel Redah @ University of Würzburg, January 20, 2019
 	/* Private variables ---------------------------------------------------------*/
-		__IO uint32_t IC4ReadValue1 = 0, IC4ReadValue2 = 0, Capture = 0;
+	__IO uint32_t IC4ReadValue1 = 0, IC4ReadValue2 = 0, Capture = 0;
 	__IO uint8_t CaptureNumber = 0;
 	__IO uint32_t TIM2Freq = 0;
 	__IO uint8_t EncoderB;
@@ -122,12 +122,17 @@ MotorSpeedUpdate();
 //calculates the speeds of the motor 
 //calculaterise();
 
-if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
-	Adcs::motorController(800);/**/
+/*if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
+	Adcs::motorController(800);
 } else{
 	Adcs::motorController(0);
-	RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
-}
+	}/**/
+	//RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
+if(safePowerDown)
+	Adcs::motorController(0);
+else
+	Adcs::motorController(Adcs::pid());
+
 }
 
 
@@ -147,52 +152,40 @@ bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setC
 	return true;
 }
 
+bool Adcs::handleTelecommandSafePowerUpDown(){
+	safePowerDown=!safePowerDown;
+}
+
 
 //Topic methods
 void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	Adcs::imu = message;
-	/*float u=(imu.gyroscope[2])-1;
-	//float cz= atan2f(cx,cy);
 
-	float r2 = imu.gyroscope[2];
-	float p2 = (imu.magnetometer[0]);
-	float y2 = (imu.magnetometer[1]);
-	float cz= atan2(p2,y2) * 180/M_PI + 180;
-	if(cz > 180) cz = -360+cz;
-	else if(cz < -180) cz = 360+cz;
-	
-	Matrix_<1,1,float> peter;
-	peter.r[0][0]=cz;
-
-	updateDt();
-	update(peter,u);
-	*/
-
-
-	//attitudeDeterminationTopic.publish(Adcs::x_hat.r[0][0],Adcs::x_hat.r[0][1]);
-	//RODOS::PRINTF("Pose: %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0], cz, u);
-
-		Vector3D_F rpy(0,0,0);
-
+	Vector3D_F rpy(0,0,0);
 	float mx = imu.magnetometer[0];
 	float my = imu.magnetometer[1];
 	float mz = imu.magnetometer[2];
-	float r = imu.gyroscope[0]*float(M_PI/180);
+	float r = imu.gyroscope[0]*float(M_PI/180); //asin(accelx/g);
 	float p = imu.gyroscope[1]*float(M_PI/180);
 	float y = imu.gyroscope[2]*float(M_PI/180/100);
-	float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
-	float cy = my*cos(r) + mz*sin(r) ;
-	Adcs::positionRb.put(Vector3D_F(cx, cy,y));
+	//float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
+	//float cy = my*cos(r) + mz*sin(r) ;
+	//Adcs::positionRb.put(Vector3D_F(cx, cy,y));
+
+	pitch = asin(imu.accelerometer[0]);
+	roll = asin(imu.accelerometer[1]/cos(pitch));
+	float Mx_h = mx*cos(pitch) + mz*sin(pitch);
+    float My_h = mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
+	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,y));
 	//Adcs::positionRb.put(Vector3D_F(p2, y2,y));
 	for(int i =0;i<10;i++){
 		rpy.x += Adcs::positionRb.vals[i].x;	
 		rpy.y += Adcs::positionRb.vals[i].y;
 		rpy.z += Adcs::positionRb.vals[i].z;
 	}
-	pos = atan2(rpy.x,rpy.y)+ rpy.z*0.1f/2.f;
-	pos=pos* 180/M_PI+180;
-	if(pos > 180) pos = -360+pos;
-	else if(pos < -180) pos = 360+pos;
+	pos = atan2(rpy.x,rpy.y);//+ rpy.z*0.1f/2.f;
+	pos=mod(pos* 180/M_PI+180);
+	
 
 
 	velocityRb.put(Vector3D_F(imu.gyroscope[0],imu.gyroscope[1],imu.gyroscope[2]));
@@ -206,14 +199,15 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	x_hat.r[0][0]= pos;
 	x_hat.r[0][1]= vel;
 	updateStdTM();
-	//RODOS::PRINTF("Pose: %f %f | %f %f | %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0],pos,vel, cz, u,rpy.z*0.1f/2.f,atan2f(rpy.x,rpy.y)*180/M_PI);
+	attTopic.velocity=vel;
+	attTopic.position=pos;
+	attTopic.roll=roll;
+	attTopic.pitch=pitch;
+	attitudeDeterminationTopic.publish(attTopic);
 
-
-
-
-
-
-	//RODOS::PRINTF("%f -> %f %f | %f %f | %f |%f %f %f | %f %f %f | %f %f\n",current_att,Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0],peter.r[0][0],u, dt, mx,my,mz, r,p,y, atan2(cx,cy),cz);
+	float rotation=0;
+	float nu = tan(cos(rotation)*sin(attTopic.roll)+sin(rotation)*sin(attTopic.pitch));
+	RODOS::PRINTF("rpy: %f %f %f | vel: %f  | nu: %f \n",	attTopic.position,	attTopic.roll,	attTopic.pitch,	attTopic.velocity,nu);
 	
 
 }
@@ -286,12 +280,10 @@ float Adcs::pid(){
 										//if we need a speed instead we do this
 	float error2= Adcs::x_hat.r[1][0] - Adcs::target_speed;
 	Adcs::sum_error2 +=error2;
-														//controll loop for desired spee
-
 	float desired_speed = 	sum_error2 * Adcs::k4 + 
 					error2 * Adcs::k6 ;
 
-	desired_speed = desiredspeed+ MAXDrehrate/2
+	desired_speed = desired_speed+ MAXDrehrate/2;
 	if(desired_speed >   maxDesiredSpeed) desired_speed = maxDesiredSpeed;
 	if(desired_speed < - maxDesiredSpeed) desired_speed = - maxDesiredSpeed;
 
@@ -342,11 +334,13 @@ void Adcs::motorController(float input){
 
 void Adcs::updateStdTM(){
 	auto stdTM = this->standardTelemetry.access();
-	stdTM->attitude = Adcs::x_hat.r[0][0];
+	stdTM->attitudeYaw = Adcs::x_hat.r[0][0];
 	stdTM->speed = Adcs::x_hat.r[1][0];
 	stdTM->target_att = Adcs::target_att;
 	stdTM->target_speed = Adcs::target_speed;
 	stdTM->motor_speed = Adcs::motor_speed_measured;
+	stdTM->roll = Adcs::roll;
+	stdTM->pitch = Adcs::pitch;
 }
 
 
@@ -624,8 +618,27 @@ _roll = (_rollGyroFavoring) * (_roll + (gyroscope.x * (1.00 / _filterUpdateRate)
 	if(pos2 > M_PI) pos2 = -2*M_PI+pos2;
 	else if(pos2 < -M_PI) pos2 = 2*M_PI+pos2;
 	
+		/*float u=(imu.gyroscope[2])-1;
+	//float cz= atan2f(cx,cy);
+
+	float r2 = imu.gyroscope[2];
+	float p2 = (imu.magnetometer[0]);
+	float y2 = (imu.magnetometer[1]);
+	float cz= atan2(p2,y2) * 180/M_PI + 180;
+	if(cz > 180) cz = -360+cz;
+	else if(cz < -180) cz = 360+cz;
 	
-	
+	Matrix_<1,1,float> peter;
+	peter.r[0][0]=cz;
+
+	updateDt();
+	update(peter,u);
+	*/
+
+
+	//attitudeDeterminationTopic.publish(Adcs::x_hat.r[0][0],Adcs::x_hat.r[0][1]);
+	//RODOS::PRINTF("Pose: %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0], cz, u);
+	/*
 	
 	*/
 

@@ -7,8 +7,8 @@ description: change this to whatever you want
 threads:
   servoThread:
     firstRun: 1000_ms
-    period: 10_ms
-    priority: 120
+    period: 500_ms
+    priority: 12000
 
 subscribe:
   lightSensorTopic: direct

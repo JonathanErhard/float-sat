@@ -3,8 +3,11 @@
 #include "control-master.h"
 #include "rodos.h"
 
+#define MaxAngle
+#define MinAngle
+
 HAL_PWM servo(PWM_IDX01); // PE11
-int angle = 0;
+int angle = 20;
 bool dir = 0;
 
 void ControlMaster::initialize()
@@ -14,26 +17,31 @@ void ControlMaster::initialize()
 // Thread methods
 void ControlMaster::initServoThread()
 {
-	servo.init(50, 4000);
-}
-
-unsigned int calculatePWM(float Angle)
-{
-	return (unsigned int)(1920 - 2 * Angle); // orig:4
+	servo.init(50, 1000);
 }
 
 void ControlMaster::runServoThread()
 {
-	dir ? angle += 1 : angle -= 1;
-	if (angle > 50 || angle < 0)
+	dir ? angle += 5 : angle -= 5;
+	if (angle > 40 || angle < 20)
 		dir = !dir;
-	// PRINTF("%d\n", angle);
-	servo.write(calculatePWM(angle));
-}
+	PRINTF("%d\n", dir);
 
-void ControlMaster::handleTopicLightSensorTopic(generated::LightSensorTopic &message)
+	// servo.write(125);
+	// 20 =90 degree
+	// 70 = 0 degree angle
+	// 120 = -90 degree angle
+}
+int ControlMaster::calculateAngle(float angle)
 {
-	auto sun_v = message.intensity;
+	if (angle > MaxAngle) // check if angle is too big
+		angle = MaxAngle;
+	if (angle < MinAngle)
+		angle = MinAngle
+
+			angle = (angle + 90) * (120 - 20) / (MaxAngle - MinAngle) + 20;
+
+	return (int)angle;
 }
 
 // Telecommand methods

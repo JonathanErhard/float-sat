@@ -30,12 +30,12 @@ telecommands:
     id: 1
   Reboot:
     id: 2
-  SearchSun:
-    id: 10
-  SearchObject:
-    id: 11
-  TrackObject:
-    id: 12
+  #SearchSun:
+  #  id: 10
+  #SearchObject:
+  #  id: 11
+  #TrackObject:
+  #  id: 12
 
 standard_telemetry:
   cmdCounter: uint16_t

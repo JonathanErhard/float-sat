@@ -78,7 +78,7 @@ bool Commander::handleTelecommandReboot()
     return true;
 }
 
-bool Commander::handleTelecommandSearchSun()
+/*bool Commander::handleTelecommandSearchSun()
 {
     // TODO
     return true;
@@ -92,7 +92,7 @@ bool Commander::handleTelecommandTrackObject()
 {
     // TODO
     return true;
-}
+}*/
 
 void Commander::updateStdTM()
 {
