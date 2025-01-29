@@ -9,10 +9,9 @@
 #include "platform.h"
 
 // Disable MUX (1) to use TOF without MUX
-#define VL53L4ED_DISABLE_MUX 0
+#define  VL53L4ED_DISABLE_MUX 0
 
-/* SCL pin config -> PA8 */
-/* SDA pin config -> PC9 */
+// SCL-PB10, SDA-PB11
 HAL_I2C I2C(I2C_IDX3);
 
 void tof_i2c_init()
@@ -55,7 +54,6 @@ uint8_t VL53L4ED_RdByte(Dev_t dev, uint16_t RegisterAdress, uint8_t *value)
 {
   uint8_t tx_buff[2] = {(uint8_t)(RegisterAdress & 0xFF00),
                         (uint8_t)(RegisterAdress & 0x00FF)};
-
   return I2C.writeRead((uint8_t)(dev & 0x00FF), tx_buff, 2, value, 1) == 1 ? 0 : 255;
 }
 
@@ -83,7 +81,7 @@ uint8_t VL53L4ED_WrDWord(Dev_t dev, uint16_t RegisterAdress, uint32_t value)
                         (uint8_t)(value & 0xFF000000),
                         (uint8_t)(value & 0x00FF0000),
                         (uint8_t)(value & 0x0000FF00),
-                        (uint8_t)(value & 0x000000FF)};
+                        (uint8_t)(value & 0x000000FF) };
   return I2C.write((uint8_t)(dev & 0x00FF), tx_buff, 6) == 6 ? 0 : 255;
 }
 

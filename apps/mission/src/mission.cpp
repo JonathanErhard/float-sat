@@ -20,10 +20,10 @@ HAL_PWM servo(PWM_IDX01); // PE11
 
 
 #define rotation 0
-#define d2 30 //D2 in mm
-#define h1 30 //h1 in mm
-#define h3 30
-#define h5 30 //h2 in mm
+#define d2 93 //D2 in mm
+#define h1 136 //h1 in mm
+#define h3 68 //distance h3 measured in mm
+#define h5 26 //h2 in mm
 #define h4 30
 #define d3 30
 #define threshold 3
@@ -35,14 +35,19 @@ void Mission::initialize(){
 }
 
 
-
+long starttime=0;
+int x = 0;
 //Thread methods
 void Mission::initMissionThread() {
-
+	starttime=RODOS::NOW(); 
 }
 
 void Mission::runMissionThread() {
-	updateStdTM();
+	//updateStdTM();
+	//if(RODOS::NOW()-starttime>10*SECONDS){
+	//	changeMirrorAngle(45);
+	//}else
+	//	changeMirrorAngle(90);
 }
 
 
@@ -53,11 +58,11 @@ bool Mission::handleTelecommandNOP() {
 
 float Mission::targetReaction(float x, float y){
 	if(x-y<-180){
-		return x+360;
+		return (x+360)/2+y/2;
 	} else if(x-y >180){
-		return x-360;
+		return (x-360)/2+y/2;
 	} else	
-		return x;
+		return (x)/2+y/2;
     }
 
 float Mission::mod(float in){
@@ -155,6 +160,7 @@ void Mission::handleTopicAttitudeDeterminationTopic(generated::AttitudeDetermina
 
 void Mission::handleTopicProximityTopic(generated::ProximityTopic &message) {
 	Mission::proximity=message;
+	//RODOS::PRINTF("prox: %f\n",proximity.distance);
 }
 
 void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) {
@@ -173,7 +179,7 @@ int Mission::calculateMirrorAngle(){
 	float omegadiffmin =90;
 	float omega=0;
 	float omegasoll=90;
-	while ( abs(omega-omegasoll)>threshold|| beta<45){
+	while (true){
 		beta = beta- 2;
 		float q1= sqrt((d1+d2-h1*sin(nu))*(d1+d2-h1*sin(nu))
 						+(h1*cos(nu)-h5)*(h1*cos(nu)-h5));
@@ -185,7 +191,7 @@ int Mission::calculateMirrorAngle(){
 			omegadiffmin=abs(omega-omegasoll);
 			betamin=beta;
 		}
-		if(abs(omega-omegasoll)>threshold )
+		if(abs(omega-omegasoll)<threshold )
 			return beta;
 		if(beta<45)
 			return betamin;

@@ -18,6 +18,7 @@
 #include <string.h>
 #include <math.h>
 #include "VL53L4ED_api.h"
+#include "rodos.h"
 
 static const uint8_t VL53L4ED_DEFAULT_CONFIGURATION[] = {
 	#ifdef VL53L4ED_I2C_FAST_MODE_PLUS
@@ -175,7 +176,6 @@ VL53L4ED_Error VL53L4ED_SensorInit(
 	do{
 		status |= VL53L4ED_RdByte(dev,
 				VL53L4ED_FIRMWARE__SYSTEM_STATUS, &tmp);
-
 		if(tmp == (uint8_t)0x3) /* Sensor booted */
 		{
 			continue_loop = (uint8_t)0;

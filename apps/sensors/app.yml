@@ -5,7 +5,7 @@ description: publishes sensor data
 threads:
   collectData:
     firstRun: 100_ms
-    period: 100_ms
+    period: 10_ms
     priority: 1000
 
 publish:

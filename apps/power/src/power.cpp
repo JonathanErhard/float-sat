@@ -55,7 +55,7 @@ void Power::runMainthread()
 	readCurrent();
 	powerTopic.publish(powerTopicBuffer);
 	update_led();
-	updateStdTM();
+	//updateStdTM();
 }
 
 void Power::readVoltage()
@@ -77,14 +77,14 @@ void Power::readCurrent()
 	float c_v_raw = acc / (CURRENT_ITERATIONS * ADC_RESOLUTION) * 3.0f;
 	float c_voltage = c_v_raw * float(C_SMALL_R + C_BIG_R) / float(C_SMALL_R);
 	current = (c_voltage - 2.571f) * I_P / -3.56f;
-	PRINTF("c_v: %f\n", double(c_voltage));
-	PRINTF("I: %f\n", double(current));
+	//PRINTF("c_v: %f\n", double(c_voltage));
+	//PRINTF("I: %f\n", double(current));
 	powerTopicBuffer.current = current;
 }
 
 void Power::update_led()
 {
-	if (voltage < 5.0f)
+	if (voltage < 11.84f)
 		led_gpio.setPins(true);
 }
 
@@ -92,6 +92,8 @@ void Power::updateStdTM(){
 	auto stdTM = this->standardTelemetry.access();
 	stdTM->voltage = voltage;
 	stdTM->current = current;
+	//PRINTF("V: %f\n", double(voltage));
+	//PRINTF("I: %f\n", double(current));
 	
 }
 

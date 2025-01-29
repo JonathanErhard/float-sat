@@ -6,6 +6,7 @@
 #include "stm32f4xx_conf.h"
 #include "math.h"
 #include "stdint.h"
+#include "MedianFilter.h"
 
 
 class Adcs: public generated::Adcs{
@@ -79,10 +80,13 @@ class Adcs: public generated::Adcs{
     float sum_error1, sum_error2, sum_error3=0;
     float last_error1=0;
     float init_time;
+
     void motorController(float input);
     void EncoderInit();
     void MotorSpeedUpdate();
+    MedianFilter<float, 10> motorFilter;
     void calculaterise();
+    float desired_speed;
 
 
 

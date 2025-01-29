@@ -8,6 +8,8 @@
 #include "MedianFilter.h"
 #include "VL53L4ED_api.h"
 
+#include "rodos.h"
+
 #define TOF_I2C_ADDRESS 0x29
 
 /**
@@ -33,6 +35,7 @@ void Sensors::readSunSensor()
 }
 
 int iteration = 0;
+int peter27=0;
 
 void Sensors::initialize()
 {
@@ -45,38 +48,39 @@ static MedianFilter<int, 25> filter;
 // everything regarding LIDAR is basically TAMARIW code
 
 void init_lidar()
-{
+  {
     tof_i2c_init();
-
+    PRINTF("initializing...\n");
     // Initialize and return status
     if (VL53L4ED_SensorInit(TOF_I2C_ADDRESS) == VL53L4ED_ERROR_NONE)
     {
-        // Enable 10 ms sampling and start sampling
-        VL53L4ED_SetRangeTiming(TOF_I2C_ADDRESS, 10, 0);
-        VL53L4ED_StartRanging(TOF_I2C_ADDRESS);
-        PRINTF("\r\nToF initialized!\r\n");
+      // Enable 10 ms sampling and start sampling
+      VL53L4ED_SetRangeTiming(TOF_I2C_ADDRESS, 10, 0);
+      VL53L4ED_StartRanging(TOF_I2C_ADDRESS);
+      PRINTF("\r\nToF initialized!\r\n");
     }
     else
     {
-        PRINTF("\r\nToF error!\r\n");
-        while (1)
-        {
-        }
+      PRINTF("\r\nToF error!\r\n");
+      //while (1)
+      //{
+      //}
     }
-}
+  }
 
 // Thread methods
 void Sensors::initCollectData()
 {
+    
     // init IMU and the registers required to read i2c
     imu.init(400000);
 
     // init adc for solar sensor
     adc.config(RODOS::ADC_PARAMETER_TYPE::ADC_PARAMETER_RESOLUTION, ADC_BITS);
     adc.init(SUN_PIN);
-
+ 
     // init LIDAR
-    init_lidar();
+    
 }
 
 void Sensors::readLIDAR()
@@ -91,15 +95,18 @@ void Sensors::readLIDAR()
     {
         AT(NOW() + 2 * MILLISECONDS);
         VL53L4ED_CheckForDataReady(TOF_I2C_ADDRESS, &data_ready);
+        
     }
 
     // Read distance measurements
     if (VL53L4ED_GetResult(TOF_I2C_ADDRESS, &tof_result) == VL53L4ED_ERROR_NONE)
-    {
+    {   
+        
         if (tof_filter_flag)
         {
             filter.addSample(tof_result.distance_mm);
             distance = filter.getMedian();
+            //RODOS::PRINTF("prox: %f\n",tof_result.distance_mm);
         }
         else
         {
@@ -109,15 +116,19 @@ void Sensors::readLIDAR()
     }
     else
     {
-        PRINTF("ToF ranging error!\n");
+        PRINTF("ToF ranging error!\n"); //        <- changed this here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
     }
     proximityBuffer.distance = distance;
 }
 
 void Sensors::runCollectData()
 {
+    if(iteration==0){
+        init_lidar();
+        peter27=RODOS::NOW();
+    }
     iteration++;
-
+    
     // read and pulish IMU
     imu.read_adj();
     imu.cpy_adj(imuTopicBuffer.accelerometer, imuTopicBuffer.gyroscope, imuTopicBuffer.magnetometer);
@@ -129,7 +140,9 @@ void Sensors::runCollectData()
 
     // read and publish LIDAR (ToF distance)
     readLIDAR();
+    PRINTF("dist: %f, time passed: %d \n",double(proximityBuffer.distance),(RODOS::NOW()-peter27)/RODOS::SECONDS);
     proximityTopic.publish(proximityBuffer);
+    publishTM();
 }
 
 // Telecommand methods
@@ -149,15 +162,15 @@ bool Sensors::handleTelecommandCalibGyro()
 void Sensors::publishTM()
 {
     corfu::Accessor stdtm = this->standardTelemetry.access();
-    stdtm->roll = imuTopicBuffer.gyroscope[0];
-    stdtm->pitch = imuTopicBuffer.gyroscope[1];
-    stdtm->yaw = imuTopicBuffer.gyroscope[2];
-    stdtm->ax = imuTopicBuffer.accelerometer[0];
-    stdtm->ay = imuTopicBuffer.accelerometer[1];
-    stdtm->az = imuTopicBuffer.accelerometer[2];
-    stdtm->mx = imuTopicBuffer.magnetometer[0];
-    stdtm->my = imuTopicBuffer.magnetometer[1];
-    stdtm->mz = imuTopicBuffer.magnetometer[2];
+    //stdtm->roll = imuTopicBuffer.gyroscope[0];
+    //stdtm->pitch = imuTopicBuffer.gyroscope[1];
+    //stdtm->yaw = imuTopicBuffer.gyroscope[2];
+    //stdtm->ax = imuTopicBuffer.accelerometer[0];
+    //stdtm->ay = imuTopicBuffer.accelerometer[1];
+    //stdtm->az = imuTopicBuffer.accelerometer[2];
+    //stdtm->mx = imuTopicBuffer.magnetometer[0];
+    //stdtm->my = imuTopicBuffer.magnetometer[1];
+    //stdtm->mz = imuTopicBuffer.magnetometer[2];
     stdtm->distance = float(proximityBuffer.distance);
     stdtm->brightness = lightSensorBuffer.intensity;
 }

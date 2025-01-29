@@ -19,6 +19,7 @@
 	#define freqPWM 5000	//TODO check if values ok (just stole them)
 	#define MaxDeltaPWM 5
 	#define MaxPWM 990
+	#define MinPWM 100
 	#define MAXDrehrate 5000	//Max revolutions per minute that we can get
     HAL_PWM PWM1(PWM_IDX14);
     HAL_PWM PWM2(PWM_IDX15);
@@ -122,17 +123,16 @@ MotorSpeedUpdate();
 //calculates the speeds of the motor 
 //calculaterise();
 
-/*if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
-	Adcs::motorController(800);
-} else{
-	Adcs::motorController(0);
-	}/**/
+//if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
+//	Adcs::motorController(400);
+//} else{
+//	Adcs::motorController(0);
+//	}/**/
 	//RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
 if(safePowerDown)
 	Adcs::motorController(0);
 else
 	Adcs::motorController(Adcs::pid());
-
 }
 
 
@@ -165,18 +165,15 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	float mx = imu.magnetometer[0];
 	float my = imu.magnetometer[1];
 	float mz = imu.magnetometer[2];
-	float r = imu.gyroscope[0]*float(M_PI/180); //asin(accelx/g);
-	float p = imu.gyroscope[1]*float(M_PI/180);
-	float y = imu.gyroscope[2]*float(M_PI/180/100);
-	//float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
-	//float cy = my*cos(r) + mz*sin(r) ;
-	//Adcs::positionRb.put(Vector3D_F(cx, cy,y));
+	
 
-	pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
-	roll =  atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
-	float Mx_h = mx*cos(pitch) + mz*sin(pitch);
-    float My_h = mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
-	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,y));
+	pitch = - atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	roll  = - atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	float Mx_h = mx*cos(pitch) +mz *sin(pitch);
+	//mx*cos(pitch) + mz*sin(pitch);
+    float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);
+	//mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
+	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,0));
 	//Adcs::positionRb.put(Vector3D_F(p2, y2,y));
 	for(int i =0;i<10;i++){
 		rpy.x += Adcs::positionRb.vals[i].x;	
@@ -280,41 +277,62 @@ float Adcs::pid(){
 										//if we need a speed instead we do this
 	float error2= Adcs::x_hat.r[1][0] - Adcs::target_speed;
 	Adcs::sum_error2 +=error2;
-	float desired_speed = 	sum_error2 * Adcs::k4 + 
+	desired_speed = 	sum_error2 * Adcs::k4 + 
 					error2 * Adcs::k6 ;
 
 	desired_speed = desired_speed+ MAXDrehrate/2;
 	if(desired_speed >   maxDesiredSpeed) desired_speed = maxDesiredSpeed;
 	if(desired_speed < - maxDesiredSpeed) desired_speed = - maxDesiredSpeed;
 
-
+	desired_speed=2500; // 				<- Hard coded some bullshit here pls change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	MotorSpeedUpdate();
 	float error3 = Adcs::motor_speed_measured-desired_speed; //check how far off we are from the actual speed
 	Adcs::sum_error3 += error3;
 	float error4 = 	sum_error3 * Adcs::k8 +
 					error3 * Adcs::k9 ;
-
 	
 	return error4;
 }
 
 
-
+bool flag=false;
 void Adcs::motorController(float input){
 	
+	if(flag){
+		if(abs(input)<5)
+			input=0;
+		else if(input< 0)
+			input-=MinPWM;
+		else 
+			input +=MinPWM;
 
-	if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
-		input=last_input+MaxDeltaPWM;
-	}else if(input-last_input<-MaxDeltaPWM){
-		input=last_input-MaxDeltaPWM;
+		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+			input=last_input+MaxDeltaPWM;
+		}else if(input-last_input<-MaxDeltaPWM){
+			input=last_input-MaxDeltaPWM;
+		}
+
+		if(input>0 && abs(input)<MinPWM)
+			input=-MinPWM;
+		if(input<0 && abs(input)<MinPWM)
+			input=MinPWM;
+	}else{
+
+		//RODOS::PRINTF(" DeltaPWM: %f\n error3: %f \n error4: %f \n motor speed: %f \n desired Speed: %f \n",input-last_input, Adcs::motor_speed_measured-desired_speed, input, motor_speed_measured, desired_speed);
+		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+			input=last_input+MaxDeltaPWM;
+		}else if(input-last_input<-MaxDeltaPWM){
+			input=last_input-MaxDeltaPWM;
+		}
+
 	}
 	
 	if(input>MaxPWM) //check if motor is exceeding max speed
 		input =MaxPWM;
 	else if(input< - MaxPWM)
 		input= -MaxPWM;
-	RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
-
+	//RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
+	
 
 
 	if(input>0){ //differentiates between positive and negative speed
@@ -467,13 +485,15 @@ void TIM2_IRQHandler(void)
 	{
 		TIM2Freq=0;
 	}
-
+	
 	if (EncoderB)
 	{
-		Adcs::motor_speed_measured = -1*((float)TIM2Freq / 16) * 60;  //CCW
+		motorFilter.addSample( -1*((float)TIM2Freq / 16) * 60);  //CCW
 	}
-	else {Adcs::motor_speed_measured = ((float)TIM2Freq / 16) * 60;}  //CW
+	else {motorFilter.addSample(((float)TIM2Freq / 16) * 60);}  //CW
 	//RODOS::PRINTF("I AM ALICE: %f %d\n", Adcs::motor_speed_measured, TIM2Freq);
+	
+	Adcs::motor_speed_measured = motorFilter.getMedian();
 }
 
 int angle = 500;
@@ -530,6 +550,13 @@ if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
 
 
 /*
+
+//float r = imu.gyroscope[0]*float(M_PI/180); //asin(accelx/g);
+	//float p = imu.gyroscope[1]*float(M_PI/180);
+	//float y = imu.gyroscope[2]*float(M_PI/180/100);
+	//float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
+	//float cy = my*cos(r) + mz*sin(r) ;
+	//Adcs::positionRb.put(Vector3D_F(cx, cy,y));
 //RODOS::PRINTF("input %f %f| %f | %f  %f\n ",input,last_input,motor_speed_measured, angle,(RODOS::NOW()-init_time )/ RODOS::SECONDS );
 	//( angle <3 && angle > -3))
 /*if(RODOS::NOW()-init_time <60 * RODOS::SECONDS || angle!=500){
