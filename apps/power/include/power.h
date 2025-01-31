@@ -5,6 +5,9 @@
 class Power : public generated::Power
 {
 	generated::PowerTopic powerTopicBuffer;
+private:
+	long time;
+
 
 public:
 	void

@@ -3,7 +3,7 @@
 #include "power.h"
 #include "hal/hal_adc.h"
 #include "hal/hal_gpio.h"
-
+#include "rodos.h"
 /**
  * @brief adcs
  * one adc hal object to read different pins
@@ -45,7 +45,7 @@ void Power::initMainthread()
 	adcPower.config(RODOS::ADC_PARAMETER_TYPE::ADC_PARAMETER_RESOLUTION, ADC_BITS);
 	adcPower.init(CURRENT_PIN);
 	adcPower.init(VOLTAGE_PIN);
-
+	time=RODOS::NOW();
 	led_gpio.init(1, 1, 0);
 }
 
@@ -55,7 +55,8 @@ void Power::runMainthread()
 	readCurrent();
 	powerTopic.publish(powerTopicBuffer);
 	update_led();
-	//updateStdTM();
+	
+	updateStdTM();
 }
 
 void Power::readVoltage()
@@ -89,12 +90,14 @@ void Power::update_led()
 }
 
 void Power::updateStdTM(){
-	auto stdTM = this->standardTelemetry.access();
-	stdTM->voltage = voltage;
-	stdTM->current = current;
-	//PRINTF("V: %f\n", double(voltage));
-	//PRINTF("I: %f\n", double(current));
-	
+	if(RODOS::NOW() - time > 1 * RODOS::SECONDS){
+        time=RODOS::NOW();
+		auto stdTM = this->standardTelemetry.access();
+		stdTM->voltage = voltage;
+		stdTM->current = current;
+		//PRINTF("V: %f\n", double(voltage));
+		//PRINTF("I: %f\n", double(current));
+	}
 }
 
 // Telecommand methods

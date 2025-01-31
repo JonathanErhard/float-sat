@@ -21,7 +21,8 @@ class Sensors : public generated::Sensors
 	generated::ImuDataTopic imuTopicBuffer;
 	generated::LightSensorTopic lightSensorBuffer;
 	generated::ProximityTopic proximityBuffer;
-
+private:
+	long time;
 public:
 	void
 	initialize() override;
