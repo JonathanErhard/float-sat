@@ -31,7 +31,7 @@ cmd15="cd build-corfu-host-tools/ground-tools/ground
 
 cmd2="set +e
 rfkill -o DEVICE
-sudo rfcomm connect /dev/rfcomm0 00:0E:EA:CF:7C:1D"
+sudo rfcomm connect /dev/rfcomm0 00:0E:EA:CF:7C:3C"
 
 cmd3="
 sudo chmod a+rw /dev/rfcomm0

@@ -62,9 +62,6 @@ void init_lidar()
     else
     {
       PRINTF("\r\nToF error!\r\n");
-      //while (1)
-      //{
-      //}
     }
   }
 
@@ -106,7 +103,6 @@ void Sensors::readLIDAR()
         {
             filter.addSample(tof_result.distance_mm);
             distance = filter.getMedian();
-            //RODOS::PRINTF("prox: %f\n",tof_result.distance_mm);
         }
         else
         {
@@ -116,7 +112,7 @@ void Sensors::readLIDAR()
     }
     else
     {
-        PRINTF("ToF ranging error!\n"); //        <- changed this here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+        init_lidar();
     }
     proximityBuffer.distance = distance;
 }
@@ -140,7 +136,8 @@ void Sensors::runCollectData()
 
     // read and publish LIDAR (ToF distance)
     readLIDAR();
-    PRINTF("dist: %f, time passed: %d \n",double(proximityBuffer.distance),(RODOS::NOW()-peter27)/RODOS::SECONDS);
+    //PRINTF("dist: %f, time passed: %d \n",double(proximityBuffer.distance),(RODOS::NOW()-peter27)/RODOS::SECONDS);
+    PRINTF("dist: %f\n",double(proximityBuffer.distance));
     proximityTopic.publish(proximityBuffer);
     publishTM();
 }
