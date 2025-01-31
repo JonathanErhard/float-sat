@@ -3,6 +3,8 @@
 #include <mission-generated/mission.h> 
 
 class Mission: public generated::Mission{
+	private:
+			long time;
 
 	public:
 
@@ -39,6 +41,7 @@ class Mission: public generated::Mission{
 	int calculateMirrorAngle();
 	void changeMirrorAngle(int angle);
 	int currentAngle;
+
 
 	//updating the stdTM
 	void updateStdTM();

@@ -71,7 +71,7 @@ class Adcs: public generated::Adcs{
     float vel, pos=0;
     float pitch,roll;
 
-    bool safePowerDown=true;
+    bool safePowerDown=false;
 
     float k1, k2, k3, k4, k5, k6, k7, k8, k9; //pid values
     float dt_pid;
@@ -86,7 +86,14 @@ class Adcs: public generated::Adcs{
     void MotorSpeedUpdate();
     MedianFilter<float, 10> motorFilter;
     void calculaterise();
+    void testRPM();
+    
     float desired_speed;
+private:
+    long time;
+    float testValue=1000;
+    float testsquares=0;
+    float testcounter=0;
 
 
 

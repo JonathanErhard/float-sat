@@ -17,8 +17,8 @@ ARG2=${2: flash}
 set +e
 cd "$(dirname "$0")" || exit 128
 
+#/bin/bash generate.sh
 cmd1="set +e
-/bin/bash generate.sh
 cd build-discovery/generated/nodes/main-node
 make main-node
 cd ../../../..

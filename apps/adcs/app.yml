@@ -7,7 +7,7 @@ description: Attitude Determination and Control
 threads:
   adcsThreat:
     firstRun: 1100_ms
-    period: 10_ms
+    period: 100_ms
     priority: 1200
     stackSize: 6000
 

@@ -34,17 +34,15 @@ void Mission::initialize(){
 	changeMirrorAngle(90); //and set the current angle to 90
 }
 
-
-long starttime=0;
 int x = 0;
 //Thread methods
 void Mission::initMissionThread() {
-	starttime=RODOS::NOW(); 
+	time=RODOS::NOW(); 
 }
 
 void Mission::runMissionThread() {
-	//updateStdTM();
-	//if(RODOS::NOW()-starttime>10*SECONDS){
+	updateStdTM();
+	//if(RODOS::NOW()-time>10*SECONDS){
 	//	changeMirrorAngle(45);
 	//}else
 	//	changeMirrorAngle(90);
@@ -218,13 +216,16 @@ void Mission::changeMirrorAngle(int angle){
 }
 
 void Mission::updateStdTM(){
-	auto stdTM = this->standardTelemetry.access();
-	stdTM->currentAngle = Mission::currentAngle;
-	stdTM->currentMode = Mission::missionModes.modes;
-	stdTM->isInMission = Mission::isInMission;
-    stdTM->attitudeLight = Mission::Att_light;
-    stdTM->attitudeObject = Mission::Att_obj;
-    stdTM->distanceObject = Mission::nearest;
-    stdTM->intensityLight = Mission::brightest;
+	if(RODOS::NOW() - time > 1 * RODOS::SECONDS){
+        time=RODOS::NOW();
+		auto stdTM = this->standardTelemetry.access();
+		stdTM->currentAngle = Mission::currentAngle;
+		stdTM->currentMode = Mission::missionModes.modes;
+		stdTM->isInMission = Mission::isInMission;
+		stdTM->attitudeLight = Mission::Att_light;
+		stdTM->attitudeObject = Mission::Att_obj;
+		stdTM->distanceObject = Mission::nearest;
+		stdTM->intensityLight = Mission::brightest;
+	}
 }
 

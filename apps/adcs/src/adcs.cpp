@@ -106,8 +106,9 @@ void Adcs::initialize(){
 	k5=0.0;
 	k6=1.0;
 	k7=0.1;
-	k8=0.0;
+	k8=0.23;
 	k9=1.0;
+	time=RODOS::NOW();
 	init_time=RODOS::NOW();
 }
 
@@ -119,20 +120,32 @@ void Adcs::initAdcsThreat() {
 
 
 void Adcs::runAdcsThreat() {
-MotorSpeedUpdate();
-//calculates the speeds of the motor 
-//calculaterise();
+	MotorSpeedUpdate();
+	//calculates the speeds of the motor 
+	//calculaterise();
 
-//if(RODOS::NOW()-init_time <30 * RODOS::SECONDS){
-//	Adcs::motorController(400);
-//} else{
-//	Adcs::motorController(0);
-//	}/**/
-	//RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
-if(safePowerDown)
-	Adcs::motorController(0);
-else
-	Adcs::motorController(Adcs::pid());
+
+		//RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
+	if(safePowerDown)
+		Adcs::motorController(0);
+	else{
+		if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
+			Adcs::motorController(1000);
+		}else if(RODOS::NOW()-init_time <60 * RODOS::SECONDS){
+			testRPM();
+			Adcs::motorController(pid());
+		} else{
+			Adcs::motorController(0);
+		}/**/
+	}
+}
+
+
+void Adcs::testRPM(){
+	testValue+=5;
+	testsquares += (Adcs::motor_speed_measured-desired_speed) * (Adcs::motor_speed_measured-desired_speed);
+	testcounter++;
+
 }
 
 
@@ -284,7 +297,8 @@ float Adcs::pid(){
 	if(desired_speed >   maxDesiredSpeed) desired_speed = maxDesiredSpeed;
 	if(desired_speed < - maxDesiredSpeed) desired_speed = - maxDesiredSpeed;
 
-	desired_speed=2500; // 				<- Hard coded some bullshit here pls change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	desired_speed=Adcs::testValue; // 				<- Hard coded some bullshit here pls change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 	MotorSpeedUpdate();
 	float error3 = Adcs::motor_speed_measured-desired_speed; //check how far off we are from the actual speed
 	Adcs::sum_error3 += error3;
@@ -297,14 +311,10 @@ float Adcs::pid(){
 
 bool flag=false;
 void Adcs::motorController(float input){
-	
-	if(flag){
-		if(abs(input)<5)
-			input=0;
-		else if(input< 0)
-			input-=MinPWM;
-		else 
-			input +=MinPWM;
+
+		RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n error3: %f \nerror4: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n"
+			,input-last_input, Adcs::motor_speed_measured-desired_speed, input, motor_speed_measured, desired_speed,
+			testsquares/testcounter);
 
 		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
 			input=last_input+MaxDeltaPWM;
@@ -312,20 +322,7 @@ void Adcs::motorController(float input){
 			input=last_input-MaxDeltaPWM;
 		}
 
-		if(input>0 && abs(input)<MinPWM)
-			input=-MinPWM;
-		if(input<0 && abs(input)<MinPWM)
-			input=MinPWM;
-	}else{
-
-		//RODOS::PRINTF(" DeltaPWM: %f\n error3: %f \n error4: %f \n motor speed: %f \n desired Speed: %f \n",input-last_input, Adcs::motor_speed_measured-desired_speed, input, motor_speed_measured, desired_speed);
-		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
-			input=last_input+MaxDeltaPWM;
-		}else if(input-last_input<-MaxDeltaPWM){
-			input=last_input-MaxDeltaPWM;
-		}
-
-	}
+	//}
 	
 	if(input>MaxPWM) //check if motor is exceeding max speed
 		input =MaxPWM;
@@ -350,14 +347,17 @@ void Adcs::motorController(float input){
 
 
 void Adcs::updateStdTM(){
-	auto stdTM = this->standardTelemetry.access();
-	stdTM->attitudeYaw = Adcs::x_hat.r[0][0];
-	stdTM->speed = Adcs::x_hat.r[1][0];
-	stdTM->target_att = Adcs::target_att;
-	stdTM->target_speed = Adcs::target_speed;
-	stdTM->motor_speed = Adcs::motor_speed_measured;
-	stdTM->roll = Adcs::roll*360/M_PI;
-	stdTM->pitch = Adcs::pitch*360/M_PI;
+	if(RODOS::NOW() - time > 1 * RODOS::SECONDS){
+        time=RODOS::NOW();
+		auto stdTM = this->standardTelemetry.access();
+		stdTM->attitudeYaw = Adcs::x_hat.r[0][0];
+		stdTM->speed = Adcs::x_hat.r[1][0];
+		stdTM->target_att = Adcs::target_att;
+		stdTM->target_speed = Adcs::target_speed;
+		stdTM->motor_speed = Adcs::motor_speed_measured;
+		stdTM->roll = Adcs::roll*360/M_PI;
+		stdTM->pitch = Adcs::pitch*360/M_PI;
+	}
 }
 
 
@@ -550,7 +550,25 @@ if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
 
 
 /*
+if(flag){
+		if(abs(input)<5)
+			input=0;
+		else if(input< 0)
+			input-=MinPWM;
+		else 
+			input +=MinPWM;
 
+		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+			input=last_input+MaxDeltaPWM;
+		}else if(input-last_input<-MaxDeltaPWM){
+			input=last_input-MaxDeltaPWM;
+		}
+
+		if(input>0 && abs(input)<MinPWM)
+			input=-MinPWM;
+		if(input<0 && abs(input)<MinPWM)
+			input=MinPWM;
+	}else{
 //float r = imu.gyroscope[0]*float(M_PI/180); //asin(accelx/g);
 	//float p = imu.gyroscope[1]*float(M_PI/180);
 	//float y = imu.gyroscope[2]*float(M_PI/180/100);
