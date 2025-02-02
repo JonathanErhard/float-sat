@@ -106,8 +106,9 @@ void Adcs::initialize(){
 	k5=0.0;
 	k6=1.0;
 	k7=0.1;
-	k8=0.23;
-	k9=1.0;
+	//RPM CONTROLLER
+	k8=0.15;
+	k9=5;
 	time=RODOS::NOW();
 	init_time=RODOS::NOW();
 }
@@ -123,20 +124,18 @@ void Adcs::runAdcsThreat() {
 	MotorSpeedUpdate();
 	//calculates the speeds of the motor 
 	//calculaterise();
-
-
-		//RODOS::PRINTF(" measure %f sett %f counter %d result %f\n",measure,sett,counter, sett/measure);
 	if(safePowerDown)
 		Adcs::motorController(0);
 	else{
 		if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
-			Adcs::motorController(1000);
+			Adcs::motorController(2000);
 		}else if(RODOS::NOW()-init_time <60 * RODOS::SECONDS){
-			testRPM();
+			//testRPM();
+			testValue=2000;
 			Adcs::motorController(pid());
 		} else{
 			Adcs::motorController(0);
-		}/**/
+		}
 	}
 }
 
@@ -165,8 +164,10 @@ bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setC
 	return true;
 }
 
-bool Adcs::handleTelecommandSafePowerUpDown(){
-	safePowerDown=!safePowerDown;
+bool Adcs::handleTelecommandSafePowerUpDown(const generated::SafePowerUpDown &powerupdown){
+	Adcs::safePowerDown=powerupdown.highRPM;
+	PRINTF("Pull the Lever Kronk\n");
+	return true;
 }
 
 
@@ -180,8 +181,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	float mz = imu.magnetometer[2];
 	
 
-	pitch = - atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
-	roll  = - atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	roll  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
 	float Mx_h = mx*cos(pitch) +mz *sin(pitch);
 	//mx*cos(pitch) + mz*sin(pitch);
     float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);
@@ -194,9 +195,14 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 		rpy.z += Adcs::positionRb.vals[i].z;
 	}
 	pos = atan2(rpy.x,rpy.y);//+ rpy.z*0.1f/2.f;
-	pos=mod(pos* 180/M_PI+180);
+	//winkel dinkel berechnungen
+		float r = imu.gyroscope[0]*float(M_PI/180);
+		float p = imu.gyroscope[1]*float(M_PI/180);
+		float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
+   		float cy = my*cos(r) + mz*sin(r) ;
+	//pos = atan2(Mx_h,My_h);
+	//RODOS::PRINTF("-------------------------------\n roll %f \n pitch %f\n yaw %f \n Winkel yaw %f\n\n mx: %f \n my %f\n ",roll*180/M_PI,pitch*180/M_PI,pos*180/M_PI,atan2(cx,cy)*180/M_PI,Mx_h,My_h);
 	
-
 
 	velocityRb.put(Vector3D_F(imu.gyroscope[0],imu.gyroscope[1],imu.gyroscope[2]));
 	Vector3D_F velSum(0,0,0);
@@ -210,14 +216,14 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	x_hat.r[0][1]= vel;
 	updateStdTM();
 	attTopic.velocity=vel;
-	attTopic.position=pos;
-	attTopic.roll=roll*360/M_PI;
-	attTopic.pitch=pitch*360/M_PI;
+	attTopic.position=pos *180/M_PI;
+	attTopic.roll=roll*180/M_PI;
+	attTopic.pitch=pitch*180/M_PI;
 	attitudeDeterminationTopic.publish(attTopic);
 
 	float rotation=0;
 	float nu = tan(cos(rotation)*sin(attTopic.roll)+sin(rotation)*sin(attTopic.pitch));
-	RODOS::PRINTF("rpy: %f %f %f | vel: %f  | nu: %f \n",	attTopic.position,	attTopic.roll,	attTopic.pitch,	attTopic.velocity,nu);
+	//RODOS::PRINTF("rpy: %f %f %f | vel: %f  | nu: %f \n",	attTopic.position,	attTopic.roll,	attTopic.pitch,	attTopic.velocity,nu);
 	
 
 }
@@ -312,17 +318,15 @@ float Adcs::pid(){
 bool flag=false;
 void Adcs::motorController(float input){
 
-		RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n error3: %f \nerror4: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n"
+		RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n error3: %f \nerror4: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n"
 			,input-last_input, Adcs::motor_speed_measured-desired_speed, input, motor_speed_measured, desired_speed,
-			testsquares/testcounter);
+			testsquares/testcounter,input);
 
-		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
-			input=last_input+MaxDeltaPWM;
-		}else if(input-last_input<-MaxDeltaPWM){
-			input=last_input-MaxDeltaPWM;
-		}
-
-	//}
+	if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+		input=last_input+MaxDeltaPWM;
+	}else if(input-last_input<-MaxDeltaPWM){
+		input=last_input-MaxDeltaPWM;
+	}
 	
 	if(input>MaxPWM) //check if motor is exceeding max speed
 		input =MaxPWM;
@@ -330,7 +334,7 @@ void Adcs::motorController(float input){
 		input= -MaxPWM;
 	//RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
 	
-
+	
 
 	if(input>0){ //differentiates between positive and negative speed
 		PWM1.write(abs(input));
@@ -350,13 +354,13 @@ void Adcs::updateStdTM(){
 	if(RODOS::NOW() - time > 1 * RODOS::SECONDS){
         time=RODOS::NOW();
 		auto stdTM = this->standardTelemetry.access();
-		stdTM->attitudeYaw = Adcs::x_hat.r[0][0];
+		stdTM->attitudeYaw = pos * 180/M_PI;
 		stdTM->speed = Adcs::x_hat.r[1][0];
 		stdTM->target_att = Adcs::target_att;
 		stdTM->target_speed = Adcs::target_speed;
 		stdTM->motor_speed = Adcs::motor_speed_measured;
-		stdTM->roll = Adcs::roll*360/M_PI;
-		stdTM->pitch = Adcs::pitch*360/M_PI;
+		stdTM->roll = Adcs::roll*180/M_PI;
+		stdTM->pitch = Adcs::pitch*180/M_PI;
 	}
 }
 
