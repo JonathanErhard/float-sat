@@ -12,6 +12,14 @@
 
 #define TOF_I2C_ADDRESS 0x29
 
+// IMU init values 
+#define IMU_I2C_IDX RODOS::I2C_IDX::I2C_IDX2                       //PB10 & PB11
+int16_t GYR_CALIB_VALS[3] = {131,30,-14};                          // offset
+int16_t ACC_CALIB_VALS[3] = {228,0,0};                             // offset
+int16_t MAG_BOUNDRIES[3][2] = {{863,1289},{-955,-415},{-168,-42}}; //{x[min,max], y[min,max], z[min,max]}
+
+Sensors::Sensors():imu(IMU_I2C_IDX,GYR_CALIB_VALS,ACC_CALIB_VALS,MAG_BOUNDRIES){} 
+
 /**
  * @brief Sun Sensor adc
  * some defines and functions, so our run method isn't 300 lines of code
@@ -35,7 +43,6 @@ void Sensors::readSunSensor()
 }
 
 int iteration = 0;
-int peter27=0;
 
 void Sensors::initialize()
 {
@@ -122,7 +129,6 @@ void Sensors::runCollectData()
 {
     if(iteration==0){
         init_lidar();
-        peter27=RODOS::NOW();
     }
     iteration++;
     
@@ -139,8 +145,6 @@ void Sensors::runCollectData()
     readLIDAR();
     proximityTopic.publish(proximityBuffer);
     publishTM();
-
-    //PRINTF("dist: %f, time passed: %d \n",double(proximityBuffer.distance),(RODOS::NOW()-peter27)/RODOS::SECONDS);
 }
 
 // Telecommand methods

@@ -63,3 +63,6 @@ backup/*
 generated/*
 
 .vscode/*
+
+compile.sh
+howToFloat.md

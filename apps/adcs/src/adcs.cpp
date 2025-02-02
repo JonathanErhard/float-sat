@@ -99,16 +99,16 @@ void Adcs::initialize(){
 	PWM2.init(freqPWM,MaxPWM+10);
 	last_input=0;
 	EncoderInit();
-	k1=0.1;
-	k2=0.0;
-	k3=1.0;
-	k4=0.1;
-	k5=0.0;
-	k6=1.0;
-	k7=0.1;
+	k_pos[0]=0.1;
+	k_pos[1]=0.0;
+	k_pos[2]=1.0;
+	k_v_sat[0]=0.1;
+	k_v_sat[1]=0.0;
+	k_v_sat[2]=1.0;
+	k_v_wheel[0]=0.1;
 	//RPM CONTROLLER
-	k8=0.15;
-	k9=5;
+	k_v_wheel[1]=0.15;
+	k_v_wheel[2]=5;
 	time=RODOS::NOW();
 	init_time=RODOS::NOW();
 }
@@ -147,6 +147,14 @@ void Adcs::testRPM(){
 
 }
 
+bool Adcs::handleTelecommandSetPid(const generated::SetPid& setPid){
+	for(int i = 0;i<3;i++){
+		Adcs::k_pos[i] = k_pos[i];
+		Adcs::k_v_sat[i] = k_v_sat[i];
+		Adcs::k_v_wheel[i] = k_v_wheel[i];
+	}
+	return false;
+}
 
 //Telecommand methods
 bool Adcs::handleTelecommandNOP() {
@@ -287,17 +295,17 @@ float Adcs::pid(){
 	if(mode.mode!=2){
 		float error1= Adcs::x_hat.r[0][0] - Adcs::target_att; //controll loop for desired attitude
 		Adcs::sum_error1 += sum_error1;
-		Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k1 + 
-						(error1-last_error1) * k2 +
-						error1 * Adcs::k3 ;
+		Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[0] + 
+						(error1-last_error1) * k_pos[1] +
+						error1 * Adcs::k_pos[2] ;
 		Adcs::last_error1 = error1;
 	}
 
 										//if we need a speed instead we do this
 	float error2= Adcs::x_hat.r[1][0] - Adcs::target_speed;
 	Adcs::sum_error2 +=error2;
-	desired_speed = 	sum_error2 * Adcs::k4 + 
-					error2 * Adcs::k6 ;
+	desired_speed = 	sum_error2 * Adcs::k_v_sat[0] + 
+					error2 * Adcs::k_v_sat[2] ;
 
 	desired_speed = desired_speed+ MAXDrehrate/2;
 	if(desired_speed >   maxDesiredSpeed) desired_speed = maxDesiredSpeed;
@@ -308,8 +316,8 @@ float Adcs::pid(){
 	MotorSpeedUpdate();
 	float error3 = Adcs::motor_speed_measured-desired_speed; //check how far off we are from the actual speed
 	Adcs::sum_error3 += error3;
-	float error4 = 	sum_error3 * Adcs::k8 +
-					error3 * Adcs::k9 ;
+	float error4 = 	sum_error3 * Adcs::k_v_wheel[1] +
+					error3 * Adcs::k_v_wheel[2] ;
 	
 	return error4;
 }
@@ -399,7 +407,7 @@ void Adcs::EncoderInit()
   /* -----------------------------------------------------------------------
      TIM2 Configuration:
 
-     In this example TIM2 input clock (TIM2CLK) is set to 2 * APB1 clock (PCLK1):
+     In this example TIM2 input clock (TIM2CLK) is set to 2 * APB1 clock (PCLk_pos[0]):
      	 TIM2CLK = SystemCoreClock / 2 = 84000000 Hz
 
      To get TIM2 counter clock at X Hz, the prescaler is computed as follows:

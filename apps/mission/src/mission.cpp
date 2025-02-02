@@ -24,8 +24,6 @@ HAL_PWM servo(PWM_IDX01); // PE11
 #define h1 136 //h1 in mm
 #define h3 68 //distance h3 measured in mm
 #define h5 26 //h2 in mm
-#define h4 30
-#define d3 30
 #define threshold 3
 
 //int time1;
@@ -150,6 +148,12 @@ bool Mission::handleTelecommandChangeAngle(const generated::ChangeAngle &changeA
 	return false;           
 }
 
+bool Mission::handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) {
+	sun_dist = setSunConstants.distance;
+	sun_height = setSunConstants.height;
+	return false;
+}
+
 
 //Topic methods
 void Mission::handleTopicAttitudeDeterminationTopic(generated::AttitudeDeterminationTopic &message) {
@@ -181,10 +185,10 @@ int Mission::calculateMirrorAngle(){
 		beta = beta- 2;
 		float q1= sqrt((d1+d2-h1*sin(nu))*(d1+d2-h1*sin(nu))
 						+(h1*cos(nu)-h5)*(h1*cos(nu)-h5));
-		float q2= sqrt((d3+d2-h1*sin(nu)-h3*cos(beta-nu))*(d3+d2-h1*sin(nu)-h3*cos(beta-nu))
-						+(h4-h1*cos(nu)+h5-h3 *sin(beta-nu))*(h4-h1*cos(nu)+h5-h3 *sin(beta-nu)));
+		float q2= sqrt((sun_dist+d2-h1*sin(nu)-h3*cos(beta-nu))*(sun_dist+d2-h1*sin(nu)-h3*cos(beta-nu))
+						+(sun_height-h1*cos(nu)+h5-h3 *sin(beta-nu))*(sun_height-h1*cos(nu)+h5-h3 *sin(beta-nu)));
 		omegasoll = asin( (q2*q2+h3*h3-q1*q1)/(2*q2*h3));
-		omega = beta-nu -tan((h4 - h1*cos(nu)-h3*sin(beta-nu)/(d3+d2-h1*sin(nu)-h3*cos(beta-nu))));
+		omega = beta-nu -tan((sun_height - h1*cos(nu)-h3*sin(beta-nu)/(sun_dist+d2-h1*sin(nu)-h3*cos(beta-nu))));
 		if(abs(omega-omegasoll)>omegadiffmin){
 			omegadiffmin=abs(omega-omegasoll);
 			betamin=beta;
