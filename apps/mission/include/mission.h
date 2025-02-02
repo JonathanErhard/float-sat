@@ -18,6 +18,8 @@ class Mission: public generated::Mission{
 	bool handleTelecommandNOP() override;
 	bool handleTelecommandChangeMode(const generated::ChangeMode &changeMode) override;
 	bool handleTelecommandChangeAngle(const generated::ChangeAngle &changeAngle) override;
+    bool handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) override;
+	
 
 	//Topic methods
 	void handleTopicAttitudeDeterminationTopic(generated::AttitudeDeterminationTopic &message) override;
@@ -38,6 +40,8 @@ class Mission: public generated::Mission{
 	float asteroidPosition;
 
 	//controling the motor
+	uint32_t sun_height = 200; // sun height relative to sphere center [mm]
+	uint32_t sun_dist = 1500;  // sun dist relative to sphere center [mm]
 	int calculateMirrorAngle();
 	void changeMirrorAngle(int angle);
 	int currentAngle;

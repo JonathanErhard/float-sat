@@ -49,7 +49,15 @@ telecommands:
     fields:
       setangle:
         type: uint8_t
-    description: Angle that the mirror has. minimum 0° maximum 90 °  but over ~ 45 ° has an effect on the center of gravity 
+    description: Angle that the mirror has. minimum 0° maximum 90 °  but over ~ 45 ° has an effect on the center of gravity
+  SetSunConstants:
+    id: 4
+    fields:
+      height:
+        type: uint32_t
+      distance:
+        type: uint32_t
+
 
 standard_telemetry:
     currentAngle: uint8_t

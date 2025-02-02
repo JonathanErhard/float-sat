@@ -24,8 +24,9 @@ class Sensors : public generated::Sensors
 private:
 	long time;
 public:
-	void
-	initialize() override;
+	Sensors();
+
+	void initialize() override;
 
 	// Thread methods
 	void initCollectData() override;
