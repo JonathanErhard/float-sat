@@ -46,6 +46,8 @@ telecommands:
   SafePowerUpDown:
     id: 3
     description: changes the satellites flywheel from 0 to 2500 RPM and back
+    fields: 
+      highRPM: bool
 
 
 #  ExampleWithFields:

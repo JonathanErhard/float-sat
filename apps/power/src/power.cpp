@@ -87,6 +87,9 @@ void Power::update_led()
 {
 	if (voltage < 11.84f)
 		led_gpio.setPins(true);
+	else
+		led_gpio.setPins(false);
+
 }
 
 void Power::updateStdTM(){

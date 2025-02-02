@@ -22,7 +22,7 @@ class Adcs: public generated::Adcs{
 		//Telecommand methods
 		bool handleTelecommandNOP() override;
 		bool handleTelecommandSetControlMode(const generated::SetControlMode &setControlMode) override;
-    bool handleTelecommandSafePowerUpDown() override;
+    bool handleTelecommandSafePowerUpDown(const generated::SafePowerUpDown &powerupdown) override;
 
 		//Topic methods
 		void handleTopicImuDataTopic(generated::ImuDataTopic &message) override;
@@ -71,7 +71,7 @@ class Adcs: public generated::Adcs{
     float vel, pos=0;
     float pitch,roll;
 
-    bool safePowerDown=false;
+    bool safePowerDown=true;
 
     float k1, k2, k3, k4, k5, k6, k7, k8, k9; //pid values
     float dt_pid;
