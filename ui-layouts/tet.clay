@@ -1,0 +1,31 @@
+project: exampleOBSW
+node: main-node
+hwid: 255
+windows: 
+  0: 
+    type: StdTelemetry
+    app: housekeeper
+    id: 1
+    identi: 17563647
+    x: 2751
+    y: 1041
+    w: 650
+    h: 304
+  1: 
+    type: StdTelemetry
+    app: commander
+    id: 1
+    identi: 17563394
+    x: 2758
+    y: 138
+    w: 650
+    h: 439
+  2: 
+    type: StdTelemetry
+    app: housekeeper
+    id: 1
+    identi: 17563394
+    x: 2758
+    y: 654
+    w: 650
+    h: 304

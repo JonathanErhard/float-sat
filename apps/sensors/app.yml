@@ -33,5 +33,9 @@ standard_telemetry:
     mx: float
     my: float
     mz: float
-    distance: float
-    brightness: float
+    distance:
+      type: float 
+      customWidget: plottingWidget
+    brightness:
+      type: float 
+      customWidget: plottingWidget

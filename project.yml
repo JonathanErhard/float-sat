@@ -87,7 +87,7 @@ topics:
     description: the current satellite mode and submode
     fields:
       mode: uint8_t
-      submode: uint8_t
+      submode: float
   missionModeTopic:
     id: 8002
     description: the current part of the mission that is active

@@ -1,0 +1,37 @@
+project: exampleOBSW
+node: main-node
+hwid: 255
+appwidgets: 
+    commander: true
+    example-app: false
+    housekeeper: true
+    transceiver: false
+    watchdog: true
+windows: 
+  0: 
+    type: ExtTelemetry
+    app: watchdog
+    id: 1
+    identi: 16908287
+    x: 1551
+    y: 340
+    w: 650
+    h: 924
+  1: 
+    type: StdTelemetry
+    app: commander
+    id: 1
+    identi: 17563647
+    x: 862
+    y: 529
+    w: 650
+    h: 439
+  2: 
+    type: Telecommand
+    app: watchdog
+    id: 2
+    identi: 64458194943
+    x: 2208
+    y: 311
+    w: 880
+    h: 680

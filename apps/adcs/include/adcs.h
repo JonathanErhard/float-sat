@@ -67,7 +67,7 @@ class Adcs: public generated::Adcs{
     //----------------------------this is for control-------------------------------------------------------------------
     float pid();
 
-    float target_att, target_speed; //target attitude and speed
+    float target_att, target_speed,target_RPM; //target attitude and speed
 
     float vel, pos=0;
     float pitch,roll;
@@ -98,7 +98,7 @@ class Adcs: public generated::Adcs{
     float desired_speed;
 private:
     long time;
-    float testValue=1000;
+    float testValue=2000;
     float testsquares=0;
     float testcounter=0;
 

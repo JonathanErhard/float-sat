@@ -1,4 +1,21 @@
 project: FloatSat
 node: main-node
 hwid: 255
+appwidgets: 
+    adcs: true
+    commander: false
+    housekeeper: false
+    mission: true
+    power: false
+    sensors: true
+    transceiver: false
 windows: 
+  0: 
+    type: Telecommand
+    app: mission
+    id: 3
+    identi: 64482508799
+    x: 644
+    y: 336
+    w: 700
+    h: 400

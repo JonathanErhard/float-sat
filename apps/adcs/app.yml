@@ -35,8 +35,10 @@ telecommands:
           0: Nothing
           1: Position
           2: Velocity
+          3: RPM
       submode:
-        type: uint8_t
+        type: float
+        default_value: 2
     description: |
       ### changes the position / velocity of the satellite
 
@@ -64,6 +66,7 @@ telecommands:
         array:
           length: 3
           type: float
+          default_value: 2.7 , 0.008, 0
 
 
 
@@ -73,13 +76,25 @@ telecommands:
 #      parameter: uint8_t
 
 standard_telemetry:
-    attitudeYaw: float
+    attitudeYaw:
+      type: float
+      customWidget: pointingWidget
     pitch: float
     roll: float
     speed: float
-    target_att: float
-    target_speed: float
-    motor_speed: float
+    target_att: 
+      type: float 
+      customWidget: plottingWidget
+    target_speed:
+      type: float 
+      customWidget: plottingWidget
+    target_RPM:
+      type: float 
+      customWidget: plottingWidget
+    motor_speed:
+      type: float 
+      customWidget: plottingWidget
+    power_up: bool
 
 
 #extended_telemetry:
