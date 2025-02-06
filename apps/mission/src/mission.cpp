@@ -208,6 +208,7 @@ void Mission::changeMirrorAngle(int angle){
 		angle =MaxAngle;
 	if(angle < MinAngle)
 		angle = MinAngle;
+	currentAngle=angle;
 	RODOS::PRINTF("changed angle to %d\n", angle);
 	angle= -angle;
 	angle =(angle+90) * (120-20) / (180)  + 20;

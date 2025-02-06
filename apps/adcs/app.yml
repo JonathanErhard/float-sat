@@ -95,6 +95,7 @@ standard_telemetry:
       type: float 
       customWidget: plottingWidget
     power_up: bool
+    controlMode: uint8_t
 
 
 #extended_telemetry:

@@ -161,10 +161,16 @@ void Adcs::testRPM(){
 
 bool Adcs::handleTelecommandSetPid(const generated::SetPid& setPid){
 	for(int i = 0;i<3;i++){
-		Adcs::k_pos[i] = setPid.k_pos[i];
-		Adcs::k_v_sat[i] = setPid.k_v_sat[i];
-		//Adcs::k_v_wheel[i] = setPid.k_v_wheel[i];
+		switch(mode.mode){
+		default:
+			 Adcs::k_pos[i] = setPid.k_pos[i]; break;
+		case 2: 
+			Adcs::k_v_sat[i] = setPid.k_v_sat[i]; break;
+		case 3: 
+			Adcs::k_v_wheel[i] = setPid.k_v_wheel[i]; break;
+		}
 	}
+	RODOS::PRINTF("kpos: %f \n kvsat %f\n kvwheel %f\n",k_pos[0],k_v_sat[0],k_v_wheel[0]);
 	return false;
 }
 
@@ -345,9 +351,9 @@ float Adcs::pid(){
 bool flag=false;
 void Adcs::motorController(float input){
 
-		RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n k_v_wheel[1]: %f \nk_v_wheel[2]_: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n \n sumerror %f \n error %f\n"
-			,input-last_input, k_v_wheel[1], k_v_wheel[2], motor_speed_measured, desired_speed,
-			testsquares/testcounter,input, sum_error3,Adcs::motor_speed_measured-desired_speed);
+		//RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n k_v_wheel[1]: %f \nk_v_wheel[2]_: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n \n sumerror %f \n error %f\n"
+		//	,input-last_input, k_v_wheel[1], k_v_wheel[2], motor_speed_measured, desired_speed,
+		//	testsquares/testcounter,input, sum_error3,Adcs::motor_speed_measured-desired_speed);
 
 
 
@@ -392,6 +398,7 @@ void Adcs::updateStdTM(){
 		stdTM->pitch = Adcs::pitch*180/M_PI;
 		stdTM->power_up=Adcs::safePowerDown;
 		stdTM->target_RPM=Adcs::target_RPM;
+		stdTM->controlMode=Adcs::mode.mode;
 	}
 }
 
