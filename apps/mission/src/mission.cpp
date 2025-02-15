@@ -127,14 +127,14 @@ bool Mission::handleTelecommandChangeMode(const generated::ChangeMode &changeMod
 				if(Mission::Att_obj>500 && Mission::Att_light>500)
 					Mission::rotate();
 				mode.mode=1;
-				mode.submode=targetReaction(Att_light , Att_obj + OFFSET_MIRROR);
+				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
 				modeTopic.publish(mode);
 				changeMirrorAngle(calculateMirrorAngle());
 				break;
 			case 6:
 				Mission::rotate();
 				mode.mode=1;
-				mode.submode=targetReaction(Att_light , Att_obj + OFFSET_MIRROR);
+				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
 				modeTopic.publish(mode);
 				changeMirrorAngle(calculateMirrorAngle());
 				break;  

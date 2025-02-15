@@ -85,7 +85,6 @@ class Adcs: public generated::Adcs{
     float last_input, last_time;
     float motor_speed_measured;
     float sum_error1, sum_error2, sum_error3=0;
-    float last_error1=0;
     float init_time;
 
     void motorController(float input);
@@ -102,6 +101,11 @@ private:
     float testsquares=0;
     float testcounter=0;
     int steps_telecomand;
+    float error2, error1;
+    float last_error1=0;
+    float last_error2=0;
+    float last_error3=0;
+
 
 
 

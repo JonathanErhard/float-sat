@@ -17,7 +17,7 @@
 #include "hal_pwm.h"
 
 	#define freqPWM 5000	//TODO check if values ok (just stole them)
-	#define MaxDeltaPWM 5
+	#define MaxDeltaPWM 10 //5
 	#define MaxPWM 990
 	#define MinPWM 100
 	#define MAXDrehrate 5000	//Max revolutions per minute that we can get
@@ -52,8 +52,7 @@ void Adcs::initialize(){
 	}
 
 	Adcs::R_Gyro = 0.001;
-	Adcs::dt = Adcs::adcsThreatThread.getPeriod()/100000000;
-    Adcs::dt = Adcs::dt/10;//halts maul, ich weiß dass es hässlig ist aber wir machen das so. deine mama ist hässlich.
+
 	Adcs::dt=0.02;
 	float factor=0;
 
@@ -81,16 +80,6 @@ void Adcs::initialize(){
 
 	I.r[0][0]=1.;							
 	I.r[1][1]=1.;
-
-	RODOS::PRINTF("dt: %f \n",Adcs::dt);
-	RODOS::PRINTF("Rgyro: %f \n",Adcs::R_Gyro);
-	RODOS::PRINTF("A: %f %f\n   %f %f\n",Adcs::A.r[0][0],Adcs::A.r[0][1],Adcs::A.r[1][0],Adcs::A.r[1][1]);
-	RODOS::PRINTF("G: %f \n   %f \n",Adcs::G.r[0][0],Adcs::G.r[0][1]);
-	RODOS::PRINTF("C: %f \n   %f \n",Adcs::C.r[0][0],Adcs::C.r[0][1]);
-	RODOS::PRINTF("Q: %f %f\n   %f %f\n",Adcs::Q.r[0][0],Adcs::Q.r[0][1],Adcs::Q.r[1][0],Adcs::Q.r[1][1]);
-	RODOS::PRINTF("R: %f \n",Adcs::R.r[0][0]);
-	RODOS::PRINTF("P: %f %f\n   %f %f\n",Adcs::P.r[0][0],Adcs::P.r[0][1],Adcs::P.r[1][0],Adcs::P.r[1][1]);
-	RODOS::PRINTF("P: %f %f\n   %f %f\n",Adcs::I.r[0][0],Adcs::I.r[0][1],Adcs::I.r[1][0],Adcs::I.r[1][1]);
 	Adcs::initialized=true;						//all initiialized
 
 	mode.mode=0;
@@ -102,19 +91,21 @@ void Adcs::initialize(){
 	PWM2.init(freqPWM,MaxPWM+10);
 	last_input=0;
 	EncoderInit();
-	k_pos[0]=0.4;
-	k_pos[1]=0.02;
-	k_pos[2]=0.0001;
+
+	//POSITION CONTROLLER
+	k_pos[0]=0.6;
+	k_pos[1]=0.007;
+	k_pos[2]=1;
 
 	//VELOCITY CONTROLLER
-	k_v_sat[0]=3.0;//3.2;//2.5;
-	k_v_sat[1]=0.04;//0.0093;
-	k_v_sat[2]=0;
+	k_v_sat[0]=10.0;//3.2;//2.5;
+	k_v_sat[1]=0.037;//0.0093;
+	k_v_sat[2]=4;
 	
 	//RPM CONTROLLER
-	k_v_wheel[0]=2.79;
-	k_v_wheel[1]=0.014;
-	k_v_wheel[2]=0;
+	k_v_wheel[0]=1.15;
+	k_v_wheel[1]=0.0147;
+	k_v_wheel[2]=6;
 
 
 	//2.79 ;0.008 original values
@@ -133,26 +124,14 @@ void Adcs::runAdcsThreat() {
 	MotorSpeedUpdate();
 	//calculates the speeds of the motor 
 	//calculaterise();
-	if(!safePowerDown && RODOS::NOW()-init_time <20 * RODOS::SECONDS){
-		Adcs::motorController(300);
+	if(!safePowerDown){
+		Adcs::motorController(0);
 		Adcs::sum_error3=0;
 		Adcs::sum_error2=0;
 		Adcs::sum_error1=0;
 		init_time=RODOS::NOW();
-	} else if (!safePowerDown){
-		Adcs::motorController(0);
 	}else{
-		//if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
-		//	Adcs::motorController(500);
-		//}else if(RODOS::NOW()-init_time <60 * RODOS::SECONDS){
-		//	//testRPM();
-		//	testValue=2000;
-		//	Adcs::motorController(pid());
-		//} else{
-			Adcs::motorController(pid());
-		//}
-		
-		
+		Adcs::motorController(pid());
 	}
 }
 
@@ -325,37 +304,38 @@ float Adcs::pid(){
 	if(mode.mode==4)
 		return steps_telecomand;
 	MotorSpeedUpdate();
-	Adcs::dt_pid=(RODOS::NOW()-Adcs::last_time)/1000000000;//update time intervall
 	Adcs::last_time=RODOS::NOW();
 	if(mode.mode!=3){
 		if(mode.mode!=2){
-			float error1= - Adcs::pos + Adcs::target_att; //controll loop for desired attitude
-			Adcs::sum_error1 += sum_error1;
+			error1 = mod( Adcs::target_att - Adcs::pos);
+			if(fabs(Adcs::error1) >180)  Adcs::error1 = - (Adcs::error1 - 180);	
+			Adcs::sum_error1 += error1;
 			Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[1] + 
-							(error1-last_error1) * k_pos[2] *0.1 +
+							(error1 - last_error1) * k_pos[2]  +
 							error1 * Adcs::k_pos[0] ;
 			Adcs::last_error1 = error1;
 			if(target_speed > maxTargetSpeed) target_speed = maxTargetSpeed;
 			if(target_speed < minTargetSpeed) target_speed = minTargetSpeed;
-			//error1=-error1;
 		}/**/
 
-											//if we need a speed instead we do this
-		float error2=  Adcs::target_speed - vel; //has to be this way round because actio = reactio
+		error2=   - Adcs::vel + Adcs::target_speed; //has to be this way round because actio = reactio
 		Adcs::sum_error2 +=error2;
 		desired_speed = 	error2 * Adcs::k_v_sat[0] + 
-							sum_error2 * Adcs::k_v_sat[1] ;
+							Adcs::sum_error2 * Adcs::k_v_sat[1] +
+							(error2 - Adcs::last_error2)*k_v_sat[2];
+		Adcs::last_error2 = Adcs::error2;
 	}
-	//desired_speed+=2000;
-	//control_output_pi = ((reactWSpeed-2500)*0.5f - (satellite_velocity-Adcs::desired_velocity))/0.5f;
+
 	if(desired_speed > maxDesiredSpeed)  desired_speed = maxDesiredSpeed;
-	if(desired_speed < minDesiredSpeed)  desired_speed = minDesiredSpeed;/**/
-	//desired_speed += maxDesiredSpeed/2;
+	if(desired_speed < minDesiredSpeed)  desired_speed = minDesiredSpeed;
+
 	
 	float error3 = (Adcs::motor_speed_measured-desired_speed); //check how far off we are from the actual speed
 	Adcs::sum_error3 += error3;
 	Adcs::target_RPM = 	error3 * Adcs::k_v_wheel[0] +
-					Adcs::sum_error3 * Adcs::k_v_wheel[1] ;
+					Adcs::sum_error3 * Adcs::k_v_wheel[1] +
+					(error3-Adcs::last_error3)*Adcs::k_v_wheel[2];
+	Adcs::last_error3 = error3;
 	
 	return target_RPM;	
 }
@@ -388,8 +368,6 @@ void Adcs::motorController(float input){
 		input= -MaxPWM;
 	//RODOS::PRINTF("%f %f %f\n ",input,motor_speed_measured, motor_speed_measured*500.000/2092.500);
 	
-	
-
 	if(input>0){ //differentiates between positive and negative speed
 		PWM1.write(abs(input));
 		PWM2.write(0.0);
@@ -397,8 +375,6 @@ void Adcs::motorController(float input){
 		PWM1.write(0.0);
 		PWM2.write(abs(input));
 	}
-
-
 
 	Adcs::last_input=input; //save the last input
 }
@@ -418,6 +394,8 @@ void Adcs::updateStdTM(){
 		stdTM->power_up=Adcs::safePowerDown;
 		stdTM->target_RPM=Adcs::desired_speed;//Adcs::target_RPM;
 		stdTM->controlMode=Adcs::mode.mode;
+		stdTM->testvar1=Adcs::error1;
+		stdTM->testvar2=Adcs::sum_error1;
 	}
 }
 
@@ -557,54 +535,8 @@ void TIM2_IRQHandler(void)
 	Adcs::motor_speed_measured = motorFilter.getMedian();
 }
 
-int angle = 500;
-bool dir = 0;
-double measure=0;
-double sett=0;
-int counter=0;
-int time=0;
-double res1,res2,res3=0;
 
-void Adcs::calculaterise(){
-MotorSpeedUpdate();
-if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
-	Adcs::motorController(300);
-	time=20;
-}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
-	Adcs::motorController(300);
-	sett+=angle;
-	measure+=motor_speed_measured;
-	counter++;
-	res1=sett/measure;
-	time=50;
-}else if(RODOS::NOW()-init_time <(20+time) * RODOS::SECONDS){
-	Adcs::motorController(500);
-	time=70;
-	sett=0; measure=0; counter=0;
-}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
-	Adcs::motorController(300);
-	sett+=angle;
-	measure+=motor_speed_measured;
-	counter++;
-	res2=sett/measure;
-	time=100;
-}else if(RODOS::NOW()-init_time <(20+time) * RODOS::SECONDS){
-	Adcs::motorController(800);
-	time=120;
-	sett=0; measure=0; counter=0;
-}else if(RODOS::NOW()-init_time <(30+time) * RODOS::SECONDS){
-	Adcs::motorController(800);
-	sett+=angle;
-	measure+=motor_speed_measured;
-	counter++;
-	res3=sett/measure;
-	time=160;
-}else{
-	Adcs::motorController(0);
-	RODOS::PRINTF(" res1 %f res2 %f res3 %d res_average %f\n",res1,res2,res3,(res1+res2+res3)/3);
-	
-	}
-}
+
 
 
 
@@ -755,7 +687,17 @@ _roll = (_rollGyroFavoring) * (_roll + (gyroscope.x * (1.00 / _filterUpdateRate)
 	//attitudeDeterminationTopic.publish(Adcs::x_hat.r[0][0],Adcs::x_hat.r[0][1]);
 	//RODOS::PRINTF("Pose: %f %f | %f %f\n",Adcs::x_hat.r[0][0],Adcs::x_hat.r[1][0], cz, u);
 	/*
-	
+		Adcs::dt = Adcs::adcsThreatThread.getPeriod()/100000000;
+    Adcs::dt = Adcs::dt/10;//halts maul, ich weiß dass es hässlig ist aber wir machen das so. deine mama ist hässlich.
+	RODOS::PRINTF("dt: %f \n",Adcs::dt);
+	RODOS::PRINTF("Rgyro: %f \n",Adcs::R_Gyro);
+	RODOS::PRINTF("A: %f %f\n   %f %f\n",Adcs::A.r[0][0],Adcs::A.r[0][1],Adcs::A.r[1][0],Adcs::A.r[1][1]);
+	RODOS::PRINTF("G: %f \n   %f \n",Adcs::G.r[0][0],Adcs::G.r[0][1]);
+	RODOS::PRINTF("C: %f \n   %f \n",Adcs::C.r[0][0],Adcs::C.r[0][1]);
+	RODOS::PRINTF("Q: %f %f\n   %f %f\n",Adcs::Q.r[0][0],Adcs::Q.r[0][1],Adcs::Q.r[1][0],Adcs::Q.r[1][1]);
+	RODOS::PRINTF("R: %f \n",Adcs::R.r[0][0]);
+	RODOS::PRINTF("P: %f %f\n   %f %f\n",Adcs::P.r[0][0],Adcs::P.r[0][1],Adcs::P.r[1][0],Adcs::P.r[1][1]);
+	RODOS::PRINTF("P: %f %f\n   %f %f\n",Adcs::I.r[0][0],Adcs::I.r[0][1],Adcs::I.r[1][0],Adcs::I.r[1][1]);
 	*/
 
 

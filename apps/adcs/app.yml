@@ -99,6 +99,8 @@ standard_telemetry:
       customWidget: plottingWidget
     power_up: bool
     controlMode: uint8_t
+    testvar1: float
+    testvar2: float
 
 
 #extended_telemetry:
