@@ -16,6 +16,7 @@ HAL_PWM servo(PWM_IDX01); // PE11
 //offset for the sonsors so that the coordinate Frame matches the IMU
 #define PROXIMITYSENSOROFFSET 90
 #define LIGHTSENSOROFFSET 90
+#define OFFSET_MIRROR 0
 
 
 
@@ -88,6 +89,7 @@ void Mission::rotate(){
 			nearest=proximity.distance;
 			Att_obj=mod(attitude.position+PROXIMITYSENSOROFFSET);
 			}
+		AT(NOW() + 2 * MILLISECONDS);
 	}
 	mode.mode=2;
 	mode.submode=0;
@@ -125,14 +127,14 @@ bool Mission::handleTelecommandChangeMode(const generated::ChangeMode &changeMod
 				if(Mission::Att_obj>500 && Mission::Att_light>500)
 					Mission::rotate();
 				mode.mode=1;
-				mode.submode=targetReaction(Att_light , Att_obj);
+				mode.submode=targetReaction(Att_light , Att_obj + OFFSET_MIRROR);
 				modeTopic.publish(mode);
 				changeMirrorAngle(calculateMirrorAngle());
 				break;
 			case 6:
 				Mission::rotate();
 				mode.mode=1;
-				mode.submode=targetReaction(Att_light , Att_obj);
+				mode.submode=targetReaction(Att_light , Att_obj + OFFSET_MIRROR);
 				modeTopic.publish(mode);
 				changeMirrorAngle(calculateMirrorAngle());
 				break;  

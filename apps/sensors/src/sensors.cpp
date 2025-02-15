@@ -18,7 +18,8 @@ int16_t GYR_CALIB_VALS[3] = {131,30,-14};                          // offset
 int16_t ACC_CALIB_VALS[3] = {228,0,0};                             // offset
 int16_t MAG_BOUNDRIES[3][2] = {{863,1289},{-955,-415},{-168,-42}}; //{x[min,max], y[min,max], z[min,max]}
 
-Sensors::Sensors():imu(IMU_I2C_IDX,GYR_CALIB_VALS,ACC_CALIB_VALS,MAG_BOUNDRIES){} 
+
+Sensors::Sensors():imu(IMU_I2C_IDX){}   //,GYR_CALIB_VALS,ACC_CALIB_VALS,MAG_BOUNDRIES){} 
 
 /**
  * @brief Sun Sensor adc
@@ -75,7 +76,7 @@ void init_lidar()
 // Thread methods
 void Sensors::initCollectData()
 {
-    
+
     // init IMU and the registers required to read i2c
     imu.init(400000);
 
@@ -117,10 +118,13 @@ void Sensors::readLIDAR()
             distance = tof_result.distance_mm;
         }
         VL53L4ED_ClearInterrupt(TOF_I2C_ADDRESS);
+
     }
     else
-    {
+    {   
+       
         init_lidar();
+        
     }
     proximityBuffer.distance = distance;
 }
@@ -129,11 +133,13 @@ void Sensors::runCollectData()
 {
     if(iteration==0){
         init_lidar();
+        imu.init(400000);
     }
     iteration++;
     
     // read and pulish IMU
     imu.read_adj();
+    //imu.print_real();
     imu.cpy_adj(imuTopicBuffer.accelerometer, imuTopicBuffer.gyroscope, imuTopicBuffer.magnetometer);
     imuDataTopic.publish(imuTopicBuffer);
 

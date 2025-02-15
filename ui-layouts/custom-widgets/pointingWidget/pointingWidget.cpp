@@ -59,8 +59,8 @@ void PointingWidget::update(const corfu::ground::Telemetry &receivedTelemetry){
     //For this corfu project, (137,1) is MyTelemetry of example-app
     if(receivedTelemetry.serviceID != 0x68 || receivedTelemetry.subserviceID != 1) return;
 
-    auto val = std::stod(receivedTelemetry.payload.at("AdcsStandardTelemetry").at("yaw").getValue());
-    auto val2 = std::stod(receivedTelemetry.payload.at("AdcsStandardTelemetry").at("yaw").getValue());
+    auto val = std::stod(receivedTelemetry.payload.at("AdcsStandardTelemetry").at("attitudeYaw").getValue());
+    auto val2 = std::stod(receivedTelemetry.payload.at("AdcsStandardTelemetry").at("attitudeYaw").getValue());
     painter->begin(pic);
     float s = 469.0f;
     painter->drawEllipse(0,0,s,s);

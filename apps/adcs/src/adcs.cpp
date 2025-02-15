@@ -26,8 +26,8 @@
 
 	#define maxDesiredSpeed 4000 //TODO check these values
 	#define minDesiredSpeed-4000
-	#define maxTargetSpeed 40
-	#define minTargetSpeed -40
+	#define maxTargetSpeed 40000000
+	#define minTargetSpeed -4000000
 	
 //PE13//PE11
 	//coppied from Senors.cpp written by Atheel Redah @ University of Würzburg, January 20, 2019
@@ -102,20 +102,22 @@ void Adcs::initialize(){
 	PWM2.init(freqPWM,MaxPWM+10);
 	last_input=0;
 	EncoderInit();
-	k_pos[0]=2.3;
-	k_pos[1]=0.01;
-	k_pos[2]=0.01;
+	k_pos[0]=0.4;
+	k_pos[1]=0.02;
+	k_pos[2]=0.0001;
 
 	//VELOCITY CONTROLLER
-	k_v_sat[0]=2.5;
-	k_v_sat[1]=0.0093;
+	k_v_sat[0]=3.0;//3.2;//2.5;
+	k_v_sat[1]=0.04;//0.0093;
 	k_v_sat[2]=0;
 	
 	//RPM CONTROLLER
 	k_v_wheel[0]=2.79;
-	k_v_wheel[1]=0.008;
-	k_v_wheel[0]=0;
+	k_v_wheel[1]=0.014;
+	k_v_wheel[2]=0;
 
+
+	//2.79 ;0.008 original values
 	time=RODOS::NOW();
 	init_time=RODOS::NOW();
 }
@@ -131,11 +133,14 @@ void Adcs::runAdcsThreat() {
 	MotorSpeedUpdate();
 	//calculates the speeds of the motor 
 	//calculaterise();
-	if(safePowerDown){
-		Adcs::motorController(0);
+	if(!safePowerDown && RODOS::NOW()-init_time <20 * RODOS::SECONDS){
+		Adcs::motorController(300);
 		Adcs::sum_error3=0;
 		Adcs::sum_error2=0;
+		Adcs::sum_error1=0;
 		init_time=RODOS::NOW();
+	} else if (!safePowerDown){
+		Adcs::motorController(0);
 	}else{
 		//if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
 		//	Adcs::motorController(500);
@@ -170,7 +175,7 @@ bool Adcs::handleTelecommandSetPid(const generated::SetPid& setPid){
 			Adcs::k_v_wheel[i] = setPid.k_v_wheel[i]; break;
 		}
 	}
-	RODOS::PRINTF("kpos: %f \n kvsat %f\n kvwheel %f\n",k_pos[0],k_v_sat[0],k_v_wheel[0]);
+	RODOS::PRINTF("kpos: %f  , %f , %f\n kvsat %f , %f , %f\n kvwheel %f , %f , %f\n",k_pos[0],k_pos[1],k_pos[2],k_v_sat[0],k_v_sat[1],k_v_sat[2],k_v_wheel[0],k_v_wheel[1],k_v_wheel[2]);
 	return false;
 }
 
@@ -181,12 +186,18 @@ bool Adcs::handleTelecommandNOP() {
 
 bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setControlMode) {
 	Adcs::controlMode=setControlMode;
-	if(controlMode.mode==0)
-		Adcs::target_att=Adcs::x_hat.r[0][0];
-	if(controlMode.mode==1)
+	mode.mode=controlMode.mode;
+	mode.submode=controlMode.submode;
+	if(mode.mode==0)
+		Adcs::target_att=Adcs::pos;
+	if(mode.mode==1)
 		Adcs::target_att=controlMode.submode;
-	if(controlMode.mode==2)
+	if(mode.mode==2)
 		Adcs::target_speed=controlMode.submode;
+	if(mode.mode==3)
+		Adcs::desired_speed=mode.submode;
+	if(mode.mode==4);
+		Adcs::steps_telecomand=mode.submode;
 	return true;
 }
 
@@ -211,7 +222,7 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	roll  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
 	float Mx_h = mx*cos(pitch) +mz *sin(pitch);
 	//mx*cos(pitch) + mz*sin(pitch);
-    float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);
+    float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);//+ beim letzten
 	//mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
 	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,0));
 	//Adcs::positionRb.put(Vector3D_F(p2, y2,y));
@@ -220,7 +231,7 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 		rpy.y += Adcs::positionRb.vals[i].y;
 		rpy.z += Adcs::positionRb.vals[i].z;
 	}
-	pos = atan2(rpy.x,rpy.y);//+ rpy.z*0.1f/2.f;
+	pos = atan2(rpy.x,rpy.y)*180/M_PI;//+ rpy.z*0.1f/2.f;
 	//winkel dinkel berechnungen
 		float r = imu.gyroscope[0]*float(M_PI/180);
 		float p = imu.gyroscope[1]*float(M_PI/180);
@@ -242,11 +253,11 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	x_hat.r[0][1]= vel;
 	updateStdTM();
 	attTopic.velocity=vel;
-	attTopic.position=pos *180/M_PI;
+	attTopic.position=pos;
 	attTopic.roll=roll*180/M_PI;
 	attTopic.pitch=pitch*180/M_PI;
 	attitudeDeterminationTopic.publish(attTopic);
-
+	
 	float rotation=0;
 	float nu = tan(cos(rotation)*sin(attTopic.roll)+sin(rotation)*sin(attTopic.pitch));
 	//RODOS::PRINTF("rpy: %f %f %f | vel: %f  | nu: %f \n",	attTopic.position,	attTopic.roll,	attTopic.pitch,	attTopic.velocity,nu);
@@ -307,22 +318,26 @@ void Adcs::handleTopicModeTopic(generated::ModeTopic &message) {
 		Adcs::target_speed=mode.submode;
 	if(mode.mode==3)
 		Adcs::desired_speed=mode.submode;
+	
 }
 
 float Adcs::pid(){
+	if(mode.mode==4)
+		return steps_telecomand;
 	MotorSpeedUpdate();
 	Adcs::dt_pid=(RODOS::NOW()-Adcs::last_time)/1000000000;//update time intervall
 	Adcs::last_time=RODOS::NOW();
 	if(mode.mode!=3){
 		if(mode.mode!=2){
-			float error1= Adcs::pos - Adcs::target_att; //controll loop for desired attitude
+			float error1= - Adcs::pos + Adcs::target_att; //controll loop for desired attitude
 			Adcs::sum_error1 += sum_error1;
 			Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[1] + 
-							(error1-last_error1) * k_pos[2] +
+							(error1-last_error1) * k_pos[2] *0.1 +
 							error1 * Adcs::k_pos[0] ;
 			Adcs::last_error1 = error1;
 			if(target_speed > maxTargetSpeed) target_speed = maxTargetSpeed;
 			if(target_speed < minTargetSpeed) target_speed = minTargetSpeed;
+			//error1=-error1;
 		}/**/
 
 											//if we need a speed instead we do this
@@ -331,12 +346,10 @@ float Adcs::pid(){
 		desired_speed = 	error2 * Adcs::k_v_sat[0] + 
 							sum_error2 * Adcs::k_v_sat[1] ;
 	}
-	desired_speed+=2000;
+	//desired_speed+=2000;
 	//control_output_pi = ((reactWSpeed-2500)*0.5f - (satellite_velocity-Adcs::desired_velocity))/0.5f;
 	if(desired_speed > maxDesiredSpeed)  desired_speed = maxDesiredSpeed;
 	if(desired_speed < minDesiredSpeed)  desired_speed = minDesiredSpeed;/**/
-	
-	//desired_speed = Adcs::target_speed; //comment this in if you want to check the PID RPM values
 	//desired_speed += maxDesiredSpeed/2;
 	
 	float error3 = (Adcs::motor_speed_measured-desired_speed); //check how far off we are from the actual speed
@@ -354,13 +367,19 @@ void Adcs::motorController(float input){
 		//RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n k_v_wheel[1]: %f \nk_v_wheel[2]_: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n \n sumerror %f \n error %f\n"
 		//	,input-last_input, k_v_wheel[1], k_v_wheel[2], motor_speed_measured, desired_speed,
 		//	testsquares/testcounter,input, sum_error3,Adcs::motor_speed_measured-desired_speed);
-
-
-
-	if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
-		input=last_input+MaxDeltaPWM;
-	}else if(input-last_input<-MaxDeltaPWM){
-		input=last_input-MaxDeltaPWM;
+	if(flag&&abs(input)<MinPWM){
+		if(abs(input)<MinPWM/2)
+			input=0;
+		else if(input< -MinPWM/2 )
+			input=MinPWM;
+		else 
+			input =MinPWM;
+	}else{
+		if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+			input=last_input+MaxDeltaPWM;
+		}else if(input-last_input<-MaxDeltaPWM){
+			input=last_input-MaxDeltaPWM;
+		}
 	}
 	
 	if(input>MaxPWM) //check if motor is exceeding max speed
@@ -389,7 +408,7 @@ void Adcs::updateStdTM(){
 	if(RODOS::NOW() - time > 1 * RODOS::SECONDS){
         time=RODOS::NOW();
 		auto stdTM = this->standardTelemetry.access();
-		stdTM->attitudeYaw = pos * 180/M_PI;
+		stdTM->attitudeYaw = pos;
 		stdTM->speed = Adcs::x_hat.r[1][0];
 		stdTM->target_att = Adcs::target_att;
 		stdTM->target_speed = Adcs::target_speed;
@@ -397,7 +416,7 @@ void Adcs::updateStdTM(){
 		stdTM->roll = Adcs::roll*180/M_PI;
 		stdTM->pitch = Adcs::pitch*180/M_PI;
 		stdTM->power_up=Adcs::safePowerDown;
-		stdTM->target_RPM=Adcs::target_RPM;
+		stdTM->target_RPM=Adcs::desired_speed;//Adcs::target_RPM;
 		stdTM->controlMode=Adcs::mode.mode;
 	}
 }
@@ -592,6 +611,17 @@ if(RODOS::NOW()-init_time <20 * RODOS::SECONDS){
 
 
 /*
+
+if(input-last_input>MaxDeltaPWM){ //if the change of input is too high make it the maximum change
+			input=last_input+MaxDeltaPWM;
+		}else if(input-last_input<-MaxDeltaPWM){
+			input=last_input-MaxDeltaPWM;
+		}
+
+		if(input>0 && abs(input)<MinPWM)
+			input=-MinPWM;
+		if(input<0 && abs(input)<MinPWM)
+			input=MinPWM;
 if(flag){
 		if(abs(input)<5)
 			input=0;

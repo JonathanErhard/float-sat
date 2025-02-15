@@ -67,12 +67,12 @@ class Adcs: public generated::Adcs{
     //----------------------------this is for control-------------------------------------------------------------------
     float pid();
 
-    float target_att, target_speed,target_RPM; //target attitude and speed
+    float target_att = 0, target_speed =0,target_RPM=0; //target attitude and speed
 
     float vel, pos=0;
     float pitch,roll;
 
-    bool safePowerDown=true;
+    bool safePowerDown=false;
 
     float k_pos[3];
 	  float k_v_sat[3];
@@ -101,6 +101,7 @@ private:
     float testValue=2000;
     float testsquares=0;
     float testcounter=0;
+    int steps_telecomand;
 
 
 

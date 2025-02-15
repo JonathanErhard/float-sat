@@ -6,16 +6,25 @@ appwidgets:
     commander: false
     housekeeper: false
     mission: true
-    power: false
+    power: true
     sensors: true
     transceiver: false
 windows: 
   0: 
     type: Telecommand
-    app: mission
-    id: 3
-    identi: 64482508799
-    x: 644
-    y: 336
+    app: adcs
+    id: 4
+    identi: 64498499583
+    x: 172
+    y: 80
+    w: 700
+    h: 400
+  1: 
+    type: Telecommand
+    app: adcs
+    id: 2
+    identi: 64464945151
+    x: 1220
+    y: 566
     w: 700
     h: 400

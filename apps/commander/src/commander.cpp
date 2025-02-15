@@ -8,7 +8,7 @@
 #include <corfu/node.h>
 
 #define BATTERY_THRESHHOLD 7.0f
-HAL_GPIO pin_green_led(GPIO_060);
+
 
 void Commander::runCommandThread()
 {
@@ -65,9 +65,6 @@ void Commander::runCommandThread()
 bool Commander::handleTelecommandNOP()
 {
     RODOS::PRINTF("COMMANDER -> NOP\n");
-
-    pin_green_led.init(true, 1, 0);
-    pin_green_led.setPins(1);
     return true;
 }
 

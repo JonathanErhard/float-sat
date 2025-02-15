@@ -36,6 +36,7 @@ telecommands:
           1: Position
           2: Velocity
           3: RPM
+          4: Step
       submode:
         type: float
         default_value: 2
@@ -78,10 +79,12 @@ telecommands:
 standard_telemetry:
     attitudeYaw:
       type: float
-      customWidget: pointingWidget
+      customWidget: plottingWidget
     pitch: float
     roll: float
-    speed: float
+    speed:
+      type: float 
+      customWidget: plottingWidget
     target_att: 
       type: float 
       customWidget: plottingWidget

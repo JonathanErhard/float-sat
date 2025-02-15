@@ -37,6 +37,7 @@ float current = 0.0f;
 
 void Power::initialize()
 {
+
 }
 
 // Thread methods
@@ -89,6 +90,8 @@ void Power::update_led()
 		led_gpio.setPins(true);
 	else
 		led_gpio.setPins(false);
+	
+	//RODOS::PRINTF("%d\n",voltage < 11.84f);
 
 }
 
