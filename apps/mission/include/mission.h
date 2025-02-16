@@ -24,6 +24,7 @@ class Mission: public generated::Mission{
 	bool handleTelecommandChangeAngle(const generated::ChangeAngle &changeAngle) override;
     bool handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) override;
 	bool handleTelecommandSetRotationSpeed(const generated::SetRotationSpeed& rotationspeed2) override;
+	bool handleTelecommandSetMinDist(const generated::SetMinDist& setMinDist) override;
 	
 
 	//Topic methods
@@ -70,7 +71,7 @@ class Mission: public generated::Mission{
 
 	void rotate_start();
 	void rotate_end();
-	void rotate();
+	bool check_rotation_end();
 	float targetReaction(float x, float y);
 	float mod(float in);
 
