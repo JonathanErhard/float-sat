@@ -81,7 +81,6 @@ class Adcs: public generated::Adcs{
     float k1, k2, k3, //pos
     k4, k5, k6, //v sat
     k7, k8, k9; //pid values
-    float dt_pid;
     float last_input, last_time;
     float motor_speed_measured;
     float sum_error1, sum_error2, sum_error3=0;
@@ -101,10 +100,11 @@ private:
     float testsquares=0;
     float testcounter=0;
     int steps_telecomand;
-    float error2, error1;
+    float error2, error1, error3;
     float last_error1=0;
     float last_error2=0;
     float last_error3=0;
+    float dt_pid;
 
 
 
