@@ -77,6 +77,7 @@ inline void Mission::rotate_start(){
 	mode.mode=2;
 	mode.submode=rotationspeed;
 	modeTopic.publish(mode);
+	collecting_max = true;
 }
 
 inline void Mission::rotate_end(){
@@ -84,12 +85,6 @@ inline void Mission::rotate_end(){
 	mode.mode=2;
 	mode.submode=0;
 	modeTopic.publish(mode);
-}
-
-void Mission::rotate(){
-	rotate_start();
-	collecting_max = true;
-	rotate_end();
 	collecting_max = false;
 }
 
@@ -104,32 +99,32 @@ bool Mission::handleTelecommandChangeMode(const generated::ChangeMode &changeMod
 			default:
 				break;
 			case 1:
-				Mission::rotate();
+				Mission::rotate_start();
 				break;
 			case 2:
 				if(Mission::Att_light>500)
-					Mission::rotate();
+					Mission::rotate_start();
 				mode.mode=1;
 				mode.submode=Att_light;
 				modeTopic.publish(mode);
 				break;
 			case 3:
 				if(Mission::Att_obj>500)
-					Mission::rotate();
+					Mission::rotate_start();
 				mode.mode=1;
 				mode.submode=Att_obj;
 				modeTopic.publish(mode);
 				break;
 			case 4:
 				if(Mission::Att_obj>500 && Mission::Att_light>500)
-					Mission::rotate();
+					Mission::rotate_start();
 				mode.mode=1;
 				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
 				modeTopic.publish(mode);
 				changeMirrorAngle(calculateMirrorAngle());
 				break;
 			case 5:
-				Mission::rotate();
+				Mission::rotate_start();
 				mode.mode=1;
 				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
 				modeTopic.publish(mode);
@@ -149,8 +144,8 @@ bool Mission::handleTelecommandChangeAngle(const generated::ChangeAngle &changeA
 	return false;           
 }
 
-virtual bool handleTelecommandSetMinDist(const SetMinDist& setMinDist) {
-	Mission::nearest=setMinDist;
+bool Mission::handleTelecommandSetMinDist(const generated::SetMinDist& setMinDist) {
+	Mission::nearest=setMinDist.dist;
 	changeMirrorAngle(calculateMirrorAngle());
 	return false;           
 }
@@ -174,27 +169,31 @@ void Mission::handleTopicAttitudeDeterminationTopic(generated::AttitudeDetermina
 void Mission::handleTopicProximityTopic(generated::ProximityTopic &message) {
 	Mission::proximity=message;
 	if(collecting_max){
-		if ( (time_start - RODOS::NOW() > 5*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start )<5)){
-            break;
-        }  
+		if(!check_rotation_end())
 		if(proximity.distance<nearest && proximity.distance > 0) { //had some bs where this was 0 so hope to catch the bs with this
 			nearest=proximity.distance;
 			Att_obj=mod(attitude.position+PROXIMITYSENSOROFFSET);
-			}
+		}
 	}
 }
 
 void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) {
 	Mission::light=message;
+	if(!check_rotation_end())
 	if(collecting_max){
-		if ( (time_start - RODOS::NOW() > 5*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start )<5)){
-			inMission = false;
-		}  
-		else if(light.intensity>brightest) {
+		if(light.intensity>brightest) {
 			brightest=light.intensity;
 			Att_light=mod(attitude.position+LIGHTSENSOROFFSET);
-			}
+		}
 	}
+}
+
+bool Mission::check_rotation_end(){
+	if ( (time_start - RODOS::NOW() > 5*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start)<5)){
+			rotate_end();
+			return true;
+		}  
+	return false;
 }
 
 void Mission::handleTopicMissionModeTopic(generated::MissionModeTopic &message) { //realized i dont need this
