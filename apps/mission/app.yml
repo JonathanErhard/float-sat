@@ -44,6 +44,10 @@ telecommands:
       * pointasteroid: points at where it thinks the asteroid is. if we havent found it yet finds it
       * reflect: reflects the light from the sun to the asteroid if we havent found the asteroid or sun yet finds it
       * everything: finds the sun and asteroid and reflects the light onto the asteroid
+  SetMinDist:
+    id: 6
+    fields:
+      dist: float
   ChangeAngle:
     id: 3
     fields:

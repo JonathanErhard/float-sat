@@ -8,6 +8,7 @@ class Mission: public generated::Mission{
 		int rotationspeed = 10;
 		int64_t time_start;
 		float attitude_start =0;
+		bool collecting_max = false;
 
 	public:
 
@@ -67,11 +68,10 @@ class Mission: public generated::Mission{
 	bool isInMission;
 
 
+	void rotate_start();
+	void rotate_end();
 	void rotate();
 	float targetReaction(float x, float y);
 	float mod(float in);
-
-	
-
 
 };
