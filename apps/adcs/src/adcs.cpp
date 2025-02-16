@@ -180,9 +180,9 @@ bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setC
 
 bool Adcs::handleTelecommandSafePowerUpDown(const generated::SafePowerUpDown &powerupdown){
 	if(powerupdown.highRPM == 1)
-		Adcs::safePowerDown=false;
-	else 
 		Adcs::safePowerDown=true;
+	else 
+		Adcs::safePowerDown=false;
 	return true;
 }
 
@@ -311,14 +311,15 @@ float Adcs::pid(){
 	if(mode.mode==4)
 		return steps_telecomand;
 	MotorSpeedUpdate();
+	float dt_pid = (last_time - RODOS::NOW()) /(100*RODOS::MILLISECONDS); 
 	Adcs::last_time=RODOS::NOW();
 	if(mode.mode!=3){
 		if(mode.mode!=2){
 			error1 = mod( Adcs::target_att - Adcs::pos);
 			if(fabs(Adcs::error1) >180)  Adcs::error1 = - (Adcs::error1 - 180);	
 			Adcs::sum_error1 += error1;
-			Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[1] + 
-							(error1 - last_error1) * k_pos[2]  +
+			Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[1] *dt_pid+ 
+							(error1 - last_error1) * k_pos[2] / dt_pid +
 							error1 * Adcs::k_pos[0] ;
 			Adcs::last_error1 = error1;
 			if(target_speed > maxTargetSpeed) target_speed = maxTargetSpeed;
@@ -328,8 +329,8 @@ float Adcs::pid(){
 		error2=   - Adcs::vel + Adcs::target_speed; //has to be this way round because actio = reactio
 		Adcs::sum_error2 +=error2;
 		desired_speed = 	error2 * Adcs::k_v_sat[0] + 
-							Adcs::sum_error2 * Adcs::k_v_sat[1] +
-							(error2 - Adcs::last_error2)*k_v_sat[2];
+							Adcs::sum_error2 * Adcs::k_v_sat[1] * dt_pid+
+							(error2 - Adcs::last_error2)*k_v_sat[2] / dt_pid;
 		Adcs::last_error2 = Adcs::error2;
 	}
 
@@ -340,15 +341,15 @@ float Adcs::pid(){
 	float error3 = (Adcs::motor_speed_measured-desired_speed); //check how far off we are from the actual speed
 	Adcs::sum_error3 += error3;
 	Adcs::target_RPM = 	error3 * Adcs::k_v_wheel[0] +
-					Adcs::sum_error3 * Adcs::k_v_wheel[1] +
-					(error3-Adcs::last_error3)*Adcs::k_v_wheel[2];
+					Adcs::sum_error3 * Adcs::k_v_wheel[1] * dt_pid+
+					(error3-Adcs::last_error3)*Adcs::k_v_wheel[2] / dt_pid;
 	Adcs::last_error3 = error3;
 	
 	return target_RPM;	
 }
 
 
-bool flag=false;
+bool flag=true;
 void Adcs::motorController(float input){
 
 		//RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n k_v_wheel[1]: %f \nk_v_wheel[2]_: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n \n sumerror %f \n error %f\n"
