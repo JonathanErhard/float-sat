@@ -4,7 +4,10 @@
 
 class Mission: public generated::Mission{
 	private:
-			long time;
+		long time;
+		int rotationspeed = 10;
+		int64_t time_start;
+		float attitude_start =0;
 
 	public:
 
@@ -19,6 +22,7 @@ class Mission: public generated::Mission{
 	bool handleTelecommandChangeMode(const generated::ChangeMode &changeMode) override;
 	bool handleTelecommandChangeAngle(const generated::ChangeAngle &changeAngle) override;
     bool handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) override;
+	bool handleTelecommandSetRotationSpeed(const generated::SetRotationSpeed& rotationspeed2) override;
 	
 
 	//Topic methods
@@ -66,6 +70,7 @@ class Mission: public generated::Mission{
 	void rotate();
 	float targetReaction(float x, float y);
 	float mod(float in);
+
 	
 
 

@@ -29,7 +29,7 @@ telecommands:
       modes:
         type: uint8_t
         aliases:
-          0: Nothing
+          0: Stop
           1: Find
           2: Pointsun
           3: pointasteroid
@@ -38,7 +38,7 @@ telecommands:
     description: |
       ### Changes the overarcing mode of the satellite
 
-      * Nothing: does nothing lol
+      * Stop: stops current rotation 
       * Find: spins around and finds the brightest point
       * Pointsun: points at where it thinks the sun is. if we havent found it yet finds it
       * pointasteroid: points at where it thinks the asteroid is. if we havent found it yet finds it
@@ -57,6 +57,12 @@ telecommands:
         type: uint32_t
       distance:
         type: uint32_t
+  SetRotationSpeed:
+    id: 5
+    fields:
+      speed:
+        type: uint32_t
+    description: "sets the rotation speed of the satellite while finding the sun / asteroid"
 
 
 standard_telemetry:
@@ -67,6 +73,8 @@ standard_telemetry:
     attitudeObject: float
     distanceObject: float
     intensityLight: float
+    testvar1: float
+    testvar2: float
 
 
 

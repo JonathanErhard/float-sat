@@ -122,8 +122,6 @@ void Adcs::initAdcsThreat() {
 
 void Adcs::runAdcsThreat() {
 	MotorSpeedUpdate();
-	//calculates the speeds of the motor 
-	//calculaterise();
 	if(!safePowerDown){
 		Adcs::motorController(0);
 		Adcs::sum_error3=0;
@@ -181,8 +179,10 @@ bool Adcs::handleTelecommandSetControlMode(const generated::SetControlMode &setC
 }
 
 bool Adcs::handleTelecommandSafePowerUpDown(const generated::SafePowerUpDown &powerupdown){
-	Adcs::safePowerDown=powerupdown.highRPM;
-	PRINTF("Pull the Lever Kronk\n");
+	if(powerupdown.highRPM == 1)
+		Adcs::safePowerDown=false;
+	else 
+		Adcs::safePowerDown=true;
 	return true;
 }
 
@@ -197,8 +197,11 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	float mz = imu.magnetometer[2];
 	
 
-	pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
-	roll  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	//pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	//roll  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	pitch = imu.gyroscope[0]*float(M_PI/180);
+	roll = imu.gyroscope[1]*float(M_PI/180);
+	
 	float Mx_h = mx*cos(pitch) +mz *sin(pitch);
 	//mx*cos(pitch) + mz*sin(pitch);
     float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);//+ beim letzten
@@ -212,10 +215,10 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	}
 	pos = atan2(rpy.x,rpy.y)*180/M_PI;//+ rpy.z*0.1f/2.f;
 	//winkel dinkel berechnungen
-		float r = imu.gyroscope[0]*float(M_PI/180);
-		float p = imu.gyroscope[1]*float(M_PI/180);
-		float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
-   		float cy = my*cos(r) + mz*sin(r) ;
+	//float r = imu.gyroscope[0]*float(M_PI/180);
+	//float p = imu.gyroscope[1]*float(M_PI/180);
+	//float cx = mx*cos(p) + my*sin(r)*sin(p) - mz*cos(r)*sin(p);
+	//float cy = my*cos(r) + mz*sin(r) ;
 	//pos = atan2(Mx_h,My_h);
 	//RODOS::PRINTF("-------------------------------\n roll %f \n pitch %f\n yaw %f \n Winkel yaw %f\n\n mx: %f \n my %f\n ",roll*180/M_PI,pitch*180/M_PI,pos*180/M_PI,atan2(cx,cy)*180/M_PI,Mx_h,My_h);
 	
@@ -296,7 +299,11 @@ void Adcs::handleTopicModeTopic(generated::ModeTopic &message) {
 	if(mode.mode==2)
 		Adcs::target_speed=mode.submode;
 	if(mode.mode==3)
-		Adcs::desired_speed=mode.submode;
+		Adcs::desired_speed = mode.submode;
+	if(mode.mode==4)
+		Adcs::safePowerDown = true;
+	if(mode.mode==5)
+		Adcs::safePowerDown = false;
 	
 }
 

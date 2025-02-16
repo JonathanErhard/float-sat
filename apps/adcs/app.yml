@@ -50,7 +50,7 @@ telecommands:
     id: 3
     description: changes the satellites flywheel from 0 to 2500 RPM and back
     fields: 
-      highRPM: bool
+      highRPM: uint8_t
   SetPid:
     id: 4
     description: sets the values for the PID controller. this is mostly used during testing, because we don't want to flash the floatsat every time we want to try new values
