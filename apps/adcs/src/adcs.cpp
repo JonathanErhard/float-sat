@@ -93,19 +93,19 @@ void Adcs::initialize(){
 	EncoderInit();
 
 	//POSITION CONTROLLER
-	k_pos[0]=0.6;
-	k_pos[1]=0.007;
-	k_pos[2]=1;
+	k_pos[0]=0.3;//0.6;
+	k_pos[1]=0;//0.007;
+	k_pos[2]=0;//1;
 
 	//VELOCITY CONTROLLER
-	k_v_sat[0]=10.0;//3.2;//2.5;
-	k_v_sat[1]=0.037;//0.0093;
+	k_v_sat[0]=7;//10.0;//3.2;//2.5;
+	k_v_sat[1]=0.4;//0.037;//0.0093;S
 	k_v_sat[2]=4;
 	
 	//RPM CONTROLLER
 	k_v_wheel[0]=1.15;
-	k_v_wheel[1]=0.0147;
-	k_v_wheel[2]=6;
+	k_v_wheel[1]=0.013;
+	k_v_wheel[2]=4;
 
 
 	//2.79 ;0.008 original values
@@ -311,13 +311,14 @@ float Adcs::pid(){
 	if(mode.mode==4)
 		return steps_telecomand;
 	MotorSpeedUpdate();
-	float dt_pid = (last_time - RODOS::NOW()) /(100*RODOS::MILLISECONDS); 
-	Adcs::last_time=RODOS::NOW();
+	int64_t currenttime=RODOS::NOW();
+	dt_pid = (currenttime-last_time) /(100*RODOS::MILLISECONDS); 
+	Adcs::last_time=currenttime;
 	if(mode.mode!=3){
 		if(mode.mode!=2){
 			error1 = mod( Adcs::target_att - Adcs::pos);
 			if(fabs(Adcs::error1) >180)  Adcs::error1 = - (Adcs::error1 - 180);	
-			Adcs::sum_error1 += error1;
+			Adcs::sum_error1 += error1 * dt_pid;
 			Adcs::target_speed = 	Adcs::sum_error1 * Adcs::k_pos[1] *dt_pid+ 
 							(error1 - last_error1) * k_pos[2] / dt_pid +
 							error1 * Adcs::k_pos[0] ;
@@ -327,9 +328,9 @@ float Adcs::pid(){
 		}/**/
 
 		error2=   - Adcs::vel + Adcs::target_speed; //has to be this way round because actio = reactio
-		Adcs::sum_error2 +=error2;
+		Adcs::sum_error2 +=error2 *dt_pid;
 		desired_speed = 	error2 * Adcs::k_v_sat[0] + 
-							Adcs::sum_error2 * Adcs::k_v_sat[1] * dt_pid+
+							Adcs::sum_error2 * Adcs::k_v_sat[1] +
 							(error2 - Adcs::last_error2)*k_v_sat[2] / dt_pid;
 		Adcs::last_error2 = Adcs::error2;
 	}
@@ -338,10 +339,10 @@ float Adcs::pid(){
 	if(desired_speed < minDesiredSpeed)  desired_speed = minDesiredSpeed;
 
 	
-	float error3 = (Adcs::motor_speed_measured-desired_speed); //check how far off we are from the actual speed
-	Adcs::sum_error3 += error3;
+	error3 = (Adcs::motor_speed_measured-desired_speed); //check how far off we are from the actual speed
+	Adcs::sum_error3 += error3*dt_pid;
 	Adcs::target_RPM = 	error3 * Adcs::k_v_wheel[0] +
-					Adcs::sum_error3 * Adcs::k_v_wheel[1] * dt_pid+
+					Adcs::sum_error3 * Adcs::k_v_wheel[1] +
 					(error3-Adcs::last_error3)*Adcs::k_v_wheel[2] / dt_pid;
 	Adcs::last_error3 = error3;
 	
@@ -349,7 +350,7 @@ float Adcs::pid(){
 }
 
 
-bool flag=true;
+bool flag=false;
 void Adcs::motorController(float input){
 
 		//RODOS::PRINTF("-----------------------------------\n DeltaPWM: %f\n k_v_wheel[1]: %f \nk_v_wheel[2]_: %f \nmotor speed: %f \ndesired Speed: %f \nRPM Error: %f \n input %f \n \n sumerror %f \n error %f\n"
@@ -402,8 +403,8 @@ void Adcs::updateStdTM(){
 		stdTM->power_up=Adcs::safePowerDown;
 		stdTM->target_RPM=Adcs::desired_speed;//Adcs::target_RPM;
 		stdTM->controlMode=Adcs::mode.mode;
-		stdTM->testvar1=Adcs::error1;
-		stdTM->testvar2=Adcs::sum_error1;
+		stdTM->testvar1=Adcs::error2;
+		stdTM->testvar2=Adcs::sum_error2;
 	}
 }
 
