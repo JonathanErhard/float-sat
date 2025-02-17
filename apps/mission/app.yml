@@ -8,7 +8,7 @@ threads:
   missionThread:
     firstRun: 1000_ms
     period: 1000_ms
-    priority: 9000
+    priority: 5000
 
 subscribe:
   attitudeDeterminationTopic: direct
@@ -45,7 +45,7 @@ telecommands:
       * reflect: reflects the light from the sun to the asteroid if we havent found the asteroid or sun yet finds it
       * everything: finds the sun and asteroid and reflects the light onto the asteroid
   SetMinDist:
-    id: 6
+    id: 6 
     fields:
       dist: float
   ChangeAngle:
@@ -67,6 +67,12 @@ telecommands:
       speed:
         type: uint32_t
     description: "sets the rotation speed of the satellite while finding the sun / asteroid"
+  TestMirrorRotation:
+    id: 7
+    fields:
+      distance: uint8_t
+      attitudeLight: int8_t
+      attitudeAsteroid: int8_t
 
 
 standard_telemetry:

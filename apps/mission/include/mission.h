@@ -25,6 +25,7 @@ class Mission: public generated::Mission{
     bool handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) override;
 	bool handleTelecommandSetRotationSpeed(const generated::SetRotationSpeed& rotationspeed2) override;
 	bool handleTelecommandSetMinDist(const generated::SetMinDist& setMinDist) override;
+	bool handleTelecommandTestMirrorRotation(const generated::TestMirrorRotation& mirrorRotation) override;
 	
 
 	//Topic methods
@@ -46,8 +47,8 @@ class Mission: public generated::Mission{
 	float asteroidPosition;
 
 	//controling the motor
-	uint32_t sun_height = 200; // sun height relative to sphere center [mm]
-	uint32_t sun_dist = 1500;  // sun dist relative to sphere center [mm]
+	uint32_t sun_height = 300; // sun height relative to sphere center [mm]
+	uint32_t sun_dist = 600;  // sun dist relative to sphere center [mm]
 	int calculateMirrorAngle();
 	void changeMirrorAngle(int angle);
 	int currentAngle;

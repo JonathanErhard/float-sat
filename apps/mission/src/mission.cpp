@@ -12,7 +12,7 @@ HAL_PWM servo(PWM_IDX01); // PE11
 
 //offset for the sonsors so that the coordinate Frame matches the IMU
 #define PROXIMITYSENSOROFFSET 90
-#define LIGHTSENSOROFFSET -90
+#define LIGHTSENSOROFFSET 90
 #define OFFSET_MIRROR 0
 
 
@@ -69,9 +69,6 @@ float Mission::mod(float in){
 
 inline void Mission::rotate_start(){
 	generated::ModeTopic mode;
-	mode.mode=4;	//turn on the motor
-	mode.submode=0;
-	modeTopic.publish(mode);
 	attitude_start= mod(Mission::attitude.position + 10.0) ;
 	time_start= RODOS::NOW();
 	mode.mode=2;
@@ -85,6 +82,34 @@ inline void Mission::rotate_end(){
 	mode.mode=2;
 	mode.submode=0;
 	modeTopic.publish(mode);
+	switch (missionModes.modes){
+		default:
+			break;
+		case 1:
+			break;
+		case 2:
+			mode.mode=1;
+			mode.submode=Att_light;
+			modeTopic.publish(mode);
+			break;
+		case 3:
+			mode.mode=1;
+			mode.submode=Att_obj;
+			modeTopic.publish(mode);
+			break;
+		case 4:
+			mode.mode=1;
+			mode.submode=targetReaction(Att_light , mod(Att_obj ));
+			modeTopic.publish(mode);
+			changeMirrorAngle(calculateMirrorAngle());
+			break;
+		case 5:
+			mode.mode=1;
+			mode.submode=targetReaction(Att_light , mod(Att_obj ));
+			modeTopic.publish(mode);
+			changeMirrorAngle(calculateMirrorAngle());
+			break;  
+	}
 	collecting_max = false;
 }
 
@@ -96,45 +121,27 @@ bool Mission::handleTelecommandChangeMode(const generated::ChangeMode &changeMod
 	if(!isInMission){
 		isInMission=true;
 		switch (missionModes.modes) {
-			default:
+			case 0:
 				break;
+			case 5:
 			case 1:
 				Mission::rotate_start();
 				break;
-			case 2:
+			default:
 				if(Mission::Att_light>500)
 					Mission::rotate_start();
-				mode.mode=1;
-				mode.submode=Att_light;
-				modeTopic.publish(mode);
+				else
+					rotate_end();
 				break;
-			case 3:
-				if(Mission::Att_obj>500)
-					Mission::rotate_start();
-				mode.mode=1;
-				mode.submode=Att_obj;
-				modeTopic.publish(mode);
-				break;
-			case 4:
-				if(Mission::Att_obj>500 && Mission::Att_light>500)
-					Mission::rotate_start();
-				mode.mode=1;
-				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
-				modeTopic.publish(mode);
-				changeMirrorAngle(calculateMirrorAngle());
-				break;
-			case 5:
-				Mission::rotate_start();
-				mode.mode=1;
-				mode.submode=targetReaction(Att_light , mod(Att_obj + OFFSET_MIRROR));
-				modeTopic.publish(mode);
-				changeMirrorAngle(calculateMirrorAngle());
-				break;  
+
         }
 		isInMission=false;
 	}
-	else if(missionModes.modes == 0)
+	else if(missionModes.modes == 0){
 		isInMission=false;
+		collecting_max=false;
+		rotate_end();
+	}
 	return false;
 }
 
@@ -158,6 +165,20 @@ bool Mission::handleTelecommandSetSunConstants(const generated::SetSunConstants&
 
 bool Mission::handleTelecommandSetRotationSpeed(const generated::SetRotationSpeed& rotationspeed2){
 	rotationspeed=rotationspeed2.speed;
+	return false;
+}
+
+bool Mission::handleTelecommandTestMirrorRotation(const generated::TestMirrorRotation& mirrorRotation){
+	nearest = mirrorRotation.distance;
+	Att_light = mirrorRotation.attitudeLight;
+	Att_obj = mirrorRotation.attitudeAsteroid;
+
+	generated::ModeTopic mode;
+	mode.mode=1;
+	mode.submode=targetReaction(Att_light , mod(Att_obj ));
+	modeTopic.publish(mode);
+	changeMirrorAngle(calculateMirrorAngle());
+	return false;
 }
 
 
@@ -179,8 +200,8 @@ void Mission::handleTopicProximityTopic(generated::ProximityTopic &message) {
 
 void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) {
 	Mission::light=message;
-	if(!check_rotation_end())
 	if(collecting_max){
+		if(!check_rotation_end())
 		if(light.intensity>brightest) {
 			brightest=light.intensity;
 			Att_light=mod(attitude.position+LIGHTSENSOROFFSET);
@@ -189,7 +210,7 @@ void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) 
 }
 
 bool Mission::check_rotation_end(){
-	if ( (time_start - RODOS::NOW() > 5*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start)<5)){
+	if ( (RODOS::NOW() - time_start > 10*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start)<5)){
 			rotate_end();
 			return true;
 		}  
@@ -202,12 +223,30 @@ void Mission::handleTopicMissionModeTopic(generated::MissionModeTopic &message) 
 
 
 int Mission::calculateMirrorAngle(){
-	float nu = tan(cos(rotation/360*M_PI)*sin(attitude.roll/360*M_PI)+sin(rotation/360*M_PI)*sin(attitude.pitch/360*M_PI));
+	
 	float d1=proximity.distance;
-	int beta, betamin =90;
+	float winkel = atan2(sun_height,sun_dist);
+	float winkel2 = atan((h3+h1)/d1);
+	int beta=90, betamin =90;
+	float omegadiffmin =90;
+	while(true){
+		beta = beta- 1;
+		if(abs(winkel-winkel2 - beta) < omegadiffmin){
+			omegadiffmin=abs(winkel - winkel2 - beta);
+			betamin=beta;
+		}
+		if(abs(winkel-winkel2 - beta)<threshold )
+			return beta;
+		if(beta<45)
+			return betamin;
+	}
+	return 0;
+
+	/*int beta=90, betamin =90;
 	float omegadiffmin =90;
 	float omega=0;
 	float omegasoll=90;
+	float nu = tan(cos(rotation/360*M_PI)*sin(attitude.roll/360*M_PI)+sin(rotation/360*M_PI)*sin(attitude.pitch/360*M_PI));
 	while (true){
 		beta = beta- 2;
 		float q1= sqrt((d1+d2-h1*sin(nu))*(d1+d2-h1*sin(nu))
@@ -216,7 +255,7 @@ int Mission::calculateMirrorAngle(){
 						+(sun_height-h1*cos(nu)+h5-h3 *sin(beta-nu))*(sun_height-h1*cos(nu)+h5-h3 *sin(beta-nu)));
 		omegasoll = asin( (q2*q2+h3*h3-q1*q1)/(2*q2*h3));
 		omega = beta-nu -tan((sun_height - h1*cos(nu)-h3*sin(beta-nu)/(sun_dist+d2-h1*sin(nu)-h3*cos(beta-nu))));
-		if(abs(omega-omegasoll)>omegadiffmin){
+		if(abs(omega-omegasoll)<omegadiffmin){
 			omegadiffmin=abs(omega-omegasoll);
 			betamin=beta;
 		}
@@ -224,8 +263,8 @@ int Mission::calculateMirrorAngle(){
 			return beta;
 		if(beta<45)
 			return betamin;
-	}
-	return (int) tan(beta/d1)-nu;
+		return (int) tan(beta/d1)-nu;
+	}*/
 }
 
 void Mission::changeMirrorAngle(int angle){
@@ -256,7 +295,7 @@ void Mission::updateStdTM(){
 		stdTM->attitudeObject = Mission::Att_obj;
 		stdTM->distanceObject = Mission::nearest;
 		stdTM->intensityLight = Mission::brightest;
-		stdTM->testvar1 = (int) (time_start - RODOS::NOW())/ RODOS::SECONDS ;
+		stdTM->testvar1 = (int64_t) (time_start - RODOS::NOW())/ RODOS::SECONDS ;
 		stdTM->testvar2 = (int) abs(Mission::attitude.position - attitude_start );
 	}
 }

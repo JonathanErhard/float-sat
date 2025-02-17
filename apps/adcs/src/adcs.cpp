@@ -197,8 +197,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	float mz = imu.magnetometer[2];
 	
 
-	//pitch = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
-	//roll  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	float p = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	float r  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
 	pitch = imu.gyroscope[0]*float(M_PI/180);
 	roll = imu.gyroscope[1]*float(M_PI/180);
 	
@@ -236,8 +236,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	updateStdTM();
 	attTopic.velocity=vel;
 	attTopic.position=pos;
-	attTopic.roll=roll*180/M_PI;
-	attTopic.pitch=pitch*180/M_PI;
+	attTopic.roll=r*180/M_PI;
+	attTopic.pitch=p*180/M_PI;
 	attitudeDeterminationTopic.publish(attTopic);
 	
 	float rotation=0;
@@ -299,12 +299,7 @@ void Adcs::handleTopicModeTopic(generated::ModeTopic &message) {
 	if(mode.mode==2)
 		Adcs::target_speed=mode.submode;
 	if(mode.mode==3)
-		Adcs::desired_speed = mode.submode;
-	if(mode.mode==4)
-		Adcs::safePowerDown = true;
-	if(mode.mode==5)
-		Adcs::safePowerDown = false;
-	
+		Adcs::desired_speed = mode.submode;	
 }
 
 float Adcs::pid(){

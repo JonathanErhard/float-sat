@@ -93,7 +93,7 @@ class Adcs: public generated::Adcs{
     void calculaterise();
     void testRPM();
     
-    float desired_speed;
+    float desired_speed = 0;
 private:
     long time;
     float testValue=2000;
