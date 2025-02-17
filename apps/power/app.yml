@@ -16,5 +16,9 @@ telecommands:
     id: 1
 
 standard_telemetry:
-    voltage: float
-    current: float
+    voltage:
+      type: float 
+      customWidget: plottingWidget
+    current:
+      type: float 
+      customWidget: plottingWidget

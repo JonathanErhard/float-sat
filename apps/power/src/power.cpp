@@ -86,7 +86,7 @@ void Power::readCurrent()
 
 void Power::update_led()
 {
-	if (voltage < 11.84f)
+	if (voltage < 12.3f)
 		led_gpio.setPins(true);
 	else
 		led_gpio.setPins(false);

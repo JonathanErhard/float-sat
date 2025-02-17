@@ -10,6 +10,13 @@ class Mission: public generated::Mission{
 		float attitude_start =0;
 		bool collecting_max = false;
 
+		float sunAngle = 0;
+		float objAngle = 0;
+		float gamma = 0;
+		bool isTracking = false;
+
+		float mirror_offset = 5.0;
+
 	public:
 
 	void initialize() override;
@@ -25,7 +32,8 @@ class Mission: public generated::Mission{
     bool handleTelecommandSetSunConstants(const generated::SetSunConstants& setSunConstants) override;
 	bool handleTelecommandSetRotationSpeed(const generated::SetRotationSpeed& rotationspeed2) override;
 	bool handleTelecommandSetMinDist(const generated::SetMinDist& setMinDist) override;
-	bool handleTelecommandTestMirrorRotation(const generated::TestMirrorRotation& mirrorRotation) override;
+	bool handleTelecommandMirrorTracking(const generated::MirrorTracking& mirrorRotation) override;
+	bool handleTelecommandSetMirrorOffset(const generated::SetMirrorOffset& setMirrorOffset) override;
 	
 
 	//Topic methods

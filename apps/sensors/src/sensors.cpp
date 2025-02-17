@@ -92,7 +92,7 @@ void Sensors::initCollectData()
 void Sensors::readLIDAR()
 {
     uint8_t data_ready = 0;
-    int distance = 0;
+    int distance_raw = 0;
 
     VL53L4ED_ResultsData_t tof_result;
 
@@ -111,21 +111,20 @@ void Sensors::readLIDAR()
         if (tof_filter_flag)
         {
             filter.addSample(tof_result.distance_mm);
-            distance = filter.getMedian();
+            distance_raw = filter.getMedian();
         }
         else
         {
-            distance = tof_result.distance_mm;
+            distance_raw = tof_result.distance_mm;
         }
         VL53L4ED_ClearInterrupt(TOF_I2C_ADDRESS);
 
     }
     else
     {   
-       
         init_lidar();
-        
     }
+    float distance = (((-1.272089e-10*distance_raw+0.00000047833609)*distance_raw-0.0003512875)*distance_raw+0.12808240463)*distance_raw-0.94115216068;
     proximityBuffer.distance = distance;
 }
 

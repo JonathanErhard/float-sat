@@ -26,8 +26,8 @@
 
 	#define maxDesiredSpeed 4000 //TODO check these values
 	#define minDesiredSpeed-4000
-	#define maxTargetSpeed 40000000
-	#define minTargetSpeed -4000000
+	#define maxTargetSpeed 35
+	#define minTargetSpeed -35
 	
 //PE13//PE11
 	//coppied from Senors.cpp written by Atheel Redah @ University of Würzburg, January 20, 2019
@@ -197,14 +197,15 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	float mz = imu.magnetometer[2];
 	
 
-	float p = atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
-	float r  = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
-	pitch = imu.gyroscope[0]*float(M_PI/180);
-	roll = imu.gyroscope[1]*float(M_PI/180);
 	
-	float Mx_h = mx*cos(pitch) +mz *sin(pitch);
+	pitch =  atan2(imu.accelerometer[0],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[1]*imu.accelerometer[1]));//asin(imu.accelerometer[0]);
+	roll = atan2(imu.accelerometer[1],sqrt(imu.accelerometer[2]*imu.accelerometer[2]+imu.accelerometer[0]*imu.accelerometer[0]));//asin(imu.accelerometer[1]/cos(pitch));
+	float p =  imu.gyroscope[0]*float(M_PI/180);
+	float r = imu.gyroscope[1]*float(M_PI/180);
+	
+	float Mx_h = mx*cos(p) +mz *sin(p);
 	//mx*cos(pitch) + mz*sin(pitch);
-    float My_h = mx*sin(roll) * sin(pitch) + my *cos(roll) - mz * sin(roll) * cos (pitch);//+ beim letzten
+    float My_h = mx*sin(r) * sin(p) + my *cos(r) - mz * sin(r) * cos (p);//+ beim letzten
 	//mx*sin(roll)*sin(pitch) + my*cos(roll) - mz*sin(roll)*cos(pitch);
 	Adcs::positionRb.put(Vector3D_F(Mx_h, My_h,0));
 	//Adcs::positionRb.put(Vector3D_F(p2, y2,y));
@@ -236,8 +237,8 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 	updateStdTM();
 	attTopic.velocity=vel;
 	attTopic.position=pos;
-	attTopic.roll=r*180/M_PI;
-	attTopic.pitch=p*180/M_PI;
+	attTopic.roll=roll*180/M_PI;
+	attTopic.pitch=pitch*180/M_PI;
 	attitudeDeterminationTopic.publish(attTopic);
 	
 	float rotation=0;
@@ -398,8 +399,7 @@ void Adcs::updateStdTM(){
 		stdTM->power_up=Adcs::safePowerDown;
 		stdTM->target_RPM=Adcs::desired_speed;//Adcs::target_RPM;
 		stdTM->controlMode=Adcs::mode.mode;
-		stdTM->testvar1=Adcs::error2;
-		stdTM->testvar2=Adcs::sum_error2;
+
 	}
 }
 

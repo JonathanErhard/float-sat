@@ -4,7 +4,7 @@
 #include "rodos.h"
 
 // Mirror stuff the mirror accepts angles from 0 to 90 degrree
-#define	MaxAngle 90
+#define	MaxAngle 100
 #define MinAngle 0
 HAL_PWM servo(PWM_IDX01); // PE11
 
@@ -12,10 +12,8 @@ HAL_PWM servo(PWM_IDX01); // PE11
 
 //offset for the sonsors so that the coordinate Frame matches the IMU
 #define PROXIMITYSENSOROFFSET 90
-#define LIGHTSENSOROFFSET 90
+#define LIGHTSENSOROFFSET -90
 #define OFFSET_MIRROR 0
-
-
 
 #define rotation 0
 #define d2 93 //D2 in mm
@@ -168,23 +166,21 @@ bool Mission::handleTelecommandSetRotationSpeed(const generated::SetRotationSpee
 	return false;
 }
 
-bool Mission::handleTelecommandTestMirrorRotation(const generated::TestMirrorRotation& mirrorRotation){
-	nearest = mirrorRotation.distance;
-	Att_light = mirrorRotation.attitudeLight;
-	Att_obj = mirrorRotation.attitudeAsteroid;
-
-	generated::ModeTopic mode;
-	mode.mode=1;
-	mode.submode=targetReaction(Att_light , mod(Att_obj ));
-	modeTopic.publish(mode);
-	changeMirrorAngle(calculateMirrorAngle());
+bool Mission::handleTelecommandMirrorTracking(const generated::MirrorTracking& mirrorRotation){
+	isTracking = mirrorRotation.isTracking;
 	return false;
 }
 
+bool Mission::handleTelecommandSetMirrorOffset(const generated::SetMirrorOffset& setMirrorOffset) {
+	mirror_offset = setMirrorOffset.offset;
+	return false;
+}
 
 //Topic methods
 void Mission::handleTopicAttitudeDeterminationTopic(generated::AttitudeDeterminationTopic &message) {
 	Mission::attitude=message;
+	if(isTracking)
+		changeMirrorAngle(calculateMirrorAngle());
 }
 
 void Mission::handleTopicProximityTopic(generated::ProximityTopic &message) {
@@ -193,7 +189,7 @@ void Mission::handleTopicProximityTopic(generated::ProximityTopic &message) {
 		if(!check_rotation_end())
 		if(proximity.distance<nearest && proximity.distance > 0) { //had some bs where this was 0 so hope to catch the bs with this
 			nearest=proximity.distance;
-			Att_obj=mod(attitude.position+PROXIMITYSENSOROFFSET);
+			Att_obj=mod(attitude.position+PROXIMITYSENSOROFFSET+mirror_offset);
 		}
 	}
 }
@@ -204,7 +200,7 @@ void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) 
 		if(!check_rotation_end())
 		if(light.intensity>brightest) {
 			brightest=light.intensity;
-			Att_light=mod(attitude.position+LIGHTSENSOROFFSET);
+			Att_light=mod(attitude.position+LIGHTSENSOROFFSET+mirror_offset);
 		}
 	}
 }
@@ -223,24 +219,13 @@ void Mission::handleTopicMissionModeTopic(generated::MissionModeTopic &message) 
 
 
 int Mission::calculateMirrorAngle(){
-	
-	float d1=proximity.distance;
-	float winkel = atan2(sun_height,sun_dist);
-	float winkel2 = atan((h3+h1)/d1);
-	int beta=90, betamin =90;
-	float omegadiffmin =90;
-	while(true){
-		beta = beta- 1;
-		if(abs(winkel-winkel2 - beta) < omegadiffmin){
-			omegadiffmin=abs(winkel - winkel2 - beta);
-			betamin=beta;
-		}
-		if(abs(winkel-winkel2 - beta)<threshold )
-			return beta;
-		if(beta<45)
-			return betamin;
-	}
-	return 0;
+	float d1=nearest*10;
+	sunAngle = atan2(sun_height,sun_dist)*180/M_PI;
+	objAngle = atan2(d1,115)*180/M_PI;
+	gamma = (90-objAngle);
+
+	return (int) (90-0.5*(gamma-sunAngle)) - (int) attitude.roll - 6;
+	//return (90 - winkel + winkel2 )/2;
 
 	/*int beta=90, betamin =90;
 	float omegadiffmin =90;
@@ -295,8 +280,6 @@ void Mission::updateStdTM(){
 		stdTM->attitudeObject = Mission::Att_obj;
 		stdTM->distanceObject = Mission::nearest;
 		stdTM->intensityLight = Mission::brightest;
-		stdTM->testvar1 = (int64_t) (time_start - RODOS::NOW())/ RODOS::SECONDS ;
-		stdTM->testvar2 = (int) abs(Mission::attitude.position - attitude_start );
 	}
 }
 

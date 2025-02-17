@@ -67,13 +67,14 @@ telecommands:
       speed:
         type: uint32_t
     description: "sets the rotation speed of the satellite while finding the sun / asteroid"
-  TestMirrorRotation:
+  MirrorTracking:
     id: 7
     fields:
-      distance: uint8_t
-      attitudeLight: int8_t
-      attitudeAsteroid: int8_t
-
+      isTracking: bool
+  SetMirrorOffset:
+    id: 8
+    fields:
+      offset: float
 
 standard_telemetry:
     currentAngle: uint8_t
@@ -83,8 +84,5 @@ standard_telemetry:
     attitudeObject: float
     distanceObject: float
     intensityLight: float
-    testvar1: float
-    testvar2: float
-
 
 
