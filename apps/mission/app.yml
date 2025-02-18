@@ -18,7 +18,7 @@ subscribe:
 
 publish:
   - modeTopic
-
+  - calibMagTopic
 
 telecommands:
   NOP:
@@ -35,6 +35,7 @@ telecommands:
           3: pointasteroid
           4: reflect
           5: everything
+          6: calibMag
     description: |
       ### Changes the overarcing mode of the satellite
 

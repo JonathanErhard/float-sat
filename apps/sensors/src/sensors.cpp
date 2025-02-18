@@ -18,8 +18,10 @@ int16_t GYR_CALIB_VALS[3] = {131,30,-14};                          // offset
 int16_t ACC_CALIB_VALS[3] = {228,0,0};                             // offset
 int16_t MAG_BOUNDRIES[3][2] = {{863,1289},{-955,-415},{-168,-42}}; //{x[min,max], y[min,max], z[min,max]}
 
+int16_t NEW_MAG_BOUNDRIES[3][2] = {{-285 ,617},{423,1345},{-1194 ,-1087}}; //buffer if we want to calib the mag
 
-Sensors::Sensors():imu(IMU_I2C_IDX){}   //,GYR_CALIB_VALS,ACC_CALIB_VALS,MAG_BOUNDRIES){} 
+
+Sensors::Sensors():imu(IMU_I2C_IDX){}//,GYR_CALIB_VALS,ACC_CALIB_VALS,MAG_BOUNDRIES){} 
 
 /**
  * @brief Sun Sensor adc
@@ -128,6 +130,46 @@ void Sensors::readLIDAR()
     proximityBuffer.distance = distance;
 }
 
+void Sensors::handleTopicCalibMagTopic(generated::CalibMagTopic &message){
+    calibMagBuffer = message;
+    if(calibMagBuffer.is_calibrating){
+        // start calibration
+        for (int i = 0; i < 3; i++)
+        {
+            NEW_MAG_BOUNDRIES[i][0] = INT16_MAX;
+            NEW_MAG_BOUNDRIES[i][1] = INT16_MIN;
+        }
+    }
+    else{
+        // end calibration
+        for(int i = 0;i<3;i++){
+            MAG_BOUNDRIES[i][0] = NEW_MAG_BOUNDRIES[i][0];
+            MAG_BOUNDRIES[i][1] = NEW_MAG_BOUNDRIES[i][1];
+            imu.MAG_BOUNDRIES[i][0] = NEW_MAG_BOUNDRIES[i][0];
+            imu.MAG_BOUNDRIES[i][1] = NEW_MAG_BOUNDRIES[i][1];
+        }
+    }
+
+}
+
+void Sensors::read_IMU(){
+
+    //read IMU
+    imu.read_adj();
+    //imu.print_real();
+    imu.cpy_adj(imuTopicBuffer.accelerometer, imuTopicBuffer.gyroscope, imuTopicBuffer.magnetometer);
+
+    //if calib, read raw and update calib values
+    if(calibMagBuffer.is_calibrating){
+        imu.read_raw();
+        for (int i = 0; i < 3; i++)
+        {
+            NEW_MAG_BOUNDRIES[i][0] = min(imu.MAG_RAW_VALS[i], NEW_MAG_BOUNDRIES[i][0]);
+            NEW_MAG_BOUNDRIES[i][1] = max(imu.MAG_RAW_VALS[i], NEW_MAG_BOUNDRIES[i][1]);
+        }
+    }
+}
+
 void Sensors::runCollectData()
 {
     if(iteration==0){
@@ -137,9 +179,7 @@ void Sensors::runCollectData()
     iteration++;
     
     // read and pulish IMU
-    imu.read_adj();
-    //imu.print_real();
-    imu.cpy_adj(imuTopicBuffer.accelerometer, imuTopicBuffer.gyroscope, imuTopicBuffer.magnetometer);
+    read_IMU();
     imuDataTopic.publish(imuTopicBuffer);
 
     // read and publish Sun sensor (Photoresistor)
@@ -182,5 +222,11 @@ void Sensors::publishTM()
         stdtm->mz = imuTopicBuffer.magnetometer[2];
         stdtm->distance = float(proximityBuffer.distance);
         stdtm->brightness = lightSensorBuffer.intensity;
+        stdtm->magx0 = MAG_BOUNDRIES[0][0]; 
+        stdtm->magx1 = MAG_BOUNDRIES[0][1]; 
+        stdtm->magy0 = MAG_BOUNDRIES[1][0]; 
+        stdtm->magy1 = MAG_BOUNDRIES[1][1]; 
+        stdtm->magz0 = MAG_BOUNDRIES[2][0]; 
+        stdtm->magz1 = MAG_BOUNDRIES[2][1]; 
     }
 }

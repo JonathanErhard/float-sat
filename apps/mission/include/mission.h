@@ -34,7 +34,6 @@ class Mission: public generated::Mission{
 	bool handleTelecommandSetMinDist(const generated::SetMinDist& setMinDist) override;
 	bool handleTelecommandMirrorTracking(const generated::MirrorTracking& mirrorRotation) override;
 	bool handleTelecommandSetMirrorOffset(const generated::SetMirrorOffset& setMirrorOffset) override;
-	
 
 	//Topic methods
 	void handleTopicAttitudeDeterminationTopic(generated::AttitudeDeterminationTopic &message) override;
@@ -46,6 +45,7 @@ class Mission: public generated::Mission{
 	generated::ProximityTopic proximity;
 	generated::LightSensorTopic light;
 	generated::MissionModeTopic missionMode;
+	generated::CalibMagTopic calibMag;
 
 	generated::ChangeMode missionModes;
 	generated::ChangeAngle changeAngle;

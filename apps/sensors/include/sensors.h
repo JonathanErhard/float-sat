@@ -21,12 +21,19 @@ class Sensors : public generated::Sensors
 	generated::ImuDataTopic imuTopicBuffer;
 	generated::LightSensorTopic lightSensorBuffer;
 	generated::ProximityTopic proximityBuffer;
+	generated::CalibMagTopic calibMagBuffer;
+
+
 private:
 	long time;
 public:
 	Sensors();
 
+	// Topic methods
+	void handleTopicCalibMagTopic(generated::CalibMagTopic &message) override;
+
 	void initialize() override;
+	
 
 	// Thread methods
 	void initCollectData() override;
@@ -39,6 +46,7 @@ public:
 	// read sensor data
 	void readSunSensor();
 	void readLIDAR();
+	void read_IMU();
 
 	void publishTM();
 };

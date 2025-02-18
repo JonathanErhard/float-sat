@@ -17,6 +17,9 @@ publish:
   - corfu::extendedTelemetryTopic
   - corfu::standardTelemetryTopic
 
+subscribe:
+  calibMagTopic: default
+
 telecommands:
   NOP:
     id: 1
@@ -39,3 +42,9 @@ standard_telemetry:
     brightness:
       type: float 
       customWidget: plottingWidget
+    magx0: int16_t
+    magx1: int16_t
+    magy0: int16_t
+    magy1: int16_t
+    magz0: int16_t
+    magz1: int16_t

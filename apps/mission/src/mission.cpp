@@ -85,6 +85,9 @@ inline void Mission::rotate_end(){
 			break;
 		case 1:
 			break;
+			mode.mode = 0;
+			mode.submode = 0;
+			modeTopic.publish(mode);
 		case 2:
 			mode.mode=1;
 			mode.submode=Att_light;
@@ -106,7 +109,14 @@ inline void Mission::rotate_end(){
 			mode.submode=targetReaction(Att_light , mod(Att_obj ));
 			modeTopic.publish(mode);
 			changeMirrorAngle(calculateMirrorAngle());
-			break;  
+			break;
+		case 6:
+			mode.mode = 0;
+			mode.submode = 0;
+			modeTopic.publish(mode);
+			calibMag.is_calibrating = false;
+			calibMagTopic.publish(calibMag);
+
 	}
 	collecting_max = false;
 }
@@ -131,7 +141,10 @@ bool Mission::handleTelecommandChangeMode(const generated::ChangeMode &changeMod
 				else
 					rotate_end();
 				break;
-
+			case 6:
+				Mission::rotate_start();
+				calibMag.is_calibrating = true;
+				calibMagTopic.publish(calibMag);
         }
 		isInMission=false;
 	}
@@ -206,7 +219,8 @@ void Mission::handleTopicLightSensorTopic(generated::LightSensorTopic &message) 
 }
 
 bool Mission::check_rotation_end(){
-	if ( (RODOS::NOW() - time_start > 10*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start)<5)){
+	int64_t min_time = 320/rotationspeed;
+	if ( (RODOS::NOW() - time_start > min_time*RODOS::SECONDS) && (abs(Mission::attitude.position - attitude_start)<5)){
 			rotate_end();
 			return true;
 		}  
