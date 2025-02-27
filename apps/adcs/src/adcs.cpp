@@ -214,7 +214,7 @@ void Adcs::handleTopicImuDataTopic(generated::ImuDataTopic &message) {
 		rpy.y += Adcs::positionRb.vals[i].y;
 		rpy.z += Adcs::positionRb.vals[i].z;
 	}
-	pos = atan2(rpy.x,rpy.y)*180/M_PI;//+ rpy.z*0.1f/2.f;
+	pos = atan2(rpy.x,rpy.y)*180/M_PI + imu.gyroscope[2]*0.01;//+ rpy.z*0.1f/2.f;
 	//winkel dinkel berechnungen
 	//float r = imu.gyroscope[0]*float(M_PI/180);
 	//float p = imu.gyroscope[1]*float(M_PI/180);
